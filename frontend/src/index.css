@@ -2,16 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer base {
+  body {
+    @apply bg-background text-secondary font-sans antialiased m-0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-white;
+  }
+
+  p {
+    @apply text-secondary leading-relaxed;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  .glass-panel {
+    @apply bg-surface_glass backdrop-blur-glass border border-white/10 shadow-lg;
+  }
+
+  .glass-card {
+    @apply bg-surface_glass backdrop-blur-glass border border-white/10 rounded-xl p-6 shadow-xl transition-all duration-300 hover:border-primary/50 hover:shadow-primary/20 hover:-translate-y-1;
+  }
+
+  .gold-text {
+    @apply text-primary font-heading italic;
+  }
+
+  .gold-button {
+    @apply px-6 py-3 rounded-md bg-transparent border border-primary text-primary font-medium tracking-wide transition-all duration-300 hover:bg-primary hover:text-background hover:shadow-[0_0_15px_rgba(212,175,55,0.4)];
+  }
+
+  .input-glass {
+    @apply w-full p-3 rounded-md bg-surface_glass border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0C10;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1F2833;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
+
+/* Selection Color */
+::selection {
+  background: #D4AF37;
+  color: #0B0C10;
 }
