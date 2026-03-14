@@ -47,14 +47,12 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-24 bg-surface lg:ml-[100px] relative overflow-hidden">
-      {/* Decorative gradient orb */}
+      {/* Decorative gradient orb & Background Overlay */}
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px] translate-y-1/2 -translate-x-1/3 pointer-events-none -z-0"></div>
 
-      {/* Abstract Design Elements */}
-      <div className="absolute top-20 right-20 w-40 h-40 border border-white/5 rotate-45 pointer-events-none -z-0"></div>
-      <svg className="absolute top-1/2 right-10 w-24 h-24 opacity-20 text-primary pointer-events-none -z-0" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
-        <polygon points="50,10 90,90 10,90" />
-      </svg>
+      {/* Abstract Triangle Background */}
+      <div className="absolute top-20 right-20 w-[300px] h-[300px] border border-primary/10 rotate-45 pointer-events-none -z-0"></div>
+      <div className="absolute top-24 right-24 w-[300px] h-[300px] border border-primary/5 rotate-[40deg] pointer-events-none -z-0"></div>
 
       <motion.div
         className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10"

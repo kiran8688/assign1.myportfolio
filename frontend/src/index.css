@@ -3,10 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-
   body {
     @apply bg-background text-secondary font-sans antialiased m-0;
   }
@@ -40,6 +36,10 @@
   .input-glass {
     @apply w-full p-3 rounded-md bg-surface_glass border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300;
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* Custom Scrollbar */
