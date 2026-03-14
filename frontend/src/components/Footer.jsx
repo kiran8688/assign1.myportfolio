@@ -4,6 +4,12 @@ import { FaTwitter, FaFacebook, FaInstagram, FaSkype, FaLinkedin } from 'react-i
 const Footer = () => {
   return (
     <footer id="footer" className="bg-background py-16 text-center text-secondary border-t border-white/10 lg:ml-[100px] relative overflow-hidden">
+      {/* Gold Designed Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10 pointer-events-none -z-0 mix-blend-luminosity"
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop')" }}
+      ></div>
+
       {/* Abstract background accents and patterns */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[120px] -translate-y-1/2 pointer-events-none -z-0"></div>
 
