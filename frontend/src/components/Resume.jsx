@@ -17,6 +17,12 @@ const Resume = () => {
 
   return (
     <section id="resume" className="py-24 bg-background lg:ml-[100px] relative overflow-hidden">
+      {/* Dark Elegant Gold Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10 pointer-events-none -z-0 mix-blend-luminosity"
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop')" }}
+      ></div>
+
       {/* Background elegant grid texture */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] opacity-20 pointer-events-none -z-0"></div>
 

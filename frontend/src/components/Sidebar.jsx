@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaHome, FaUser, FaFileAlt, FaEnvelope, FaBars, FaTimes } from 'react-icons/fa';
+import { Link } from 'react-scroll';
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,28 +27,28 @@ const Sidebar = () => {
         <nav className="w-full">
           <ul className="flex flex-col gap-4">
             <li>
-              <a href="#hero" className="flex items-center gap-4 text-secondary hover:text-primary px-4 py-3 rounded-full transition-all group glass-panel lg:w-[56px] lg:hover:w-[180px] overflow-hidden whitespace-nowrap mx-auto">
+              <Link to="hero" spy={true} smooth={true} duration={500} className="cursor-pointer flex items-center gap-4 text-secondary hover:text-primary px-4 py-3 rounded-full transition-all group glass-panel lg:w-[56px] lg:hover:w-[180px] overflow-hidden whitespace-nowrap mx-auto active:text-primary">
                 <FaHome className="text-xl shrink-0 group-hover:scale-110 transition-transform" />
                 <span className="lg:hidden group-hover:block font-medium tracking-wide">Home</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#about" className="flex items-center gap-4 text-secondary hover:text-primary px-4 py-3 rounded-full transition-all group glass-panel lg:w-[56px] lg:hover:w-[180px] overflow-hidden whitespace-nowrap mx-auto">
+              <Link to="about" spy={true} smooth={true} duration={500} className="cursor-pointer flex items-center gap-4 text-secondary hover:text-primary px-4 py-3 rounded-full transition-all group glass-panel lg:w-[56px] lg:hover:w-[180px] overflow-hidden whitespace-nowrap mx-auto active:text-primary">
                 <FaUser className="text-xl shrink-0 group-hover:scale-110 transition-transform" />
                 <span className="lg:hidden group-hover:block font-medium tracking-wide">About</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#resume" className="flex items-center gap-4 text-secondary hover:text-primary px-4 py-3 rounded-full transition-all group glass-panel lg:w-[56px] lg:hover:w-[180px] overflow-hidden whitespace-nowrap mx-auto">
+              <Link to="resume" spy={true} smooth={true} duration={500} className="cursor-pointer flex items-center gap-4 text-secondary hover:text-primary px-4 py-3 rounded-full transition-all group glass-panel lg:w-[56px] lg:hover:w-[180px] overflow-hidden whitespace-nowrap mx-auto active:text-primary">
                 <FaFileAlt className="text-xl shrink-0 group-hover:scale-110 transition-transform" />
                 <span className="lg:hidden group-hover:block font-medium tracking-wide">Resume</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#contact" className="flex items-center gap-4 text-secondary hover:text-primary px-4 py-3 rounded-full transition-all group glass-panel lg:w-[56px] lg:hover:w-[180px] overflow-hidden whitespace-nowrap mx-auto">
+              <Link to="contact" spy={true} smooth={true} duration={500} className="cursor-pointer flex items-center gap-4 text-secondary hover:text-primary px-4 py-3 rounded-full transition-all group glass-panel lg:w-[56px] lg:hover:w-[180px] overflow-hidden whitespace-nowrap mx-auto active:text-primary">
                 <FaEnvelope className="text-xl shrink-0 group-hover:scale-110 transition-transform" />
                 <span className="lg:hidden group-hover:block font-medium tracking-wide">Contact</span>
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>

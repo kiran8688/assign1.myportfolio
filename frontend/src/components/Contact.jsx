@@ -21,7 +21,7 @@ const Contact = () => {
     setStatus('loading');
     try {
       // In production, configure API URL correctly
-      const response = await axios.post('http://localhost:8000/contact', formData);
+      await axios.post('http://localhost:8000/contact', formData);
       setStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
       setTimeout(() => setStatus(''), 5000);
@@ -47,6 +47,12 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-24 bg-surface lg:ml-[100px] relative overflow-hidden">
+      {/* Dark Elegant Gold Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10 pointer-events-none -z-0 mix-blend-luminosity"
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop')" }}
+      ></div>
+
       {/* Decorative gradient orb */}
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px] translate-y-1/2 -translate-x-1/3 pointer-events-none -z-0"></div>
 

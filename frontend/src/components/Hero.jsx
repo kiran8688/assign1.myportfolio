@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaTwitter, FaFacebook, FaInstagram, FaSkype, FaLinkedin, FaChevronDown } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import { Link } from 'react-scroll';
 
 const Hero = () => {
   // Use a placeholder backend-themed image (abstract network/dark code aesthetic)
@@ -90,12 +91,12 @@ const Hero = () => {
         </motion.div>
 
         <motion.div variants={itemVariants} className="flex gap-6">
-          <a href="#about" className="gold-button">
+          <Link to="about" spy={true} smooth={true} duration={500} className="gold-button cursor-pointer">
             Discover More
-          </a>
-          <a href="#contact" className="px-6 py-3 rounded-md bg-white/5 border border-white/10 text-white font-medium tracking-wide transition-all duration-300 hover:bg-white/10 backdrop-blur-sm">
+          </Link>
+          <Link to="contact" spy={true} smooth={true} duration={500} className="px-6 py-3 rounded-md bg-white/5 border border-white/10 text-white font-medium tracking-wide transition-all duration-300 hover:bg-white/10 backdrop-blur-sm cursor-pointer">
             Contact Me
-          </a>
+          </Link>
         </motion.div>
       </motion.div>
 
@@ -105,10 +106,10 @@ const Hero = () => {
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
       >
-        <a href="#about" className="text-primary/70 hover:text-primary transition-colors flex flex-col items-center">
+        <Link to="about" spy={true} smooth={true} duration={500} className="text-primary/70 hover:text-primary transition-colors flex flex-col items-center cursor-pointer">
           <span className="text-sm tracking-widest uppercase mb-2">Scroll</span>
           <FaChevronDown className="text-xl" />
-        </a>
+        </Link>
       </motion.div>
     </section>
   );

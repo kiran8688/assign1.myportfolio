@@ -26,6 +26,12 @@ const Skills = () => {
 
   return (
     <section id="skills" className="py-24 bg-surface lg:ml-[100px] relative overflow-hidden">
+      {/* Dark Elegant Gold Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10 pointer-events-none -z-0 mix-blend-luminosity"
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop')" }}
+      ></div>
+
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
 
       {/* Background Elements - Subtle tech-inspired lines */}
