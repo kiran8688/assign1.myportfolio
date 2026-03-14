@@ -25,9 +25,14 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-24 bg-surface lg:ml-[100px] relative">
+    <section id="skills" className="py-24 bg-surface lg:ml-[100px] relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
 
+      {/* Background Elements - Subtle tech-inspired lines */}
+      <svg className="absolute right-0 top-1/4 w-96 h-96 opacity-[0.03] text-primary pointer-events-none -z-0" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="0.5">
+        <path d="M0 20 L100 20 M0 40 L100 40 M0 60 L100 60 M0 80 L100 80 M20 0 L20 100 M40 0 L40 100 M60 0 L60 100 M80 0 L80 100" />
+      </svg>
+      <div className="absolute bottom-20 left-10 w-48 h-48 border border-white/5 rotate-45 pointer-events-none -z-0"></div>
       <motion.div
         className="max-w-7xl mx-auto px-6 lg:px-12"
         initial="hidden"

@@ -18,8 +18,11 @@ const Resume = () => {
   return (
     <section id="resume" className="py-24 bg-background lg:ml-[100px] relative overflow-hidden">
       {/* Background elegant grid texture */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] opacity-20"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] opacity-20 pointer-events-none -z-0"></div>
 
+      {/* Abstract Design Elements */}
+      <div className="absolute top-40 right-10 w-32 h-32 border-4 border-primary/10 rounded-sm rotate-12 pointer-events-none -z-0"></div>
+      <div className="absolute bottom-40 left-10 w-24 h-24 border-2 border-primary/20 rounded-full pointer-events-none -z-0"></div>
       <motion.div
         className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10"
         initial="hidden"

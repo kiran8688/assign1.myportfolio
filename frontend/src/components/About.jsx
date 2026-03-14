@@ -21,6 +21,20 @@ const About = () => {
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3"></div>
 
+      {/* Abstract Design - Gold geometric lines in the background */}
+      <div className="absolute top-24 left-10 w-64 h-64 border border-primary/20 rounded-full mix-blend-overlay -z-0 opacity-50 pointer-events-none"></div>
+      <div className="absolute bottom-10 right-20 w-32 h-32 border-2 border-primary/10 rounded-full mix-blend-overlay -z-0 opacity-40 pointer-events-none"></div>
+      <svg className="absolute left-0 bottom-1/4 w-32 h-32 opacity-10 text-primary pointer-events-none -z-0" viewBox="0 0 100 100" fill="currentColor">
+        <circle cx="20" cy="20" r="3" />
+        <circle cx="50" cy="20" r="3" />
+        <circle cx="80" cy="20" r="3" />
+        <circle cx="20" cy="50" r="3" />
+        <circle cx="50" cy="50" r="3" />
+        <circle cx="80" cy="50" r="3" />
+        <circle cx="20" cy="80" r="3" />
+        <circle cx="50" cy="80" r="3" />
+        <circle cx="80" cy="80" r="3" />
+      </svg>
       <motion.div
         className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10"
         initial="hidden"
