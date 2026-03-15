@@ -69,7 +69,7 @@ const Hero = () => {
           variants={itemVariants}
           className="text-xl md:text-3xl text-gray-300 font-light max-w-2xl mb-12"
         >
-          I'm a <span className="font-semibold text-white border-b-2 border-primary pb-1">Backend Developer</span> crafting robust architectures and scalable systems.
+          I'm a <span className="font-semibold text-white border-b-2 border-primary pb-1">Full Stack Developer</span> crafting robust architectures and scalable systems.
         </motion.p>
 
         <motion.div variants={itemVariants} className="flex gap-5 mb-16">
