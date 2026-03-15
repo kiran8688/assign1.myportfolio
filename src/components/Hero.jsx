@@ -16,7 +16,7 @@ const Hero = () => {
           <img
             src={import.meta.env.BASE_URL + "img/kiran.jpg"}
             alt="Kiran Kumar"
-            className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-white/10 shadow-2xl shadow-purple-500/20"
+            className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-white/10 shadow-2xl shadow-cyan-500/20"
           />
         </motion.div>
 
@@ -37,7 +37,7 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-lg md:text-xl text-slate-400 max-w-2xl mb-12 font-light leading-relaxed"
         >
-          An entry-level <span className="font-semibold text-white border-b-2 border-primary pb-1">Web Developer</span> building responsive and user-friendly web applications with a strong emphasis on robust backend architecture.
+          An entry-level <span className="font-semibold text-white border-b-2 border-primary pb-1">Full-Stack Developer</span> building robust, scalable applications with a strong emphasis on backend architecture, while actively aspiring to secure top roles in AI and Machine Learning fields.
         </motion.p>
 
         <motion.div
@@ -51,7 +51,7 @@ const Hero = () => {
               View My Work
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-200 to-pink-200 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-200 to-blue-200 opacity-0 group-hover:opacity-100 transition-opacity"></div>
           </a>
 
           <a href="#contact" className="px-8 py-4 glass-card text-white font-semibold rounded-full transition-all hover:bg-white/10 hover:border-white/20 active:scale-95">

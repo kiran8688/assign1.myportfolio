@@ -17,10 +17,10 @@ const About = () => {
             viewport={{ once: true }}
             className="md:col-span-2 glass-card p-8 md:p-10 flex flex-col justify-center relative overflow-hidden group"
           >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl group-hover:bg-purple-500/20 transition-colors duration-700"></div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl group-hover:bg-cyan-500/20 transition-colors duration-700"></div>
 
             <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-4 mb-6 relative z-10">
-              <h3 className="text-2xl font-display font-bold text-white whitespace-nowrap">Full-Stack Developer, Backend</h3>
+              <h3 className="text-2xl font-display font-bold text-white whitespace-nowrap">Full-Stack Developer</h3>
             </div>
 
             <div className="relative z-10 min-h-[120px]">
@@ -29,11 +29,11 @@ const About = () => {
                 animate={{ opacity: 1 }}
                 className="text-slate-300 leading-relaxed text-lg font-light mb-6"
               >
-                To obtain an entry-level web developer position in a growth-oriented organization where I can apply my knowledge of front-end and full-stack web development to build responsive and user-friendly web applications. I am committed to continuous learning and improving my technical and problem-solving skills through hands-on projects and real-world challenges. I seek an environment that supports mentorship and collaboration, allowing me to contribute effectively to organizational goals while growing as a professional web developer.
+                To obtain an entry-level full-stack developer position in a growth-oriented organization where I can apply my knowledge of full-stack development to build robust and scalable applications. I am committed to continuous learning, honing my technical skills through real-world challenges, and actively aspiring to secure top roles in Artificial Intelligence and Machine Learning fields. I seek an environment that supports mentorship and collaboration, allowing me to contribute effectively to organizational goals while growing as a professional software engineer.
               </motion.p>
             </div>
 
-            <div className="inline-flex items-center gap-2 text-pink-400 font-medium relative z-10 mt-auto">
+            <div className="inline-flex items-center gap-2 text-blue-400 font-medium relative z-10 mt-auto">
               <Sparkles size={18} /> Available for new opportunities
             </div>
           </motion.div>
@@ -48,16 +48,16 @@ const About = () => {
           >
             <div>
               <p className="text-sm text-slate-500 uppercase tracking-widest mb-1">Location</p>
-              <p className="text-white font-medium flex items-center gap-2"><MapPin size={18} className="text-orange-400"/> Hyderabad, IND</p>
+              <p className="text-white font-medium flex items-center gap-2"><MapPin size={18} className="text-emerald-400"/> Hyderabad, IND</p>
             </div>
             <div>
               <p className="text-sm text-slate-500 uppercase tracking-widest mb-1">Education</p>
-              <p className="text-white font-medium flex items-center gap-2"><User size={18} className="text-purple-400"/> B.Tech CS (2024)</p>
+              <p className="text-white font-medium flex items-center gap-2"><User size={18} className="text-cyan-400"/> B.Tech CS (2024)</p>
             </div>
             <div>
               <p className="text-sm text-slate-500 uppercase tracking-widest mb-1">Email</p>
-              <a href="mailto:skirankumar2015@gmail.com" className="text-white font-medium flex items-center gap-2 hover:text-pink-400 transition-colors">
-                <Mail size={18} className="text-pink-400"/> skirankumar2015@gmail.com
+              <a href="mailto:skirankumar2015@gmail.com" className="text-white font-medium flex items-center gap-2 hover:text-blue-400 transition-colors">
+                <Mail size={18} className="text-blue-400"/> skirankumar2015@gmail.com
               </a>
             </div>
             <a href="https://github.com/kiran8688" target="_blank" rel="noreferrer" className="mt-auto flex items-center justify-between p-4 bg-white/5 rounded-2xl hover:bg-white/10 transition-colors group">

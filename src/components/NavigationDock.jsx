@@ -39,7 +39,7 @@ const NavigationDock = ({ activeSection }) => {
             {isActive && (
               <motion.div
                 layoutId="activeDockPill"
-                className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-white/10 rounded-full"
+                className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-white/10 rounded-full"
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               />
             )}
