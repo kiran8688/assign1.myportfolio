@@ -2,7 +2,7 @@
 **Full Stack Developer**
 
 ## Personal Statement
-To obtain an entry-level web developer position in a growth-oriented organization where I can apply my knowledge of front-end and full-stack web development to build responsive and user-friendly web applications. I am committed to continuous learning and improving my technical and problem-solving skills through hands-on projects and real-world challenges. I seek an environment that supports mentorship and collaboration, allowing me to contribute effectively to organizational goals while growing as a professional web developer.
+To obtain an entry-level full-stack developer position in a growth-oriented organization where I can apply my knowledge of full-stack development to build robust and scalable applications. I am committed to continuous learning, honing my technical skills through real-world challenges, and actively aspiring to secure top roles in Artificial Intelligence and Machine Learning fields. I seek an environment that supports mentorship and collaboration, allowing me to contribute effectively to organizational goals while growing as a professional software engineer.
 
 ---
 
@@ -25,7 +25,7 @@ To obtain an entry-level web developer position in a growth-oriented organizatio
 
 ### Full-Stack Development Training
 **Innomatics Research Labs, JNTU Hyderabad** | *Jan 2025*
-- Completed hands-on full-stack web development training with practical project experience.
+- Completed hands-on full-stack development training with practical project experience.
 - Gained foundational skills in HTML, CSS, JavaScript, React JS, and backend concepts.
 
 ### META Front-End Developer Professional Certificate
