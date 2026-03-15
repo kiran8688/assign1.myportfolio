@@ -21,7 +21,7 @@ class Particle {
   draw(ctx) {
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(168, 85, 247, 0.4)'; // funk-purple
+    ctx.fillStyle = 'rgba(6, 182, 212, 0.4)'; // ai-cyan
     ctx.fill();
   }
 }
@@ -67,7 +67,7 @@ const NetworkBackground = () => {
           if (distSq < 14400) { // 120 * 120
             const distance = Math.sqrt(distSq);
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(236, 72, 153, ${1 - distance/120})`; // funk-pink alpha based on distance
+            ctx.strokeStyle = `rgba(59, 130, 246, ${1 - distance/120})`; // ai-blue alpha based on distance
             ctx.lineWidth = 0.8;
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
