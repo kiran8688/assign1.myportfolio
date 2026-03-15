@@ -56,7 +56,7 @@ const About = () => {
             <span className="absolute bottom-[-1px] left-1/2 -translate-x-1/2 w-12 h-[3px] bg-primary"></span>
           </motion.h2>
           <motion.p variants={itemVariants} className="text-secondary max-w-2xl mx-auto mt-4 text-lg">
-            A passionate Full Stack Developer with a strong emphasis on robust architectures. I transform complex requirements into elegant, scalable solutions.
+            An entry-level web developer committed to continuous learning and improving technical skills through hands-on projects and real-world challenges.
           </motion.p>
         </div>
 
@@ -85,19 +85,14 @@ const About = () => {
             variants={itemVariants}
           >
             <h3 className="text-3xl font-bold text-white mb-2 font-heading tracking-wide">
-              FULL STACK <span className="gold-text">DEVELOPER</span>
+              ENTRY-LEVEL WEB <span className="gold-text">DEVELOPER</span>
             </h3>
             <p className="text-secondary mb-8 italic text-lg border-l-4 border-primary pl-4">
-              "Building systems that don't just work, but scale and inspire."
+              "Seeking an environment that supports mentorship and collaboration to contribute effectively while growing."
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
               <ul className="space-y-5 text-lg">
-                <li className="flex items-center group">
-                  <span className="text-primary mr-3 font-bold group-hover:translate-x-1 transition-transform">▹</span>
-                  <strong className="mr-3 text-white font-medium min-w-[90px]">Birthday:</strong>
-                  <span className="text-secondary group-hover:text-white transition-colors">10 May 1997</span>
-                </li>
                 <li className="flex items-center group">
                   <span className="text-primary mr-3 font-bold group-hover:translate-x-1 transition-transform">▹</span>
                   <strong className="mr-3 text-white font-medium min-w-[90px]">Phone:</strong>
@@ -108,23 +103,23 @@ const About = () => {
                   <strong className="mr-3 text-white font-medium min-w-[90px]">City:</strong>
                   <span className="text-secondary group-hover:text-white transition-colors">Hyderabad, India</span>
                 </li>
+                <li className="flex items-center group">
+                  <span className="text-primary mr-3 font-bold group-hover:translate-x-1 transition-transform">▹</span>
+                  <strong className="mr-3 text-white font-medium min-w-[90px]">Email:</strong>
+                  <span className="text-secondary group-hover:text-white transition-colors break-all">skirankumar2015@gmail.com</span>
+                </li>
               </ul>
 
               <ul className="space-y-5 text-lg">
                 <li className="flex items-center group">
                   <span className="text-primary mr-3 font-bold group-hover:translate-x-1 transition-transform">▹</span>
-                  <strong className="mr-3 text-white font-medium min-w-[90px]">Age:</strong>
-                  <span className="text-secondary group-hover:text-white transition-colors">24</span>
-                </li>
-                <li className="flex items-center group">
-                  <span className="text-primary mr-3 font-bold group-hover:translate-x-1 transition-transform">▹</span>
                   <strong className="mr-3 text-white font-medium min-w-[90px]">Degree:</strong>
-                  <span className="text-secondary group-hover:text-white transition-colors">Graduate</span>
+                  <span className="text-secondary group-hover:text-white transition-colors">B.Tech CS (2024)</span>
                 </li>
                 <li className="flex items-center group">
                   <span className="text-primary mr-3 font-bold group-hover:translate-x-1 transition-transform">▹</span>
-                  <strong className="mr-3 text-white font-medium min-w-[90px]">Email:</strong>
-                  <span className="text-secondary group-hover:text-white transition-colors break-all">skirankumar2015@gmail.com</span>
+                  <strong className="mr-3 text-white font-medium min-w-[90px]">GitHub:</strong>
+                  <span className="text-secondary group-hover:text-white transition-colors break-all">github.com/kiran8688</span>
                 </li>
                 <li className="flex items-center group">
                   <span className="text-primary mr-3 font-bold group-hover:translate-x-1 transition-transform">▹</span>
@@ -136,7 +131,7 @@ const About = () => {
 
             <div className="mt-10 pt-8 border-t border-white/10">
               <p className="text-secondary leading-relaxed">
-                Specializing in building comprehensive full stack systems, I have extensive experience with modern frameworks and databases. My approach blends traditional software engineering principles with contemporary methodologies, ensuring performance, security, and maintainability across both frontend and backend.
+                To obtain an entry-level web developer position in a growth-oriented organization where I can apply my knowledge of front-end and full-stack web development to build responsive and user-friendly web applications. I am committed to continuous learning and improving my technical and problem-solving skills through hands-on projects and real-world challenges. I seek an environment that supports mentorship and collaboration, allowing me to contribute effectively to organizational goals while growing as a professional web developer.
               </p>
             </div>
 

@@ -1,41 +1,42 @@
 # Kiran Kumar Singaram
 **Full Stack Developer**
 
-## Professional Summary
-A passionate Full Stack Developer with a strong emphasis on robust architectures. I transform complex requirements into elegant, scalable solutions. Specializing in building comprehensive full stack systems, I have extensive experience with modern frameworks and databases. My approach blends traditional software engineering principles with contemporary methodologies, ensuring performance, security, and maintainability across both frontend and backend.
-
-*"Seeking to be a part of a dynamic firm that provides a challenging career, an opportunity to explore my abilities, gain practical experience, and maximize my professional expertise."*
+## Personal Statement
+To obtain an entry-level web developer position in a growth-oriented organization where I can apply my knowledge of front-end and full-stack web development to build responsive and user-friendly web applications. I am committed to continuous learning and improving my technical and problem-solving skills through hands-on projects and real-world challenges. I seek an environment that supports mentorship and collaboration, allowing me to contribute effectively to organizational goals while growing as a professional web developer.
 
 ---
 
-## Technical Skills
+## Skills
 
-**Frontend Technologies:**
-- HTML, CSS, JavaScript (95%)
-- React & Redux (85%)
-- Tailwind CSS & Framer Motion (90%)
-
-**Backend Technologies:**
-- Python & Django (90%)
-- Node.js & Express (85%)
-
-**Databases:**
-- PostgreSQL & MongoDB (80%)
-
-**Tools & Practices:**
-- Git & CI/CD Pipelines (75%)
-- Docker & Kubernetes (70%)
+- **Languages:** JavaScript, ReactJS, Python
+- **Frameworks & Libraries:** Tailwindcss, Material UI, UI/UX
+- **Databases:** MySQL (Basics)
+- **Tools:** Git, GitHub, VS Code, Figma
 
 ---
 
-## Education & Training
+## Education
 
-### Full Stack Development
-**Innomatics Research Labs, Hyderabad** | *2022 - Present*
-Advancing as a Full-Stack Developer encompassing robust Backend architectures, responsive Frontends, database optimization, rigorous testing, and systematic debugging.
+### B.Tech in Computer Science
+**Malla Reddy Engineering College (MREC)** | *May 2024*
+- CGPA: 6.75
 
-### Bachelor in Computer Science
-**Malla Reddy Engineering College, Hyderabad** | *2015 - 2019*
+## Training and Certifications
+
+### Full-Stack Development Training
+**Innomatics Research Labs, JNTU Hyderabad** | *Jan 2025*
+- Completed hands-on full-stack web development training with practical project experience.
+- Gained foundational skills in HTML, CSS, JavaScript, React JS, and backend concepts.
+
+### META Front-End Developer Professional Certificate
+**Coursera** | *Present*
+- Learned front-end development using HTML5, CSS3, JavaScript, and React.
+- Built projects focused on responsive design, component-based architecture, and usability.
+
+### META Back-End Developer Professional Certificate
+**Coursera** | *Present*
+- Studied backend fundamentals including APIs, databases, and server-side development.
+- Gained exposure to RESTful services and full-stack application integration.
 
 ---
 
@@ -43,6 +44,7 @@ Advancing as a Full-Stack Developer encompassing robust Backend architectures, r
 - **Location:** Kukatpally, Hyderabad, Telangana 500055
 - **Phone:** +91 8099951768
 - **Email:** skirankumar2015@gmail.com
+- **GitHub:** github.com/kiran8688
 - **Freelance:** Available
 
 ---

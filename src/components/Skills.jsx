@@ -3,12 +3,10 @@ import { motion } from 'framer-motion';
 
 const Skills = () => {
   const skills = [
-    { name: 'Python & Django', percentage: 90, type: 'Backend' },
-    { name: 'Node.js & Express', percentage: 85, type: 'Backend' },
-    { name: 'PostgreSQL & MongoDB', percentage: 80, type: 'Database' },
-    { name: 'Docker & Kubernetes', percentage: 75, type: 'DevOps' },
-    { name: 'React & Tailwind', percentage: 70, type: 'Frontend' },
-    { name: 'AWS Cloud Services', percentage: 65, type: 'Infrastructure' },
+    { name: 'JavaScript, ReactJS, Python', percentage: 90, type: 'Languages' },
+    { name: 'Tailwindcss, Material UI, UI/UX', percentage: 85, type: 'Frameworks & Libraries' },
+    { name: 'MySQL (Basics)', percentage: 70, type: 'Databases' },
+    { name: 'Git, GitHub, VS Code, Figma', percentage: 80, type: 'Tools' },
   ];
 
   const sectionVariants = {
@@ -58,8 +56,7 @@ const Skills = () => {
           </motion.p>
         </div>
 
-        {/* Masonry-style grid (achieved via columns in CSS, but grid is cleaner for cards) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {skills.map((skill, index) => (
             <motion.div
               key={index}
