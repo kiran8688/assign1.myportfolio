@@ -1,54 +1,46 @@
-# Kiran Kumar Singaram - Personal Portfolio
+# Kiran Kumar Singaram
+**Full Stack Developer**
 
-A modern, responsive, and beautifully designed personal portfolio showcasing my skills, experience, and projects as a Full Stack Developer. Built using React, Vite, TailwindCSS, and Framer Motion.
+## Professional Summary
+A passionate Full Stack Developer with a strong emphasis on robust architectures. I transform complex requirements into elegant, scalable solutions. Specializing in building comprehensive full stack systems, I have extensive experience with modern frameworks and databases. My approach blends traditional software engineering principles with contemporary methodologies, ensuring performance, security, and maintainability across both frontend and backend.
 
-## Features
+*"Seeking to be a part of a dynamic firm that provides a challenging career, an opportunity to explore my abilities, gain practical experience, and maximize my professional expertise."*
 
-- **Modern Design:** Elegant dark theme with gold metallic accents, glassmorphism, and smooth animations.
-- **Responsive Layout:** fully functional and visually appealing on mobile, tablet, and desktop devices.
-- **Smooth Navigation:** Built-in React-Scroll integration for seamless single-page navigation.
-- **Dynamic Animations:** Extensive use of Framer Motion for scroll-triggered entrance animations and hover effects.
-- **Full Stack Focus:** Highlights expertise in both frontend and backend modern architectures.
+---
 
-## Technology Stack
+## Technical Skills
 
-- **Framework:** React 19 (via Vite)
-- **Styling:** Tailwind CSS
-- **Animations:** Framer Motion
-- **Navigation:** React Scroll
-- **Icons:** React Icons
+**Frontend Technologies:**
+- HTML, CSS, JavaScript (95%)
+- React & Redux (85%)
+- Tailwind CSS & Framer Motion (90%)
 
-## Getting Started
+**Backend Technologies:**
+- Python & Django (90%)
+- Node.js & Express (85%)
 
-### Prerequisites
+**Databases:**
+- PostgreSQL & MongoDB (80%)
 
-Ensure you have Node.js and npm installed on your machine.
+**Tools & Practices:**
+- Git & CI/CD Pipelines (75%)
+- Docker & Kubernetes (70%)
 
-### Installation
+---
 
-1. **Clone the repository:**
-   ```bash
-   git clone <repository-url>
-   cd <repository-directory>
-   ```
+## Education & Training
 
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+### Full Stack Development
+**Innomatics Research Labs, Hyderabad** | *2022 - Present*
+Advancing as a Full-Stack Developer encompassing robust Backend architectures, responsive Frontends, database optimization, rigorous testing, and systematic debugging.
 
-3. **Run the development server:**
-   ```bash
-   npm run dev
-   ```
+### Bachelor in Computer Science
+**Malla Reddy Engineering College, Hyderabad** | *2015 - 2019*
 
-4. **Build for production:**
-   ```bash
-   npm run build
-   ```
+---
 
-## Contact
-
-- **Email:** skirankumar2015@gmail.com
+## Contact Information
+- **Location:** Kukatpally, Hyderabad, Telangana 500055
 - **Phone:** +91 8099951768
-- **Location:** Hyderabad, India
+- **Email:** skirankumar2015@gmail.com
+- **Freelance:** Available
