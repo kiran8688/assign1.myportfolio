@@ -37,7 +37,7 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-lg md:text-xl text-slate-400 max-w-2xl mb-12 font-light leading-relaxed"
         >
-          An entry-level <span className="font-semibold text-white border-b-2 border-primary pb-1">Web Developer</span> building responsive and user-friendly web applications with a strong emphasis on robust backend architecture.
+          An entry-level <span className="font-semibold text-white border-b-2 border-primary pb-1">Full-Stack Developer</span> building robust, scalable applications with a strong emphasis on backend architecture, while actively aspiring to secure top roles in AI and Machine Learning fields.
         </motion.p>
 
         <motion.div

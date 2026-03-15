@@ -58,7 +58,7 @@ const Resume = () => {
                 <ul className="space-y-3 text-secondary mt-3">
                   <li className="flex items-start gap-3 leading-relaxed">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary/70 mt-2 shrink-0"></span>
-                    <span>Completed hands-on full-stack web development training with practical project experience.</span>
+                    <span>Completed hands-on full-stack development training with practical project experience.</span>
                   </li>
                   <li className="flex items-start gap-3 leading-relaxed">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary/70 mt-2 shrink-0"></span>
