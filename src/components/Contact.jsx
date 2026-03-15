@@ -42,23 +42,23 @@ const Contact = () => {
           viewport={{ once: true }}
           className="glass-card p-8 md:p-12 text-left relative overflow-hidden"
         >
-          <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500"></div>
+          <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-cyan-500 via-blue-500 to-emerald-500"></div>
 
           <form onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div className="space-y-2">
                 <label className="text-sm font-medium text-slate-300 pl-1">Name</label>
-                <input type="text" name="name" required className="w-full bg-black/20 border border-white/10 rounded-2xl p-4 text-white focus:outline-none focus:border-pink-500/50 focus:bg-white/5 transition-all" placeholder="John Doe" />
+                <input type="text" name="name" required className="w-full bg-black/20 border border-white/10 rounded-2xl p-4 text-white focus:outline-none focus:border-blue-500/50 focus:bg-white/5 transition-all" placeholder="John Doe" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-medium text-slate-300 pl-1">Email</label>
-                <input type="email" name="email" required className="w-full bg-black/20 border border-white/10 rounded-2xl p-4 text-white focus:outline-none focus:border-pink-500/50 focus:bg-white/5 transition-all" placeholder="john@example.com" />
+                <input type="email" name="email" required className="w-full bg-black/20 border border-white/10 rounded-2xl p-4 text-white focus:outline-none focus:border-blue-500/50 focus:bg-white/5 transition-all" placeholder="john@example.com" />
               </div>
             </div>
 
             <div className="space-y-2 mb-8">
               <label className="text-sm font-medium text-slate-300 pl-1">Message</label>
-              <textarea required name="message" rows="4" className="w-full bg-black/20 border border-white/10 rounded-2xl p-4 text-white focus:outline-none focus:border-pink-500/50 focus:bg-white/5 transition-all resize-none" placeholder="Hello Kiran, I'd like to discuss..."></textarea>
+              <textarea required name="message" rows="4" className="w-full bg-black/20 border border-white/10 rounded-2xl p-4 text-white focus:outline-none focus:border-blue-500/50 focus:bg-white/5 transition-all resize-none" placeholder="Hello Kiran, I'd like to discuss..."></textarea>
             </div>
 
             <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
@@ -78,7 +78,7 @@ const Contact = () => {
                 <motion.p
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  className="text-pink-400 font-medium"
+                  className="text-blue-400 font-medium"
                 >
                   Message sent successfully!
                 </motion.p>
