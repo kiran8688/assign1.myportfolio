@@ -45,6 +45,12 @@ const Sidebar = () => {
               </Link>
             </li>
             <li>
+              <Link to="projects" spy={true} smooth={true} duration={500} className="cursor-pointer flex items-center gap-4 text-secondary hover:text-primary px-4 py-3 rounded-full transition-all group glass-panel lg:w-[56px] lg:hover:w-[180px] overflow-hidden whitespace-nowrap mx-auto active:text-primary">
+                <span className="text-xl shrink-0 group-hover:scale-110 transition-transform flex items-center justify-center font-bold">{"{}"}</span>
+                <span className="lg:hidden group-hover:block font-medium tracking-wide">Projects</span>
+              </Link>
+            </li>
+            <li>
               <Link to="contact" spy={true} smooth={true} duration={500} className="cursor-pointer flex items-center gap-4 text-secondary hover:text-primary px-4 py-3 rounded-full transition-all group glass-panel lg:w-[56px] lg:hover:w-[180px] overflow-hidden whitespace-nowrap mx-auto active:text-primary">
                 <FaEnvelope className="text-xl shrink-0 group-hover:scale-110 transition-transform" />
                 <span className="lg:hidden group-hover:block font-medium tracking-wide">Contact</span>
