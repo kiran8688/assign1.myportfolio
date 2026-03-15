@@ -70,7 +70,7 @@ const About = () => {
           >
             <div className="absolute -inset-1 bg-gradient-to-r from-primary/50 to-primary/0 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
             <img
-              src="/img/kiran.jpg"
+              src={import.meta.env.BASE_URL + "img/kiran.jpg"}
               alt="Kiran"
               className="relative w-full h-auto rounded-xl shadow-2xl border border-white/10 grayscale hover:grayscale-0 transition-all duration-500 object-cover aspect-[3/4]"
             />
