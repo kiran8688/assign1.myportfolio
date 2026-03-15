@@ -44,3 +44,13 @@ Advancing as a Full-Stack Developer encompassing robust Backend architectures, r
 - **Phone:** +91 8099951768
 - **Email:** skirankumar2015@gmail.com
 - **Freelance:** Available
+
+---
+
+## Deployment Instructions
+
+To build and deploy the application to GitHub Pages, you can use the built-in npm scripts. Make sure you are using Node >= 22.0.0.
+
+```bash
+npm run deploy
+```
