@@ -3,11 +3,14 @@
 @tailwind utilities;
 
 @layer base {
+  html, body {
+    @apply overflow-x-hidden;
+  }
   html {
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-background text-secondary font-sans antialiased m-0;
+    @apply bg-background text-secondary font-sans antialiased m-0 relative;
   }
 
   h1, h2, h3, h4, h5, h6 {
