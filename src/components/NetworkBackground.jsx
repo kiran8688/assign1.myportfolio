@@ -60,9 +60,12 @@ const NetworkBackground = () => {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
+          // ⚡ Bolt: Optimize particle distance calculation by comparing squared distance first
+          // This avoids ~3160 expensive Math.sqrt() calls per frame for particles outside the 120px range
+          const distSq = dx * dx + dy * dy;
 
-          if (distance < 120) {
+          if (distSq < 14400) { // 120 * 120
+            const distance = Math.sqrt(distSq);
             ctx.beginPath();
             ctx.strokeStyle = `rgba(236, 72, 153, ${1 - distance/120})`; // funk-pink alpha based on distance
             ctx.lineWidth = 0.8;
