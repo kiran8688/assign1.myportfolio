@@ -56,7 +56,7 @@ const About = () => {
             <span className="absolute bottom-[-1px] left-1/2 -translate-x-1/2 w-12 h-[3px] bg-primary"></span>
           </motion.h2>
           <motion.p variants={itemVariants} className="text-secondary max-w-2xl mx-auto mt-4 text-lg">
-            A passionate Full Stack Developer with a strong emphasis on robust backend architecture. I transform complex requirements into elegant, scalable solutions.
+            A passionate Full Stack Developer with a strong emphasis on robust architectures. I transform complex requirements into elegant, scalable solutions.
           </motion.p>
         </div>
 
@@ -136,7 +136,7 @@ const About = () => {
 
             <div className="mt-10 pt-8 border-t border-white/10">
               <p className="text-secondary leading-relaxed">
-                Specializing in building comprehensive backend systems, I have extensive experience with modern frameworks and databases. My approach blends traditional software engineering principles with contemporary methodologies, ensuring performance, security, and maintainability.
+                Specializing in building comprehensive full stack systems, I have extensive experience with modern frameworks and databases. My approach blends traditional software engineering principles with contemporary methodologies, ensuring performance, security, and maintainability across both frontend and backend.
               </p>
             </div>
 

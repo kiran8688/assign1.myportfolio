@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaPaperPlane } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
@@ -19,17 +18,13 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('loading');
-    try {
-      // In production, configure API URL correctly
-      await axios.post('http://localhost:8000/contact', formData);
+
+    // Simulate API call for now since backend is removed
+    setTimeout(() => {
       setStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
       setTimeout(() => setStatus(''), 5000);
-    } catch (error) {
-      console.error(error);
-      setStatus('error');
-      setTimeout(() => setStatus(''), 5000);
-    }
+    }, 1500);
   };
 
   const containerVariants = {

@@ -54,7 +54,7 @@ const Skills = () => {
             <span className="absolute bottom-[-1px] left-1/2 -translate-x-1/2 w-12 h-[3px] bg-primary"></span>
           </motion.h2>
           <motion.p variants={cardVariants} className="text-secondary max-w-2xl mx-auto mt-4 text-lg">
-            A comprehensive overview of my technical expertise, focusing on modern backend architectures and cloud-native solutions.
+            A comprehensive overview of my technical expertise, focusing on modern full-stack architectures and cloud-native solutions.
           </motion.p>
         </div>
 
