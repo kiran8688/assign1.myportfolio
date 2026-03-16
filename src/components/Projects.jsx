@@ -18,33 +18,40 @@ const Projects = () => {
               type: "Full-Stack System",
               desc: "A responsive, component-based frontend architecture built with React. Features complex local state management, dynamic routing, and fluid animations.",
               link: "https://little-lemon-restaurant-app-by-kiran.netlify.app/",
-              tags: ["React", "UI/UX", "State Management"]
+              tags: ["React", "UI/UX", "State Management"],
+              image: "img/proj1.png"
             },
             {
               title: "E-Commerce API Integration",
               type: "Dynamic Storefront",
               desc: "An intelligent storefront system consuming public REST APIs. Built with dynamic rendering capabilities, advanced client-side filtering logic, and asynchronous data fetching.",
               link: "https://kirankumar-fake-store.netlify.app/",
-              tags: ["React", "REST API", "Async Logic"]
+              tags: ["React", "REST API", "Async Logic"],
+              image: "img/proj2.png"
             },
             {
               title: "Client Expense Pipeline",
               type: "Data Management App",
               desc: "Secure, in-browser data management application. Utilizes advanced JavaScript array manipulation for real-time financial calculations, persistent local storage, and dynamic UI updates.",
               link: "https://expense-traker-by-kiran.netlify.app/",
-              tags: ["JavaScript", "Local Storage", "Data Viz"]
+              tags: ["JavaScript", "Local Storage", "Data Viz"],
+              image: "img/proj3.png"
             }
           ].map((project, idx) => (
             <motion.div
               key={idx} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }}
-              className={`${glassStyle} group relative flex flex-col md:flex-row ${idx % 2 !== 0 ? 'md:flex-row-reverse' : ''} min-h-[400px]`}
+              className={`${glassStyle} group relative flex flex-col md:flex-row ${idx % 2 !== 0 ? 'md:flex-row-reverse' : ''} min-h-[400px] overflow-hidden`}
             >
-              <div className="w-full md:w-5/12 bg-[#05080f]/50 rounded-t-3xl md:rounded-tr-none md:rounded-bl-3xl md:rounded-l-3xl p-12 flex items-center justify-center relative overflow-hidden border-b md:border-b-0 md:border-r border-white/5 border-opacity-10">
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                <Layers className="w-32 h-32 text-white/5 group-hover:scale-110 group-hover:text-cyan-500/20 transition-all duration-700" strokeWidth={0.5} />
+              <div className="w-full md:w-5/12 bg-[#05080f]/50 p-0 flex items-center justify-center relative overflow-hidden border-b md:border-b-0 md:border-r border-white/5 border-opacity-10">
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/30 to-purple-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10 mix-blend-overlay" />
+                <img
+                  src={import.meta.env.BASE_URL + project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover object-top filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                />
               </div>
 
-              <div className="w-full md:w-7/12 p-10 md:p-16 flex flex-col justify-center">
+              <div className="w-full md:w-7/12 p-10 md:p-16 flex flex-col justify-center relative z-10 bg-[#0a0f1a]/80 backdrop-blur-sm">
                 <p className="font-['JetBrains_Mono',monospace] text-cyan-400 text-xs uppercase tracking-widest mb-3">{project.type}</p>
                 <h3 className="font-display text-3xl md:text-4xl text-white mb-6 group-hover:text-cyan-300 transition-colors">{project.title}</h3>
                 <p className="text-slate-400 leading-relaxed mb-8">{project.desc}</p>

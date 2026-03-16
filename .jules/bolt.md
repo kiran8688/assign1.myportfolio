@@ -20,3 +20,11 @@
 ## 2024-03-16 - [Fixing Vite Subdirectory Deployments for Root Domains]
 **Learning:** Hardcoding a subdirectory path in Vite's config (e.g., `base: '/assign1.myportfolio/'`) works for GitHub Pages but breaks asset resolution when deployed to a root domain like Netlify (`/`), resulting in 404s for JS/CSS and a blank white screen.
 **Action:** Use a relative base path (`base: './'`) in `vite.config.js`. This ensures Vite generates relative links (`./assets/...`) in `index.html`, allowing the build to be served correctly from both root and subdirectory deployment environments without configuration changes.
+
+## 2024-05-28 - [Vite Base Path for Multi-Domain Deployment]
+**Learning:** Hardcoded subdirectory `base` paths in Vite (e.g., `base: '/repo-name/'`) can cause blank pages when deploying to a root domain (like Netlify: `https://site.netlify.app/`) because assets will try to resolve at `https://site.netlify.app/repo-name/assets/`. Using a relative base path `base: './'` allows the build to dynamically resolve assets correctly whether deployed to a root domain OR a subdirectory (like GitHub Pages).
+**Action:** When a project is meant to be deployable across different hosting platforms (Netlify vs. GitHub Pages), configure Vite with `base: './'` instead of a specific subdirectory string unless strictly required by a unique routing constraint.
+
+## 2024-05-28 - [Playwright for Automated Asset Generation]
+**Learning:** Playwright can be utilized locally within the task environment to automatically navigate to external live URLs, wait for them to load, and scrape high-quality screenshots directly into the `public` directory.
+**Action:** Next time I need mockup images of a user's live project, write a temporary Playwright script to fetch and save them autonomously rather than waiting for manual image uploads.
