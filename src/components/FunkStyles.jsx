@@ -2,21 +2,21 @@ import React from 'react';
 
 const FunkStyles = () => (
   <style dangerouslySetInnerHTML={{ __html: `
-    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@400;500;700;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600&display=swap');
 
     :root {
-      --bg-dark: #020617; /* Very dark slate, almost black */
-      --card-bg: rgba(15, 23, 42, 0.5); /* Slate 900 slightly transparent */
-      --card-border: rgba(56, 189, 248, 0.15); /* Sky blue border */
-      --ai-cyan: #06b6d4;
-      --ai-blue: #3b82f6;
-      --ai-emerald: #10b981;
+      --bg-dark: #030305;
+      --card-bg: rgba(10, 15, 25, 0.8);
+      --card-border: rgba(6, 182, 212, 0.1);
+      --funk-purple: #06b6d4; /* Cyber Cyan */
+      --funk-pink: #3b82f6;   /* Electric Blue */
+      --funk-orange: #10b981; /* Matrix Emerald */
     }
 
     body {
       background-color: var(--bg-dark);
       color: #e2e8f0;
-      font-family: 'JetBrains Mono', monospace;
+      font-family: 'Inter', sans-serif;
       overflow-x: hidden;
       scroll-behavior: smooth;
       background-image:
@@ -25,36 +25,33 @@ const FunkStyles = () => (
     }
 
     h1, h2, h3, h4, .font-display {
-      font-family: 'Inter', sans-serif;
-      letter-spacing: -0.02em;
+      font-family: 'JetBrains Mono', monospace;
     }
 
     /* Modern Custom Scrollbar */
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: var(--bg-dark); }
-    ::-webkit-scrollbar-thumb { background: rgba(59,130,246,0.3); border-radius: 0px; }
-    ::-webkit-scrollbar-thumb:hover { background: rgba(59,130,246,0.6); }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 8px; }
+    ::-webkit-scrollbar-thumb:hover { background: #06b6d4; }
 
     /* Text Selection */
     ::selection { background: var(--ai-blue); color: #fff; }
 
     /* Terminal/Backend Card Utility */
     .glass-card {
-      background: var(--card-bg);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid var(--card-border);
-      border-radius: 0.5rem; /* sharper corners for tech vibe */
-      box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(255,255,255,0.02);
-      position: relative;
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.9) 0%, rgba(10, 15, 25, 0.95) 100%);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(59, 130, 246, 0.05);
+      border-radius: 1.5rem;
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.6);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
-    .glass-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.3), transparent);
+    .glass-card:hover {
+      border-color: rgba(6, 182, 212, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px -5px rgba(6, 182, 212, 0.2);
     }
 
     .text-gradient {

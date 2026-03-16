@@ -29,7 +29,7 @@ const About = () => {
                 animate={{ opacity: 1 }}
                 className="text-slate-300 leading-relaxed text-lg font-light mb-6"
               >
-                To obtain an entry-level full-stack developer position in a growth-oriented organization where I can apply my knowledge of full-stack development to build robust and scalable applications. I am committed to continuous learning, honing my technical skills through real-world challenges, and actively aspiring to secure top roles in Artificial Intelligence and Machine Learning fields. I seek an environment that supports mentorship and collaboration, allowing me to contribute effectively to organizational goals while growing as a professional software engineer.
+                To obtain a Full-Stack Developer position in a growth-oriented organization where I can apply my knowledge of full-stack development to build robust, scalable applications. I am an aspirer for becoming top roles in AI/ML fields, committed to continuous learning and improving my technical and problem-solving skills. I seek an environment that supports mentorship and collaboration, allowing me to contribute effectively to organizational goals while growing as a professional Full-Stack Developer.
               </motion.p>
             </div>
 
