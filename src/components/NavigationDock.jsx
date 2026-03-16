@@ -1,14 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, User, Cpu, FolderOpen, FileText, Mail } from 'lucide-react';
+import { Link } from 'react-scroll';
 
 const NavigationDock = ({ activeSection }) => {
   const navItems = [
     { id: 'hero', icon: Sparkles, label: 'Home' },
     { id: 'about', icon: User, label: 'About' },
     { id: 'skills', icon: Cpu, label: 'Skills' },
-    { id: 'resume', icon: FileText, label: 'Resume' },
     { id: 'projects', icon: FolderOpen, label: 'Work' },
+    { id: 'resume', icon: FileText, label: 'Resume' },
     { id: 'contact', icon: Mail, label: 'Contact' },
   ];
 
@@ -22,10 +23,13 @@ const NavigationDock = ({ activeSection }) => {
       {navItems.map((item) => {
         const isActive = activeSection === item.id;
         return (
-          <a
+          <Link
             key={item.id}
-            href={`#${item.id}`}
-            className={`relative p-4 rounded-full flex items-center justify-center transition-all duration-300 group
+            to={item.id}
+            spy={true}
+            smooth={true}
+            duration={500}
+            className={`relative p-4 rounded-full flex items-center justify-center transition-all duration-300 group cursor-pointer
               ${isActive ? 'text-white' : 'text-slate-400 hover:text-white hover:bg-white/5'}`}
           >
             <item.icon size={22} className="relative z-10" />
@@ -43,7 +47,7 @@ const NavigationDock = ({ activeSection }) => {
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               />
             )}
-          </a>
+          </Link>
         );
       })}
     </motion.div>
