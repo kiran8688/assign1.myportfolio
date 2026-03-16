@@ -16,3 +16,7 @@
 ## 2024-03-16 - [Integrating Monolithic React Code into a Modular Architecture]
 **Learning:** Monolithic React components provided by users often encapsulate multiple distinct sections (Hero, Skills, Projects, Footer) and complex state logic (Boot Sequences, Canvas Animations) within a single file. Directly replacing an entire application structure breaks existing modularity, routing, and maintainability.
 **Action:** When asked to integrate monolithic UI code into a modular React architecture, prioritize destructuring the monolithic code into independent components (`Hero.jsx`, `BootSequence.jsx`, `Projects.jsx`) while extracting inline styles into a centralized global component (`FunkStyles.jsx`). Retain existing functional components (like `About.jsx` or `NavigationDock.jsx`) that the monolithic code omitted, adapting them to match the new design language or explicit user requests.
+
+## 2024-03-16 - [Fixing Vite Subdirectory Deployments for Root Domains]
+**Learning:** Hardcoding a subdirectory path in Vite's config (e.g., `base: '/assign1.myportfolio/'`) works for GitHub Pages but breaks asset resolution when deployed to a root domain like Netlify (`/`), resulting in 404s for JS/CSS and a blank white screen.
+**Action:** Use a relative base path (`base: './'`) in `vite.config.js`. This ensures Vite generates relative links (`./assets/...`) in `index.html`, allowing the build to be served correctly from both root and subdirectory deployment environments without configuration changes.
