@@ -2,53 +2,60 @@ import React from 'react';
 
 const FunkStyles = () => (
   <style dangerouslySetInnerHTML={{ __html: `
-    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Space+Grotesk:wght@500;700;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600&display=swap');
 
     :root {
-      --bg-dark: #050508;
-      --card-bg: rgba(255, 255, 255, 0.03);
-      --card-border: rgba(255, 255, 255, 0.08);
-      --funk-purple: #a855f7;
-      --funk-pink: #ec4899;
-      --funk-orange: #f97316;
+      --bg-dark: #030305;
+      --card-bg: rgba(10, 15, 25, 0.8);
+      --card-border: rgba(6, 182, 212, 0.1);
+      --funk-purple: #06b6d4; /* Cyber Cyan */
+      --funk-pink: #3b82f6;   /* Electric Blue */
+      --funk-orange: #10b981; /* Matrix Emerald */
     }
 
     body {
       background-color: var(--bg-dark);
-      color: #f8fafc;
-      font-family: 'Outfit', sans-serif;
+      color: #e2e8f0;
+      font-family: 'Inter', sans-serif;
       overflow-x: hidden;
       scroll-behavior: smooth;
     }
 
     h1, h2, h3, h4, .font-display {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'JetBrains Mono', monospace;
     }
 
     /* Modern Custom Scrollbar */
-    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: var(--bg-dark); }
-    ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
-    ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.4); }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 8px; }
+    ::-webkit-scrollbar-thumb:hover { background: #06b6d4; }
 
     /* Text Selection */
     ::selection { background: var(--funk-pink); color: #fff; }
 
     /* Glass Card Utility */
     .glass-card {
-      background: var(--card-bg);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid var(--card-border);
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.9) 0%, rgba(10, 15, 25, 0.95) 100%);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(59, 130, 246, 0.05);
       border-radius: 1.5rem;
-      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.6);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .glass-card:hover {
+      border-color: rgba(6, 182, 212, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px -5px rgba(6, 182, 212, 0.2);
     }
 
     .text-gradient {
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      background-image: linear-gradient(90deg, #a855f7, #ec4899, #f97316);
+      background-image: linear-gradient(90deg, #06b6d4, #3b82f6, #10b981);
     }
   `}} />
 );
