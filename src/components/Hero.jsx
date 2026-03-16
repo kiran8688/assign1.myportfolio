@@ -15,6 +15,19 @@ const Hero = () => {
           <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent italic">Singaram.</span>
         </h1>
 
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="mb-8"
+        >
+          <img
+            src={import.meta.env.BASE_URL + "img/kiran.jpg"}
+            alt="Kiran Kumar"
+            className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-white/10 shadow-2xl shadow-cyan-500/20"
+          />
+        </motion.div>
+
         <p className="text-xl md:text-2xl text-slate-400 font-light max-w-3xl mx-auto leading-relaxed mb-12">
           Architecting resilient backend databases, robust APIs, and immersive modern web interfaces. Bridging the gap between complex data and elegant UI.
         </p>
