@@ -25,9 +25,9 @@ const Skills = () => {
   ];
 
   const certs = [
-    { year: '2025', title: 'Full-Stack Training', org: 'Innomatics Research Labs', color: 'from-purple-500/20 to-transparent' },
-    { year: 'Present', title: 'META Front-End', org: 'Coursera', color: 'from-pink-500/20 to-transparent' },
-    { year: 'Present', title: 'META Back-End', org: 'Coursera', color: 'from-orange-500/20 to-transparent' }
+    { year: '2025', title: 'Full-Stack Training', org: 'Innomatics Research Labs', color: 'from-cyan-500/20 to-transparent' },
+    { year: 'Present', title: 'META Front-End', org: 'Coursera', color: 'from-blue-500/20 to-transparent' },
+    { year: 'Present', title: 'META Back-End', org: 'Coursera', color: 'from-emerald-500/20 to-transparent' }
   ];
 
   return (
@@ -60,7 +60,7 @@ const Skills = () => {
           {/* Certifications */}
           <div>
             <h3 className="text-2xl font-display font-bold text-white mb-6 flex items-center gap-2">
-              <Code2 className="text-pink-400" /> Training & Certifications
+              <Code2 className="text-blue-400" /> Training & Certifications
             </h3>
             <div className="flex flex-col gap-4">
               {certs.map((cert, i) => (

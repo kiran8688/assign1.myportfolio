@@ -19,6 +19,9 @@ const FunkStyles = () => (
       font-family: 'Inter', sans-serif;
       overflow-x: hidden;
       scroll-behavior: smooth;
+      background-image:
+        radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.05), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(16, 185, 129, 0.05), transparent 25%);
     }
 
     h1, h2, h3, h4, .font-display {
@@ -32,9 +35,9 @@ const FunkStyles = () => (
     ::-webkit-scrollbar-thumb:hover { background: #06b6d4; }
 
     /* Text Selection */
-    ::selection { background: var(--funk-pink); color: #fff; }
+    ::selection { background: var(--ai-blue); color: #fff; }
 
-    /* Glass Card Utility */
+    /* Terminal/Backend Card Utility */
     .glass-card {
       background: linear-gradient(145deg, rgba(15, 23, 42, 0.9) 0%, rgba(10, 15, 25, 0.95) 100%);
       backdrop-filter: blur(16px);

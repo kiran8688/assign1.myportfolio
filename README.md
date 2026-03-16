@@ -25,7 +25,7 @@ To obtain a Full-Stack Developer position in a growth-oriented organization wher
 
 ### Full-Stack Development Training
 **Innomatics Research Labs, JNTU Hyderabad** | *Jan 2025*
-- Completed hands-on full-stack web development training with practical project experience.
+- Completed hands-on full-stack development training with practical project experience.
 - Gained foundational skills in HTML, CSS, JavaScript, React JS, and backend concepts.
 
 ### META Front-End Developer Professional Certificate
