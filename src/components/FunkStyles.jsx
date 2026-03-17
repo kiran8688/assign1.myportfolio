@@ -57,26 +57,26 @@ const FunkStyles = () => (
         inset 0 1px 2px 0 rgba(255, 255, 255, 0.4);
     }
 
-    /* Skills specific variant retaining the physical shape but distinct background interaction */
+    /* Skills specific variant matching the provided reference dark theme */
     .glass-card-skills {
-      background: rgba(255, 255, 255, 0.1); /* Slightly less opaque base for the grid */
+      background: rgba(10, 15, 25, 0.5); /* Darker, slightly blue tinted background */
       backdrop-filter: blur(80px) saturate(200%);
       -webkit-backdrop-filter: blur(80px) saturate(200%);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.05); /* Very subtle border */
+      border-radius: 1rem; /* Slightly sharper corners */
       box-shadow:
-        0 15px 35px -5px rgba(0, 0, 0, 0.25),
-        inset 0 1px 1px 0 rgba(255, 255, 255, 0.2);
-      transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+        0 10px 30px -10px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
     .glass-card-skills:hover {
-      background: rgba(255, 255, 255, 0.2);
-      border-color: rgba(255, 255, 255, 0.3);
+      background: rgba(15, 25, 40, 0.6); /* Slightly lighter on hover */
+      border-color: rgba(255, 255, 255, 0.1);
       box-shadow:
-        0 20px 40px -8px rgba(0, 0, 0, 0.3),
-        inset 0 1px 2px 0 rgba(255, 255, 255, 0.3);
-      transform: translateY(-5px); /* Add a slight lift */
+        0 20px 40px -8px rgba(0, 0, 0, 0.6),
+        inset 0 1px 1px 0 rgba(255, 255, 255, 0.1);
+      transform: translateY(-4px); /* Add a slight lift */
     }
 
     .text-gradient {
