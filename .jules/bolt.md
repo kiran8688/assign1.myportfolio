@@ -38,3 +38,8 @@
 ## 2025-03-17 - Modular Component Architecture & Framer Motion
 **Learning:** Monolithic UI designs given in a single file should be decomposed into smaller, domain-specific components (e.g., BootSequence, Hero, Skills) within `src/components/` to maintain modularity in a React application. When integrating complex layouts with interactive filters using `framer-motion`, employing `AnimatePresence` with `mode="popLayout"` ensures smooth, jank-free layout transitions without layout thrashing.
 **Action:** Next time I receive a large UI snippet, I will immediately plan to break it down into modular pieces mapped to the `src/components` architecture and use `AnimatePresence popLayout` for dynamically rendered lists.
+## 2026-03-17 - Asymmetric Layout implementation
+
+**Learning:** When implementing complex CSS grid layouts (masonry style with `grid-flow-dense`) combined with Framer Motion, it's simpler to manage animations purely on the card level and eliminate parent container layout animations to prevent jumpy rendering and simplify state. Permanent hover states (vibrant borders) replace complex JS state management for cleaner React component design.
+
+**Action:** Prefer CSS `grid-flow-dense` with explicit `col-span` and `row-span` for future masonry layouts over calculating column heights in JS, and use CSS/Tailwind for hover states rather than React state where possible.
