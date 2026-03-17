@@ -28,3 +28,6 @@
 ## 2024-05-28 - [Playwright for Automated Asset Generation]
 **Learning:** Playwright can be utilized locally within the task environment to automatically navigate to external live URLs, wait for them to load, and scrape high-quality screenshots directly into the `public` directory.
 **Action:** Next time I need mockup images of a user's live project, write a temporary Playwright script to fetch and save them autonomously rather than waiting for manual image uploads.
+## 2025-03-16 - Integration of Monolithic Code into Modular Architecture
+**Learning:** When users provide monolithic design code intended to replace an existing modular structure, it is crucial to manually destructure the new design back into the project 's existing component hierarchy rather than pasting it directly. It is important to also use consistent component namings (e.g., matching the user's `App.jsx` call sites with the actual exported functions in `/components`).
+**Action:** When breaking down a large file, prioritize identifying logical boundaries (like `<section>` tags or functional segments like Boot Sequence/Nav/Hero), and map these segments directly to corresponding files within `src/components/`, ensuring that global styles are appropriately abstracted.
