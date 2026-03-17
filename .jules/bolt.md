@@ -43,3 +43,7 @@
 **Learning:** When implementing complex CSS grid layouts (masonry style with `grid-flow-dense`) combined with Framer Motion, it's simpler to manage animations purely on the card level and eliminate parent container layout animations to prevent jumpy rendering and simplify state. Permanent hover states (vibrant borders) replace complex JS state management for cleaner React component design.
 
 **Action:** Prefer CSS `grid-flow-dense` with explicit `col-span` and `row-span` for future masonry layouts over calculating column heights in JS, and use CSS/Tailwind for hover states rather than React state where possible.
+## 2024-05-24 - Minimal Dark Theme Refactoring
+
+**Learning:** Highly asymmetric, vibrant grid designs can easily conflict with minimal dark design guidelines if not carefully controlled. A unified UI often requires standardizing card sizes and colors.
+**Action:** Always prioritize the requested visual reference over creative liberties, and carefully remove overly aggressive Tailwind utility classes (like `bg-gradient-to-br`, `backdrop-blur`, and `drop-shadow`) when a cleaner aesthetic is required.
