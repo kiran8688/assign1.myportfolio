@@ -47,3 +47,6 @@
 
 **Learning:** Highly asymmetric, vibrant grid designs can easily conflict with minimal dark design guidelines if not carefully controlled. A unified UI often requires standardizing card sizes and colors.
 **Action:** Always prioritize the requested visual reference over creative liberties, and carefully remove overly aggressive Tailwind utility classes (like `bg-gradient-to-br`, `backdrop-blur`, and `drop-shadow`) when a cleaner aesthetic is required.
+## 2025-03-17 - [Refactoring Monolithic React code into modular components]
+**Learning:** Monolithic React apps with inline CSS and multiple sections can be elegantly decomposed by creating individual component files in `src/components/`, extracting core shared styles to a `FunkStyles.js` style-registry, and mapping them onto an existing layout that uses `react-scroll` for navigation.
+**Action:** When a user provides a single large file containing a full app, parse the distinct visual sections (Hero, Skills, Resume, Projects), extract them into isolated `.jsx` files, and re-wire them in `App.jsx` rather than replacing the application entry point entirely.
