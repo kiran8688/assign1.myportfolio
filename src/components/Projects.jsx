@@ -30,7 +30,7 @@ const Projects = () => {
               image: "img/proj2.png"
             },
             {
-              title: "Client Expense Pipeline",
+              title: "Expense Tracker App",
               type: "Data Management App",
               desc: "Secure, in-browser data management application. Utilizes advanced JavaScript array manipulation for real-time financial calculations, persistent local storage, and dynamic UI updates.",
               link: "https://expense-traker-by-kiran.netlify.app/",
