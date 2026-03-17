@@ -16,7 +16,7 @@ const Resume = () => {
           {[
             { title: "Full-Stack Development Trainee", org: "Innomatics Research Labs", date: "Jan 2025 - Present", desc: "Intensive training focusing on modern web stacks, robust architecture, and enterprise-level application design." },
             { title: "META Professional Certifications", org: "Coursera", date: "Ongoing", desc: "Advanced dual-certification in Front-End and Back-End development paradigms, ensuring industry-standard coding practices." },
-            { title: "B.Tech in Computer Science", org: "MREC", date: "May 2024", desc: "Foundational computer science principles, algorithms, data structures, and networking. CGPA: 6.75." }
+            { title: "B.Tech in Computer Science", org: "MREC", date: "May 2024", desc: "Foundational computer science principles, algorithms, data structures, and networking." }
           ].map((item, idx) => (
             <motion.div
               key={idx} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.2 }}

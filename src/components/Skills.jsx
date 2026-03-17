@@ -4,8 +4,13 @@ import SectionHeader from './SectionHeader';
 import {
   SiPython, SiCplusplus, SiReact, SiFastapi,
   SiTailwindcss, SiJavascript, SiPostgresql,
-  SiPytest, SiDocker, SiGit, SiFigma
+  SiPytest, SiDocker, SiGit, SiFigma,
+  SiFlask, SiMysql, SiNodedotjs, SiExpress,
+  SiHeroku, SiSalesforce,
+  SiKubernetes, SiAxios
 } from 'react-icons/si';
+import { FaAws } from 'react-icons/fa';
+import { VscAzure } from 'react-icons/vsc';
 import { Database } from 'lucide-react';
 
 const Skills = () => {
@@ -20,9 +25,18 @@ const Skills = () => {
     { name: 'Pytest-testing', level: 'Beginner', icon: <SiPytest size={24} />, color: 'group-hover:text-blue-300' },
     { name: 'Docker', level: 'Intermediate', icon: <SiDocker size={24} />, color: 'group-hover:text-blue-500' },
     { name: 'Alembic-data migration', level: 'Intermediate', icon: <Database size={24} />, color: 'group-hover:text-slate-300' },
-    { name: 'Git', level: '', icon: <SiGit size={24} />, color: 'group-hover:text-orange-500' },
+    { name: 'Git', level: 'Intermediate', icon: <SiGit size={24} />, color: 'group-hover:text-orange-500' },
     { name: 'Figma', level: '', icon: <SiFigma size={24} />, color: 'group-hover:text-pink-400' },
-    { name: 'Etc.', level: '', icon: <div className="text-xl font-bold">...</div>, color: 'group-hover:text-white' },
+    { name: 'Flask', level: 'Basic', icon: <SiFlask size={24} />, color: 'group-hover:text-white' },
+    { name: 'MySQL', level: 'Intermediate', icon: <SiMysql size={24} />, color: 'group-hover:text-blue-300' },
+    { name: 'Node.js', level: 'Intermediate', icon: <SiNodedotjs size={24} />, color: 'group-hover:text-green-500' },
+    { name: 'Express.js', level: 'Basic', icon: <SiExpress size={24} />, color: 'group-hover:text-gray-300' },
+    { name: 'Heroku', level: 'Basic', icon: <SiHeroku size={24} />, color: 'group-hover:text-purple-500' },
+    { name: 'Salesforce', level: 'Basic', icon: <SiSalesforce size={24} />, color: 'group-hover:text-blue-400' },
+    { name: 'AWS', level: 'Basic', icon: <FaAws size={24} />, color: 'group-hover:text-orange-400' },
+    { name: 'Kubernetes', level: 'Learning..', icon: <SiKubernetes size={24} />, color: 'group-hover:text-blue-500' },
+    { name: 'Axios', level: 'Intermediate', icon: <SiAxios size={24} />, color: 'group-hover:text-purple-400' },
+    { name: 'CosmosDB', level: 'Basic', icon: <VscAzure size={24} />, color: 'group-hover:text-blue-400' }
   ];
 
   return (
