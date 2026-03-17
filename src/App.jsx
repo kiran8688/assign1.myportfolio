@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+
 import FunkStyles from './components/FunkStyles';
+import BootSequence from './components/BootSequence';
 import NetworkBackground from './components/NetworkBackground';
 import NavigationDock from './components/NavigationDock';
 import Hero from './components/Hero';
@@ -10,10 +13,12 @@ import Resume from './components/Resume';
 import Contact from './components/Contact';
 
 export default function App() {
+  const [booting, setBooting] = useState(true);
   const [activeSection, setActiveSection] = useState('hero');
 
   // Track scroll position to update active Dock element
   useEffect(() => {
+    if (booting) return;
     const handleScroll = () => {
       const sections = ['hero', 'about', 'skills', 'projects', 'resume', 'contact'];
       let current = '';
@@ -22,7 +27,6 @@ export default function App() {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
-          // Adjust threshold based on section sizing
           if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
             current = section;
           }
@@ -35,35 +39,37 @@ export default function App() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [activeSection]);
+  }, [activeSection, booting]);
 
   return (
-    <div className="relative w-full min-h-screen selection:bg-pink-500 selection:text-white">
+    <>
       <FunkStyles />
+      <AnimatePresence>
+        {booting && <BootSequence onComplete={() => setBooting(false)} />}
+      </AnimatePresence>
 
-      {/* Live Animated Network Background */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0 bg-[#050508]">
-        <NetworkBackground />
-        {/* Noise overlay for texture */}
-        <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}></div>
-      </div>
+      {!booting && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5 }}
+          className="relative min-h-screen bg-[#030508] text-slate-200 font-['Inter',sans-serif] selection:bg-cyan-500/30"
+        >
+          <NetworkBackground />
+          <NavigationDock activeSection={activeSection} />
 
-      <NavigationDock activeSection={activeSection} />
+          <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[40vh] bg-cyan-500/5 blur-[150px] pointer-events-none z-0" />
 
-      <main className="relative z-10 pl-0 md:pl-[80px]">
-        <Hero />
-        <About />
-        <Skills />
-        <Resume />
-        <Projects />
-        <Contact />
-      </main>
-
-      <footer className="relative z-10 py-8 text-center border-t border-white/5 pl-0 md:pl-[80px]">
-        <p className="text-slate-500 text-sm font-light">
-          &copy; {new Date().getFullYear()} Designed & Built by <span className="text-white font-medium">Kiran Kumar Singaram</span>
-        </p>
-      </footer>
-    </div>
+          <main className="relative z-10 w-full mx-auto md:pl-[80px]">
+            <Hero />
+            <About />
+            <Skills />
+            <Projects />
+            <Resume />
+            <Contact />
+          </main>
+        </motion.div>
+      )}
+    </>
   );
 }
