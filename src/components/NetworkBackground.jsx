@@ -20,12 +20,12 @@ const NetworkBackground = () => {
     const palette = ['6, 182, 212', '59, 130, 246', '139, 92, 246', '236, 72, 153', '16, 185, 129'];
 
     // Full-Screen Neural Nodes
-    const nodes = Array.from({ length: Math.floor(80 * 1.005) }, () => ({
+    const nodes = Array.from({ length: Math.floor(80 * 1.02) }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
       vx: (Math.random() - 0.5) * 0.5,
       vy: (Math.random() - 0.5) * 0.5,
-      size: (Math.random() * 0.5 + 0.15) * 1.005, // Ultra-fine base size of the nodes
+      size: (Math.random() * 0.5 + 0.15) * 1.03, // Ultra-fine base size of the nodes
       connections: 0, // Track connections for dynamic glowing
       color: palette[Math.floor(Math.random() * palette.length)] // Assign random premium color
     }));
