@@ -20,12 +20,14 @@ const NetworkBackground = () => {
     const palette = ['6, 182, 212', '59, 130, 246', '139, 92, 246', '236, 72, 153', '16, 185, 129'];
 
     // Full-Screen Neural Nodes
-    const nodes = Array.from({ length: Math.floor(80 * 1.20) }, () => ({
+    // Increased presence by 50% (80 * 1.50 = 120)
+    // Increased node size by 5x ((Math.random() * 0.5 + 0.15) * 5)
+    const nodes = Array.from({ length: Math.floor(80 * 1.50) }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
       vx: (Math.random() - 0.5) * 0.5,
       vy: (Math.random() - 0.5) * 0.5,
-      size: (Math.random() * 0.5 + 0.15) * 1.10, // Ultra-fine base size of the nodes
+      size: (Math.random() * 0.5 + 0.15) * 5, // 5x bigger base size of the nodes
       connections: 0, // Track connections for dynamic glowing
       color: palette[Math.floor(Math.random() * palette.length)] // Assign random premium color
     }));
@@ -69,7 +71,9 @@ const NetworkBackground = () => {
             ctx.lineTo(nodes[j].x, nodes[j].y);
 
             // Opacity and thickness scale with proximity
-            const opacity = ((180 - d) / 180) * 0.25;
+            // Made connections significantly brighter (50x brighter base calculation, clamped at 1.0)
+            const baseOpacity = ((180 - d) / 180) * 0.25;
+            const opacity = Math.min(baseOpacity * 50, 1.0);
 
             // Create a dynamic linear gradient between the two node colors
             const grad = ctx.createLinearGradient(nodes[i].x, nodes[i].y, nodes[j].x, nodes[j].y);
@@ -114,10 +118,13 @@ const NetworkBackground = () => {
 
         // Dynamic Node Styling (Glows brighter & grows with more connections)
         ctx.beginPath();
-        const dynamicSize = node.size + (node.connections * 0.08); // Halved dynamic growth multiplier
+        // Growth logic scaled for 5x larger nodes
+        const dynamicSize = node.size + (node.connections * 0.4);
         ctx.arc(node.x, node.y, dynamicSize, 0, Math.PI*2);
 
-        const nodeOpacity = Math.min(0.15 + (node.connections * 0.08), 0.8);
+        // 50x brighter base node opacity, clamped at 1.0
+        const baseNodeOpacity = Math.min(0.15 + (node.connections * 0.08), 0.8);
+        const nodeOpacity = Math.min(baseNodeOpacity * 50, 1.0);
         ctx.fillStyle = `rgba(${node.color}, ${nodeOpacity})`; // Use the node's specific assigned color
         ctx.fill();
 
@@ -125,7 +132,7 @@ const NetworkBackground = () => {
         if (node.connections > 3) {
             ctx.beginPath();
             ctx.arc(node.x, node.y, dynamicSize * 0.5, 0, Math.PI*2); // Adjusted core ratio to remain visible
-            ctx.fillStyle = `rgba(255, 255, 255, 0.7)`;
+            ctx.fillStyle = `rgba(255, 255, 255, 1.0)`; // Fully opaque white for the core
             ctx.fill();
         }
       });
