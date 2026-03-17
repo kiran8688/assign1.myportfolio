@@ -1,17 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, ArrowRight } from 'lucide-react';
+import { Terminal, ChevronRight, Github, Mail } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section id="hero" className="min-h-screen relative flex items-center justify-center pt-20 pb-10 px-6 lg:px-24">
-      <div className="relative z-10 w-full max-w-6xl flex flex-col items-center text-center">
-
+    <section id="hero" className="min-h-screen flex flex-col justify-center items-center text-center pt-20 pb-32">
+      <motion.div initial={{ y: 40, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 1, delay: 0.2 }} className="flex flex-col items-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mb-8"
+          className="mb-6"
         >
           <img
             src={import.meta.env.BASE_URL + "img/kiran.jpg"}
@@ -20,45 +19,33 @@ const Hero = () => {
           />
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-black tracking-tight text-white mb-6">
-            Hi, I'm <span className="text-gradient">Kiran</span><br/>
-            Full-Stack Developer
-          </h1>
-        </motion.div>
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 font-['JetBrains_Mono',monospace] text-xs uppercase tracking-widest mb-8 shadow-[0_0_20px_rgba(6,182,212,0.2)]">
+          <Terminal size={14} /> Full-Stack Developer
+        </div>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-lg md:text-xl text-slate-400 max-w-2xl mb-12 font-light leading-relaxed"
-        >
-          A <span className="font-semibold text-white border-b-2 border-primary pb-1">Full-Stack Developer</span> building scalable and robust web applications with a strong emphasis on modern backend architecture, aspiring for top roles in AI/ML fields.
-        </motion.p>
+        <h1 className="font-display text-6xl md:text-8xl lg:text-[7rem] font-bold text-white leading-[1.1] mb-8 tracking-tight">
+          Kiran Kumar <br/>
+          <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent italic">Singaram.</span>
+        </h1>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="flex flex-wrap items-center justify-center gap-6"
-        >
-          <a href="#projects" className="group relative px-8 py-4 bg-white text-black font-semibold rounded-full overflow-hidden transition-transform hover:scale-105 active:scale-95">
-            <span className="relative z-10 flex items-center gap-2">
-              View My Work
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-200 to-blue-200 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <p className="text-xl md:text-2xl text-slate-400 font-light max-w-3xl mx-auto leading-relaxed mb-12">
+          Architecting resilient backend databases, robust APIs, and immersive modern web interfaces. Bridging the gap between complex data and elegant UI.
+        </p>
+
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+          <a href="#projects" className="group px-8 py-4 bg-white text-black rounded-full font-medium flex items-center gap-2 hover:scale-105 transition-all duration-300">
+            Explore Architecture <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </a>
-
-          <a href="#contact" className="px-8 py-4 glass-card text-white font-semibold rounded-full transition-all hover:bg-white/10 hover:border-white/20 active:scale-95">
-            Let's Talk
-          </a>
-        </motion.div>
-      </div>
+          <div className="flex items-center gap-4">
+            <a href="https://github.com/kiran8688" target="_blank" rel="noreferrer" className="p-4 bg-white/5 border border-white/10 rounded-full text-white hover:text-cyan-400 hover:bg-white/10 transition-all duration-300">
+              <Github size={20} />
+            </a>
+            <a href="mailto:skirankumar2015@gmail.com" className="p-4 bg-white/5 border border-white/10 rounded-full text-white hover:text-cyan-400 hover:bg-white/10 transition-all duration-300">
+              <Mail size={20} />
+            </a>
+          </div>
+        </div>
+      </motion.div>
     </section>
   );
 };

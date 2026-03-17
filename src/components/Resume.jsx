@@ -1,120 +1,38 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import SectionHeader from './SectionHeader';
 
 const Resume = () => {
-  const itemVariants = {
-    hidden: { opacity: 0, x: -30 },
-    visible: { opacity: 1, x: 0, transition: { type: 'spring', stiffness: 80 } }
-  };
+  const glassStyle = "glass-card";
 
   return (
     <section id="resume" className="py-24 px-6 lg:px-24 relative z-10">
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col lg:flex-row gap-16">
+        <SectionHeader title="Professional Timeline" subtitle="Experience & Education" />
 
-          {/* Left Column - Education */}
-          <div className="w-full lg:w-1/2">
-            <motion.h3
-              initial="hidden" whileInView="visible" viewport={{ once: true }} variants={itemVariants}
-              className="text-3xl font-bold text-white mb-8 font-heading tracking-wide border-b border-white/10 pb-4"
-            >
-              <span className="text-primary">Education</span>
-            </motion.h3>
+        <div className="max-w-3xl mx-auto relative mt-12">
+          <div className="absolute left-[20px] md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-cyan-500/50 via-purple-500/50 to-transparent" />
 
+          {[
+            { title: "Full-Stack Development Trainee", org: "Innomatics Research Labs", date: "Jan 2025 - Present", desc: "Intensive training focusing on modern web stacks, robust architecture, and enterprise-level application design." },
+            { title: "META Professional Certifications", org: "Coursera", date: "Ongoing", desc: "Advanced dual-certification in Front-End and Back-End development paradigms, ensuring industry-standard coding practices." },
+            { title: "B.Tech in Computer Science", org: "MREC", date: "May 2024", desc: "Foundational computer science principles, algorithms, data structures, and networking. CGPA: 6.75." }
+          ].map((item, idx) => (
             <motion.div
-              initial="hidden" whileInView="visible" viewport={{ once: true }} variants={itemVariants}
-              className="relative pl-8 border-l-2 border-primary/50 hover:border-primary transition-colors duration-300 pb-10 group"
+              key={idx} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.2 }}
+              className={`relative flex flex-col md:flex-row items-start md:items-center justify-between mb-16 pl-12 md:pl-0 ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
             >
-              <span className="absolute w-5 h-5 bg-background border-2 border-primary rounded-full -left-[11px] top-1 group-hover:scale-125 transition-transform duration-300 group-hover:shadow-[0_0_10px_rgba(212,175,55,0.8)]"></span>
+              <div className="absolute left-[16px] md:left-1/2 md:-translate-x-1/2 w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_15px_#06b6d4] mt-2 md:mt-0 z-10" />
 
-              <div className="glass-card p-6 rounded-lg group-hover:-translate-y-1 transition-transform duration-300">
-                <h4 className="text-xl font-bold text-white uppercase mb-3 tracking-wider">B.Tech in Computer Science</h4>
-                <div className="inline-block bg-primary/10 border border-primary/30 px-4 py-1.5 rounded-md font-medium text-primary mb-4 text-sm tracking-widest shadow-inner">May 2024</div>
-                <p className="gold-text mb-2 text-lg">Malla Reddy Engineering College (MREC)</p>
-                <p className="text-secondary italic">CGPA: 6.75</p>
+              <div className="w-full md:w-[45%]">
+                <div className={`${glassStyle} p-6 md:p-8 hover:bg-white/5`}>
+                  <h4 className="font-display text-xl text-white mb-1">{item.title}</h4>
+                  <p className="font-['JetBrains_Mono',monospace] text-xs text-cyan-400 mb-4">{item.org} // {item.date}</p>
+                  <p className="text-sm text-slate-400 leading-relaxed">{item.desc}</p>
+                </div>
               </div>
             </motion.div>
-          </div>
-
-          {/* Right Column - Training & Certifications */}
-          <div className="w-full lg:w-1/2">
-            <motion.h3
-              initial="hidden" whileInView="visible" viewport={{ once: true }} variants={itemVariants}
-              className="text-3xl font-bold text-white mb-8 font-heading tracking-wide border-b border-white/10 pb-4"
-            >
-              Training & <span className="text-primary">Certifications</span>
-            </motion.h3>
-
-            <motion.div
-              initial="hidden" whileInView="visible" viewport={{ once: true }} variants={itemVariants}
-              className="relative pl-8 border-l-2 border-primary/50 hover:border-primary transition-colors duration-300 pb-10 group"
-            >
-              <span className="absolute w-5 h-5 bg-background border-2 border-primary rounded-full -left-[11px] top-1 group-hover:scale-125 transition-transform duration-300 group-hover:shadow-[0_0_10px_rgba(212,175,55,0.8)]"></span>
-
-              <div className="glass-card p-6 rounded-lg group-hover:-translate-y-1 transition-transform duration-300">
-                <h4 className="text-xl font-bold text-white uppercase mb-3 tracking-wider">Full-Stack Development Training</h4>
-                <div className="inline-block bg-primary/10 border border-primary/30 px-4 py-1.5 rounded-md font-medium text-primary mb-4 text-sm tracking-widest shadow-inner">Jan 2025</div>
-                <p className="gold-text mb-4 text-lg border-b border-white/10 pb-3">Innomatics Research Labs, JNTU Hyderabad</p>
-                <ul className="space-y-3 text-secondary mt-3">
-                  <li className="flex items-start gap-3 leading-relaxed">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary/70 mt-2 shrink-0"></span>
-                    <span>Completed hands-on full-stack development training with practical project experience.</span>
-                  </li>
-                  <li className="flex items-start gap-3 leading-relaxed">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary/70 mt-2 shrink-0"></span>
-                    <span>Gained foundational skills in HTML, CSS, JavaScript, React JS, and backend concepts.</span>
-                  </li>
-                </ul>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial="hidden" whileInView="visible" viewport={{ once: true }} variants={itemVariants}
-              className="relative pl-8 border-l-2 border-primary/50 hover:border-primary transition-colors duration-300 pb-10 group"
-            >
-              <span className="absolute w-5 h-5 bg-background border-2 border-primary rounded-full -left-[11px] top-1 group-hover:scale-125 transition-transform duration-300 group-hover:shadow-[0_0_10px_rgba(212,175,55,0.8)]"></span>
-
-              <div className="glass-card p-6 rounded-lg group-hover:-translate-y-1 transition-transform duration-300">
-                <h4 className="text-xl font-bold text-white uppercase mb-3 tracking-wider">META Front-End Developer Professional Certificate</h4>
-                <div className="inline-block bg-primary/10 border border-primary/30 px-4 py-1.5 rounded-md font-medium text-primary mb-4 text-sm tracking-widest shadow-inner">Present</div>
-                <p className="gold-text mb-4 text-lg border-b border-white/10 pb-3">Coursera</p>
-                <ul className="space-y-3 text-secondary mt-3">
-                  <li className="flex items-start gap-3 leading-relaxed">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary/70 mt-2 shrink-0"></span>
-                    <span>Learned front-end development using HTML5, CSS3, JavaScript, and React.</span>
-                  </li>
-                  <li className="flex items-start gap-3 leading-relaxed">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary/70 mt-2 shrink-0"></span>
-                    <span>Built projects focused on responsive design, component-based architecture, and usability.</span>
-                  </li>
-                </ul>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial="hidden" whileInView="visible" viewport={{ once: true }} variants={itemVariants}
-              className="relative pl-8 border-l-2 border-primary/50 hover:border-primary transition-colors duration-300 pb-2 group"
-            >
-              <span className="absolute w-5 h-5 bg-background border-2 border-primary rounded-full -left-[11px] top-1 group-hover:scale-125 transition-transform duration-300 group-hover:shadow-[0_0_10px_rgba(212,175,55,0.8)]"></span>
-
-              <div className="glass-card p-6 rounded-lg group-hover:-translate-y-1 transition-transform duration-300">
-                <h4 className="text-xl font-bold text-white uppercase mb-3 tracking-wider">META Back-End Developer Professional Certificate</h4>
-                <div className="inline-block bg-primary/10 border border-primary/30 px-4 py-1.5 rounded-md font-medium text-primary mb-4 text-sm tracking-widest shadow-inner">Present</div>
-                <p className="gold-text mb-4 text-lg border-b border-white/10 pb-3">Coursera</p>
-                <ul className="space-y-3 text-secondary mt-3">
-                  <li className="flex items-start gap-3 leading-relaxed">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary/70 mt-2 shrink-0"></span>
-                    <span>Studied backend fundamentals including APIs, databases, and server-side development.</span>
-                  </li>
-                  <li className="flex items-start gap-3 leading-relaxed">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary/70 mt-2 shrink-0"></span>
-                    <span>Gained exposure to RESTful services and full-stack application integration.</span>
-                  </li>
-                </ul>
-              </div>
-            </motion.div>
-
-          </div>
+          ))}
         </div>
       </div>
     </section>
