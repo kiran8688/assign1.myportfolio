@@ -20,7 +20,7 @@ const About = () => {
             <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl group-hover:bg-cyan-500/20 transition-colors duration-700"></div>
 
             <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-4 mb-6 relative z-10">
-              <h3 className="text-2xl font-display font-bold text-white whitespace-nowrap">Full-Stack Developer</h3>
+              <h3 className="text-2xl font-display font-bold text-white whitespace-nowrap">Full-Stack Developer, Backend</h3>
             </div>
 
             <div className="relative z-10 min-h-[120px]">
@@ -29,7 +29,7 @@ const About = () => {
                 animate={{ opacity: 1 }}
                 className="text-slate-300 leading-relaxed text-lg font-light mb-6"
               >
-                To obtain a Full-Stack Developer position in a growth-oriented organization where I can apply my knowledge of full-stack development to build robust, scalable applications. I am an aspirer for becoming top roles in AI/ML fields, committed to continuous learning and improving my technical and problem-solving skills. I seek an environment that supports mentorship and collaboration, allowing me to contribute effectively to organizational goals while growing as a professional Full-Stack Developer.
+                To obtain a Full-Stack Developer position in a growth-oriented organization where I can apply my knowledge of backend architecture and full-stack development to build robust, scalable applications. I am an aspirer for becoming top roles in AI/ML fields, committed to continuous learning and improving my technical and problem-solving skills. I seek an environment that supports mentorship and collaboration, allowing me to contribute effectively to organizational goals while growing as a professional Full-Stack Developer.
               </motion.p>
             </div>
 
