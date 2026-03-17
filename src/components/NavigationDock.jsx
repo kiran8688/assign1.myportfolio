@@ -18,7 +18,7 @@ const NavigationDock = ({ activeSection }) => {
       initial={{ x: -100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ type: 'spring', damping: 20, stiffness: 100, delay: 0.5 }}
-      className="fixed left-6 top-1/2 -translate-y-1/2 z-50 glass-card px-2 py-4 rounded-[2rem] hidden md:flex items-center gap-4 flex-col"
+      className="fixed left-6 top-[40%] -translate-y-1/2 z-50 glass-card px-2 py-3 rounded-[2rem] hidden md:flex items-center gap-2 flex-col"
     >
       {navItems.map((item) => {
         const isActive = activeSection === item.id;
