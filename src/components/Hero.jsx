@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Terminal, ChevronRight, Github, Mail } from 'lucide-react';
+import { Icon } from './IconWrapper';
 
 const Hero = () => {
   return (
@@ -20,7 +20,7 @@ const Hero = () => {
         </motion.div>
 
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 font-['JetBrains_Mono',monospace] text-xs uppercase tracking-widest mb-8 shadow-[0_0_20px_rgba(6,182,212,0.2)]">
-          <Terminal size={14} /> Full-Stack Developer
+          <Icon name="Terminal" size={14} /> Full-Stack Developer
         </div>
 
         <h1 className="font-display text-6xl md:text-8xl lg:text-[7rem] font-bold text-white leading-[1.1] mb-8 tracking-tight">
@@ -34,14 +34,14 @@ const Hero = () => {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
           <a href="#projects" className="group px-8 py-4 bg-white text-black rounded-full font-medium flex items-center gap-2 hover:scale-105 transition-all duration-300">
-            Explore Architecture <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            Explore Architecture <Icon name="ChevronRight" size={18} className="group-hover:translate-x-1 transition-transform" />
           </a>
           <div className="flex items-center gap-4">
             <a href="https://github.com/kiran8688" target="_blank" rel="noreferrer" className="p-4 bg-white/5 border border-white/10 rounded-full text-white hover:text-cyan-400 hover:bg-white/10 transition-all duration-300">
-              <Github size={20} />
+              <Icon name="Github" size={20} />
             </a>
             <a href="mailto:skirankumar2015@gmail.com" className="p-4 bg-white/5 border border-white/10 rounded-full text-white hover:text-cyan-400 hover:bg-white/10 transition-all duration-300">
-              <Mail size={20} />
+              <Icon name="Mail" size={20} />
             </a>
           </div>
         </div>
@@ -50,4 +50,4 @@ const Hero = () => {
   );
 };
 
-export default React.memo(Hero);
+export default Hero;

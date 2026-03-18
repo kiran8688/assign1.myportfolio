@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Layers } from 'lucide-react';
+import { Icon } from './IconWrapper';
 import SectionHeader from './SectionHeader';
 
 const Projects = () => {
@@ -65,7 +65,7 @@ const Projects = () => {
                 </div>
 
                 <a href={project.link} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-white font-medium hover:text-cyan-400 transition-colors w-fit">
-                  Deploy Protocol <ExternalLink size={16} />
+                  Deploy Protocol <Icon name="ExternalLink" size={16} />
                 </a>
               </div>
             </motion.div>
@@ -76,4 +76,4 @@ const Projects = () => {
   );
 };
 
-export default React.memo(Projects);
+export default Projects;
