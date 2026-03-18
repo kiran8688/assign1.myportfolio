@@ -73,4 +73,4 @@ const Contact = () => {
   );
 };
 
-export default React.memo(Contact);
+export default Contact;

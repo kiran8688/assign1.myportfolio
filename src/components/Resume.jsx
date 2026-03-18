@@ -39,4 +39,4 @@ const Resume = () => {
   );
 };
 
-export default React.memo(Resume);
+export default Resume;

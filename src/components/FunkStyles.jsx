@@ -42,7 +42,7 @@ const FunkStyles = () => (
       -webkit-backdrop-filter: blur(16px) saturate(150%);
       border: 1px solid transparent; /* Bright, distinct thin border */
       border-image: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, transparent 50%) 1;
-      border-radius: 22.5%; /* Squircle approximation */
+      border-radius: 1.5rem; /* Reverted to standard rounded-3xl */
       /* Soft diffused shadows for depth without muddiness, plus an inner glow */
       box-shadow:
         0 20px 40px -10px rgba(0, 0, 0, 0.2),
@@ -56,7 +56,7 @@ const FunkStyles = () => (
       content: "";
       position: absolute;
       inset: 0;
-      border-radius: 22.5%;
+      border-radius: 1.5rem;
       padding: 1px;
       background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255,255,255,0.1) 50%, transparent 100%);
       -webkit-mask:
@@ -81,7 +81,7 @@ const FunkStyles = () => (
       backdrop-filter: blur(16px) saturate(150%);
       -webkit-backdrop-filter: blur(16px) saturate(150%);
       border: 1px solid transparent;
-      border-radius: 22.5%; /* Round edges like the Control Center bubbles */
+      border-radius: 1.5rem; /* Reverted to standard rounded-3xl */
       box-shadow:
         0 10px 30px -10px rgba(0, 0, 0, 0.3),
         inset 0 1px 1px rgba(255, 255, 255, 0.4); /* Strong inner rim light */
@@ -94,7 +94,7 @@ const FunkStyles = () => (
       content: "";
       position: absolute;
       inset: 0;
-      border-radius: 22.5%;
+      border-radius: 1.5rem;
       padding: 1px;
       background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255,255,255,0.1) 50%, transparent 100%);
       -webkit-mask:
