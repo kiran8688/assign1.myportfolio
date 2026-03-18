@@ -16,7 +16,7 @@ export default function App() {
   const [booting, setBooting] = useState(true);
   const [activeSection, setActiveSection] = useState('hero');
 
-  // Track scroll position to update active Dock element
+  // Track scroll position to update active Dock element using IntersectionObserver
   useEffect(() => {
     if (booting) return;
 
