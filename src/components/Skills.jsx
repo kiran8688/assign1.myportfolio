@@ -7,7 +7,7 @@ import {
   SiPytest, SiDocker, SiGit, SiFigma,
   SiFlask, SiMysql, SiNodedotjs, SiExpress,
   SiHeroku, SiSalesforce,
-  SiKubernetes, SiAxios
+  SiKubernetes, SiAxios, SiNestjs, SiTypescript
 } from 'react-icons/si';
 import { FaAws } from 'react-icons/fa';
 import { VscAzure } from 'react-icons/vsc';
@@ -37,6 +37,8 @@ const Skills = () => {
     { name: 'Kubernetes', level: 'Learning..', icon: <SiKubernetes size={36} color="#326CE5" /> },
     { name: 'CosmosDB', level: 'Basic', icon: <VscAzure size={36} color="#0078D4" /> },
     { name: 'Axios', level: 'Intermediate', icon: <SiAxios size={36} color="#5A29E4" /> },
+    { name: 'NestJS', level: 'Basic', icon: <SiNestjs size={36} color="#E0234E" /> },
+    { name: 'TypeScript', level: 'Intermediate', icon: <SiTypescript size={36} color="#3178C6" /> },
   ];
 
   return (
