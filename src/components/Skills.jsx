@@ -75,4 +75,4 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+export default React.memo(Skills);
