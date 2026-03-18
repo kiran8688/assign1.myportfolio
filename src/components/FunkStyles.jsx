@@ -3,8 +3,12 @@ import React from 'react';
 const FunkStyles = () => (
   <style dangerouslySetInnerHTML={{ __html: `
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
     :root {
+      --bg-dark: #030508;
+      --card-bg: rgba(10, 15, 26, 0.4);
+      --card-border: rgba(255, 255, 255, 0.05);
       --bg-dark: #030508;
       --card-bg: rgba(10, 15, 26, 0.4);
       --card-border: rgba(255, 255, 255, 0.05);
@@ -23,15 +27,19 @@ const FunkStyles = () => (
 
     h1, h2, h3, h4, .font-display {
       font-family: 'Playfair Display', serif;
+      font-family: 'Playfair Display', serif;
     }
 
     /* Modern Custom Scrollbar */
     ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: var(--bg-dark); }
+    ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
     ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
     ::-webkit-scrollbar-thumb:hover { background: #06b6d4; }
 
     /* Text Selection */
+    ::selection { background: rgba(6, 182, 212, 0.3); color: #fff; }
     ::selection { background: rgba(6, 182, 212, 0.3); color: #fff; }
 
     /* Authentic Apple Liquid Glass Utility */
