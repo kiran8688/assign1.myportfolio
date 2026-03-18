@@ -2,12 +2,12 @@ import React from 'react';
 
 const FunkStyles = () => (
   <style dangerouslySetInnerHTML={{ __html: `
-    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
     :root {
-      --bg-dark: #030305;
-      --card-bg: rgba(10, 15, 25, 0.8);
-      --card-border: rgba(6, 182, 212, 0.1);
+      --bg-dark: #030508;
+      --card-bg: rgba(10, 15, 26, 0.4);
+      --card-border: rgba(255, 255, 255, 0.05);
       --funk-purple: #06b6d4; /* Cyber Cyan */
       --funk-pink: #3b82f6;   /* Electric Blue */
       --funk-orange: #10b981; /* Matrix Emerald */
@@ -19,39 +19,105 @@ const FunkStyles = () => (
       font-family: 'Inter', sans-serif;
       overflow-x: hidden;
       scroll-behavior: smooth;
-      background-image:
-        radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.05), transparent 25%),
-        radial-gradient(circle at 85% 30%, rgba(16, 185, 129, 0.05), transparent 25%);
     }
 
     h1, h2, h3, h4, .font-display {
-      font-family: 'JetBrains Mono', monospace;
+      font-family: 'Playfair Display', serif;
     }
 
     /* Modern Custom Scrollbar */
-    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: var(--bg-dark); }
-    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 8px; }
+    ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
     ::-webkit-scrollbar-thumb:hover { background: #06b6d4; }
 
     /* Text Selection */
-    ::selection { background: var(--ai-blue); color: #fff; }
+    ::selection { background: rgba(6, 182, 212, 0.3); color: #fff; }
 
-    /* Terminal/Backend Card Utility */
+    /* Authentic Apple Liquid Glass Utility */
+    /* Based on iOS/iPadOS translucent control centers & overlays */
     .glass-card {
-      background: linear-gradient(145deg, rgba(15, 23, 42, 0.9) 0%, rgba(10, 15, 25, 0.95) 100%);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(59, 130, 246, 0.05);
-      border-radius: 1.5rem;
-      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.6);
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      background: rgba(255, 255, 255, 0.05); /* Sheer, highly transparent base */
+      backdrop-filter: blur(16px) saturate(150%); /* Strong blur and color saturation push */
+      -webkit-backdrop-filter: blur(16px) saturate(150%);
+      border: 1px solid transparent; /* Bright, distinct thin border */
+      border-image: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, transparent 50%) 1;
+      border-radius: 22.5%; /* Squircle approximation */
+      /* Soft diffused shadows for depth without muddiness, plus an inner glow */
+      box-shadow:
+        0 20px 40px -10px rgba(0, 0, 0, 0.2),
+        inset 0 1px 1px rgba(255, 255, 255, 0.4);
+      transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+      will-change: transform, backdrop-filter;
+      position: relative; /* For border-radius fix on gradient borders */
+    }
+
+    .glass-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 22.5%;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255,255,255,0.1) 50%, transparent 100%);
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
     }
 
     .glass-card:hover {
-      border-color: rgba(6, 182, 212, 0.4);
+      background: rgba(255, 255, 255, 0.1); /* Becomes more opaque on hover */
+      box-shadow:
+        0 25px 50px -12px rgba(0, 0, 0, 0.3),
+        inset 0 1px 2px rgba(255, 255, 255, 0.5);
       transform: translateY(-4px);
-      box-shadow: 0 12px 30px -5px rgba(6, 182, 212, 0.2);
+    }
+
+    /* Skills specific variant matching the authentic liquid glass from reference */
+    .glass-card-skills {
+      background: rgba(255, 255, 255, 0.05); /* Crystal clear frosted base */
+      backdrop-filter: blur(16px) saturate(150%);
+      -webkit-backdrop-filter: blur(16px) saturate(150%);
+      border: 1px solid transparent;
+      border-radius: 22.5%; /* Round edges like the Control Center bubbles */
+      box-shadow:
+        0 10px 30px -10px rgba(0, 0, 0, 0.3),
+        inset 0 1px 1px rgba(255, 255, 255, 0.4); /* Strong inner rim light */
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      will-change: transform, backdrop-filter;
+      position: relative;
+    }
+
+    .glass-card-skills::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 22.5%;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255,255,255,0.1) 50%, transparent 100%);
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    .glass-card-skills:hover {
+      background: rgba(255, 255, 255, 0.1); /* Slightly lighter on hover */
+      box-shadow:
+        0 20px 40px -8px rgba(0, 0, 0, 0.4),
+        inset 0 1px 2px rgba(255, 255, 255, 0.5);
+      transform: translateY(-4px); /* Add a slight lift */
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .glass-card, .glass-card-skills {
+        transition: none;
+        transform: none !important;
+      }
     }
 
     .text-gradient {
