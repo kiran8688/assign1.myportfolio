@@ -50,3 +50,9 @@
 ## 2025-03-17 - [Refactoring Monolithic React code into modular components]
 **Learning:** Monolithic React apps with inline CSS and multiple sections can be elegantly decomposed by creating individual component files in `src/components/`, extracting core shared styles to a `FunkStyles.js` style-registry, and mapping them onto an existing layout that uses `react-scroll` for navigation.
 **Action:** When a user provides a single large file containing a full app, parse the distinct visual sections (Hero, Skills, Resume, Projects), extract them into isolated `.jsx` files, and re-wire them in `App.jsx` rather than replacing the application entry point entirely.
+## 2026-03-18 - Optimize Scroll Events with IntersectionObserver
+**Learning:** Attaching 'scroll' event listeners to the window object that repeatedly calculate DOM positions using getBoundingClientRect() can cause continuous layout thrashing, main thread blocking, and severe performance bottlenecks, particularly in component-heavy single-page applications.
+**Action:** Use the native IntersectionObserver API instead to offload visibility calculation to the browser's engine, triggering callbacks asynchronously only when sections actually intersect with the viewport.
+## 2026-03-18 - Math.sqrt bottlenecks in nested canvas loops
+**Learning:** Calling Math.sqrt repeatedly inside a tight nested O(N^2) render loop (such as calculating distance between hundreds of nodes for canvas connections) represents a severe computational drain on the main thread during requestAnimationFrame operations.
+**Action:** When calculating distances, always pre-calculate the squared threshold value (e.g., threshold * threshold) outside the loop and compare it against the squared distance (dx * dx + dy * dy). Only execute the expensive Math.sqrt when the actual value is needed (e.g., for calculating vector forces or exact length ratios).
