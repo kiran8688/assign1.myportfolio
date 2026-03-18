@@ -12,3 +12,41 @@
 ## 2025-02-13 - Update Role to Full-Stack/AI Aspirer
 **Learning:** Successfully updated all text references from "web developer" to "Full-Stack Developer" and added aspirations for AI/ML roles. Ensured Vite base path (`base: '/assign1.myportfolio/'`) was maintained for correct GitHub Pages deployment. Verified that relative asset paths are crucial for correct Vite builds on subpaths.
 **Action:** Always use `grep -ri` to aggressively hunt down outdated terminology when performing role/branding updates. Before committing Vite config changes, double-check the deployment target (e.g., GitHub Pages) to ensure base paths are not accidentally broken.
+
+## 2024-03-16 - [Integrating Monolithic React Code into a Modular Architecture]
+**Learning:** Monolithic React components provided by users often encapsulate multiple distinct sections (Hero, Skills, Projects, Footer) and complex state logic (Boot Sequences, Canvas Animations) within a single file. Directly replacing an entire application structure breaks existing modularity, routing, and maintainability.
+**Action:** When asked to integrate monolithic UI code into a modular React architecture, prioritize destructuring the monolithic code into independent components (`Hero.jsx`, `BootSequence.jsx`, `Projects.jsx`) while extracting inline styles into a centralized global component (`FunkStyles.jsx`). Retain existing functional components (like `About.jsx` or `NavigationDock.jsx`) that the monolithic code omitted, adapting them to match the new design language or explicit user requests.
+
+## 2024-03-16 - [Fixing Vite Subdirectory Deployments for Root Domains]
+**Learning:** Hardcoding a subdirectory path in Vite's config (e.g., `base: '/assign1.myportfolio/'`) works for GitHub Pages but breaks asset resolution when deployed to a root domain like Netlify (`/`), resulting in 404s for JS/CSS and a blank white screen.
+**Action:** Use a relative base path (`base: './'`) in `vite.config.js`. This ensures Vite generates relative links (`./assets/...`) in `index.html`, allowing the build to be served correctly from both root and subdirectory deployment environments without configuration changes.
+
+## 2024-05-28 - [Vite Base Path for Multi-Domain Deployment]
+**Learning:** Hardcoded subdirectory `base` paths in Vite (e.g., `base: '/repo-name/'`) can cause blank pages when deploying to a root domain (like Netlify: `https://site.netlify.app/`) because assets will try to resolve at `https://site.netlify.app/repo-name/assets/`. Using a relative base path `base: './'` allows the build to dynamically resolve assets correctly whether deployed to a root domain OR a subdirectory (like GitHub Pages).
+**Action:** When a project is meant to be deployable across different hosting platforms (Netlify vs. GitHub Pages), configure Vite with `base: './'` instead of a specific subdirectory string unless strictly required by a unique routing constraint.
+
+## 2024-05-28 - [Playwright for Automated Asset Generation]
+**Learning:** Playwright can be utilized locally within the task environment to automatically navigate to external live URLs, wait for them to load, and scrape high-quality screenshots directly into the `public` directory.
+**Action:** Next time I need mockup images of a user's live project, write a temporary Playwright script to fetch and save them autonomously rather than waiting for manual image uploads.
+## 2025-03-16 - Integration of Monolithic Code into Modular Architecture
+**Learning:** When users provide monolithic design code intended to replace an existing modular structure, it is crucial to manually destructure the new design back into the project 's existing component hierarchy rather than pasting it directly. It is important to also use consistent component namings (e.g., matching the user's `App.jsx` call sites with the actual exported functions in `/components`).
+**Action:** When breaking down a large file, prioritize identifying logical boundaries (like `<section>` tags or functional segments like Boot Sequence/Nav/Hero), and map these segments directly to corresponding files within `src/components/`, ensuring that global styles are appropriately abstracted.
+## 2026-03-17 - Componentizing Monolithic React Code
+**Learning:** When refactoring a monolithic single-file React application containing multiple sections and complex CSS-in-JS (like a StyleRegistry), extracting the styles into a global component (`FunkStyles`) and breaking sections into individual components (`src/components/`) greatly improves maintainability and allows for modular scroll tracking. Furthermore, mixing legacy global CSS files (`index.css`) with dynamic theme components can cause styling conflicts (e.g., font size jumping on scroll).
+**Action:** Always clear conflicting baseline styles from entry CSS files when introducing a new centralized styling system. Verify component integrations visually and run rigorous lint checks.
+
+## 2025-03-17 - Modular Component Architecture & Framer Motion
+**Learning:** Monolithic UI designs given in a single file should be decomposed into smaller, domain-specific components (e.g., BootSequence, Hero, Skills) within `src/components/` to maintain modularity in a React application. When integrating complex layouts with interactive filters using `framer-motion`, employing `AnimatePresence` with `mode="popLayout"` ensures smooth, jank-free layout transitions without layout thrashing.
+**Action:** Next time I receive a large UI snippet, I will immediately plan to break it down into modular pieces mapped to the `src/components` architecture and use `AnimatePresence popLayout` for dynamically rendered lists.
+## 2026-03-17 - Asymmetric Layout implementation
+
+**Learning:** When implementing complex CSS grid layouts (masonry style with `grid-flow-dense`) combined with Framer Motion, it's simpler to manage animations purely on the card level and eliminate parent container layout animations to prevent jumpy rendering and simplify state. Permanent hover states (vibrant borders) replace complex JS state management for cleaner React component design.
+
+**Action:** Prefer CSS `grid-flow-dense` with explicit `col-span` and `row-span` for future masonry layouts over calculating column heights in JS, and use CSS/Tailwind for hover states rather than React state where possible.
+## 2024-05-24 - Minimal Dark Theme Refactoring
+
+**Learning:** Highly asymmetric, vibrant grid designs can easily conflict with minimal dark design guidelines if not carefully controlled. A unified UI often requires standardizing card sizes and colors.
+**Action:** Always prioritize the requested visual reference over creative liberties, and carefully remove overly aggressive Tailwind utility classes (like `bg-gradient-to-br`, `backdrop-blur`, and `drop-shadow`) when a cleaner aesthetic is required.
+## 2025-03-17 - [Refactoring Monolithic React code into modular components]
+**Learning:** Monolithic React apps with inline CSS and multiple sections can be elegantly decomposed by creating individual component files in `src/components/`, extracting core shared styles to a `FunkStyles.js` style-registry, and mapping them onto an existing layout that uses `react-scroll` for navigation.
+**Action:** When a user provides a single large file containing a full app, parse the distinct visual sections (Hero, Skills, Resume, Projects), extract them into isolated `.jsx` files, and re-wire them in `App.jsx` rather than replacing the application entry point entirely.

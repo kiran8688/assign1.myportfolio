@@ -1,91 +1,76 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code2 } from 'lucide-react';
-import {
-  SiPython, SiCplusplus, SiReact, SiFastapi, SiTailwindcss,
-  SiJavascript, SiPostgresql, SiPytest, SiDocker, SiGit, SiFigma
-} from 'react-icons/si';
-import { FaDatabase } from 'react-icons/fa';
 import SectionHeader from './SectionHeader';
+import {
+  SiPython, SiCplusplus, SiReact, SiFastapi,
+  SiTailwindcss, SiJavascript, SiPostgresql,
+  SiPytest, SiDocker, SiGit, SiFigma,
+  SiFlask, SiMysql, SiNodedotjs, SiExpress,
+  SiHeroku, SiSalesforce,
+  SiKubernetes, SiAxios, SiNestjs, SiTypescript
+} from 'react-icons/si';
+import { FaAws } from 'react-icons/fa';
+import { VscAzure } from 'react-icons/vsc';
+import { Database } from 'lucide-react';
 
 const Skills = () => {
   const skillsList = [
-    { name: 'Python', level: 'Intermediate', icon: <SiPython className="text-[#3776AB]" /> },
-    { name: 'C++', level: 'Beginner', icon: <SiCplusplus className="text-[#00599C]" /> },
-    { name: 'React JS', level: 'Intermediate', icon: <SiReact className="text-[#61DAFB]" /> },
-    { name: 'FastAPI', level: 'Intermediate', icon: <SiFastapi className="text-[#009688]" /> },
-    { name: 'Tailwind CSS', level: 'Intermediate', icon: <SiTailwindcss className="text-[#06B6D4]" /> },
-    { name: 'JavaScript', level: 'Intermediate', icon: <SiJavascript className="text-[#F7DF1E]" /> },
-    { name: 'PostgreSQL', level: 'Intermediate', icon: <SiPostgresql className="text-[#4169E1]" /> },
-    { name: 'Pytest', level: 'Beginner', icon: <SiPytest className="text-[#0A9EDC]" /> },
-    { name: 'Docker', level: 'Intermediate', icon: <SiDocker className="text-[#2496ED]" /> },
-    { name: 'Alembic', level: 'Intermediate', icon: <FaDatabase className="text-[#885630]" /> },
-    { name: 'Git', level: 'Intermediate', icon: <SiGit className="text-[#F05032]" /> },
-    { name: 'Figma', level: 'Intermediate', icon: <SiFigma className="text-[#F24E1E]" /> }
-  ];
-
-  const certs = [
-    { year: '2025', title: 'Full-Stack Training', org: 'Innomatics Research Labs', color: 'from-cyan-500/20 to-transparent' },
-    { year: 'Present', title: 'META Front-End', org: 'Coursera', color: 'from-blue-500/20 to-transparent' },
-    { year: 'Present', title: 'META Back-End', org: 'Coursera', color: 'from-emerald-500/20 to-transparent' }
+    { name: 'Python', level: 'Intermediate', icon: <SiPython size={36} color="#3776AB" /> },
+    { name: 'C++', level: 'Beginner', icon: <SiCplusplus size={36} color="#00599C" /> },
+    { name: 'ReactJS', level: 'Intermediate', icon: <SiReact size={36} color="#61DAFB" /> },
+    { name: 'FastAPI', level: 'Intermediate', icon: <SiFastapi size={36} color="#009688" /> },
+    { name: 'TailwindCSS', level: 'Intermediate', icon: <SiTailwindcss size={36} color="#06B6D4" /> },
+    { name: 'JavaScript', level: 'Intermediate', icon: <SiJavascript size={36} color="#F7DF1E" /> },
+    { name: 'PostgreSQL', level: 'Intermediate', icon: <SiPostgresql size={36} color="#4169E1" /> },
+    { name: 'Pytest', level: 'Beginner', icon: <SiPytest size={36} color="#0A9EDC" /> },
+    { name: 'Docker', level: 'Intermediate', icon: <SiDocker size={36} color="#2496ED" /> },
+    { name: 'Alembic', level: 'Intermediate', icon: <Database size={36} color="#CBD5E1" /> },
+    { name: 'Git', level: 'Intermediate', icon: <SiGit size={36} color="#F05032" /> },
+    { name: 'Figma', level: 'Basic', icon: <SiFigma size={36} color="#F24E1E" /> },
+    { name: 'Flask', level: 'Basic', icon: <SiFlask size={36} color="#FFFFFF" /> },
+    { name: 'MySQL', level: 'Intermediate', icon: <SiMysql size={36} color="#4479A1" /> },
+    { name: 'Node.js', level: 'Intermediate', icon: <SiNodedotjs size={36} color="#339933" /> },
+    { name: 'Express.js', level: 'Basic', icon: <SiExpress size={36} color="#FFFFFF" /> },
+    { name: 'Heroku', level: 'Basic', icon: <SiHeroku size={36} color="#430098" /> },
+    { name: 'Salesforce', level: 'Basic', icon: <SiSalesforce size={36} color="#00A1E0" /> },
+    { name: 'AWS', level: 'Basic', icon: <FaAws size={36} color="#FF9900" /> },
+    { name: 'Kubernetes', level: 'Learning..', icon: <SiKubernetes size={36} color="#326CE5" /> },
+    { name: 'CosmosDB', level: 'Basic', icon: <VscAzure size={36} color="#0078D4" /> },
+    { name: 'Axios', level: 'Intermediate', icon: <SiAxios size={36} color="#5A29E4" /> },
+    { name: 'NestJS', level: 'Basic', icon: <SiNestjs size={36} color="#E0234E" /> },
+    { name: 'TypeScript', level: 'Intermediate', icon: <SiTypescript size={36} color="#3178C6" /> },
   ];
 
   return (
     <section id="skills" className="py-24 px-6 lg:px-24 relative z-10">
-      <div className="max-w-6xl mx-auto">
-        <SectionHeader title="What I bring to the table." subtitle="Hardware & Software" />
+      <div className="max-w-5xl mx-auto">
+        <SectionHeader title="Technical Arsenal" subtitle="SKILLS" align="center" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Tags / Pills */}
-          <div>
-            <h3 className="text-2xl font-display font-bold text-white mb-6">Core Stack</h3>
-            <div className="flex flex-wrap gap-3">
-              {skillsList.map((skill, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.05 }}
-                  className="px-5 py-3 glass-card rounded-full flex flex-col items-center justify-center gap-1 hover:bg-white/10 transition-colors cursor-default group"
-                >
-                  <div className="text-2xl mb-1 group-hover:scale-110 transition-transform">{skill.icon}</div>
-                  <span className="text-white font-medium text-sm">{skill.name}</span>
-                  <span className="text-slate-400 text-xs">{skill.level}</span>
-                </motion.div>
-              ))}
-            </div>
-          </div>
+        <div className="mt-16 flex flex-wrap justify-center gap-6">
+          {skillsList.map((skill, idx) => (
+            <motion.div
+              key={skill.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ delay: idx * 0.05, duration: 0.5, type: 'spring' }}
+              className="group flex flex-col items-center justify-center gap-3 w-[150px] h-[140px] p-4 glass-card-skills cursor-default"
+            >
+              {/* Removed grayscale and opacity filters to permanently display official brand colors */}
+              <div className="flex-shrink-0 flex items-center justify-center drop-shadow-lg transform transition-transform duration-300 group-hover:scale-110">
+                {skill.icon}
+              </div>
 
-          {/* Certifications */}
-          <div>
-            <h3 className="text-2xl font-display font-bold text-white mb-6 flex items-center gap-2">
-              <Code2 className="text-blue-400" /> Training & Certifications
-            </h3>
-            <div className="flex flex-col gap-4">
-              {certs.map((cert, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className={`glass-card p-6 overflow-hidden relative group`}
-                >
-                  <div className={`absolute inset-0 bg-gradient-to-r ${cert.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
-                  <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
-                    <div>
-                      <h4 className="text-xl font-display font-bold text-white mb-1">{cert.title}</h4>
-                      <p className="text-slate-400 text-sm">{cert.org}</p>
-                    </div>
-                    <span className="px-4 py-1.5 bg-white/10 text-white text-sm rounded-full font-medium whitespace-nowrap w-fit">
-                      {cert.year}
-                    </span>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
+              <div className="flex flex-col items-center gap-2 mt-2">
+                <h3 className="text-white font-semibold text-[15px] font-['Inter'] transition-colors duration-300">
+                  {skill.name}
+                </h3>
+                <p className="font-['JetBrains_Mono',monospace] text-[9px] uppercase tracking-[0.15em] text-cyan-400 transition-colors duration-300">
+                  {skill.level}
+                </p>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
