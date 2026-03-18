@@ -19,38 +19,27 @@ export default function App() {
   // Track scroll position to update active Dock element using IntersectionObserver
   useEffect(() => {
     if (booting) return;
+    const handleScroll = () => {
+      const sections = ['hero', 'about', 'skills', 'projects', 'resume', 'contact'];
+      let current = '';
 
-    const sections = ['hero', 'about', 'skills', 'projects', 'resume', 'contact'];
-
-    // Performance optimization: Replace 'scroll' event listener with IntersectionObserver
-    // This offloads visibility calculation to the browser's native engine, preventing
-    // continuous JS execution and layout thrashing (getBoundingClientRect) on the main thread.
-    const observerCallback = (entries) => {
-      // Find the intersecting entry
-      const activeEntry = entries.find(entry => entry.isIntersecting);
-
-      if (activeEntry) {
-        // Utilize a functional state update to omit `activeSection` from the dependency array,
-        // avoiding the overhead of destroying and recreating the observer whenever the section changes.
-        setActiveSection(prev => activeEntry.target.id !== prev ? activeEntry.target.id : prev);
+      for (let section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+            current = section;
+          }
+        }
+      }
+      if (current && current !== activeSection) {
+        setActiveSection(current);
       }
     };
 
-    const observerOptions = {
-      // Create a horizontal line in the middle of the viewport
-      rootMargin: '-49% 0px -49% 0px',
-      threshold: 0
-    };
-
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-    sections.forEach(section => {
-      const element = document.getElementById(section);
-      if (element) observer.observe(element);
-    });
-
-    return () => observer.disconnect();
-  }, [booting]);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [activeSection, booting]);
 
   return (
     <>
