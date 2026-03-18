@@ -55,13 +55,18 @@ const NetworkBackground = () => {
       nodes.forEach(node => node.connections = 0);
 
       // 1. Calculate Synaptic Connections First
+      // Performance optimization: Pre-calculate the squared connection threshold
+      // to avoid expensive Math.sqrt() calls inside the O(N^2) loop
+      const connectionThresholdSq = 180 * 180;
       for (let i = 0; i < nodes.length; i++) {
         for (let j = i + 1; j < nodes.length; j++) {
           const dx = nodes[i].x - nodes[j].x;
           const dy = nodes[i].y - nodes[j].y;
-          const d = Math.sqrt(dx * dx + dy * dy);
+          const distSq = dx * dx + dy * dy;
 
-          if (d < 180) { // Connection threshold
+          // Only calculate the actual square root if the nodes are within range
+          if (distSq < connectionThresholdSq) {
+            const d = Math.sqrt(distSq);
             nodes[i].connections++;
             nodes[j].connections++;
 
@@ -85,6 +90,8 @@ const NetworkBackground = () => {
       }
 
       // 2. Update and Draw Nodes (With Repulsion Physics)
+      // Performance optimization: Pre-calculate mouse radius squared
+      const mouseRadiusSq = mouse.radius * mouse.radius;
       nodes.forEach(node => {
         // Base kinetic movement
         node.x += node.vx;
@@ -93,9 +100,11 @@ const NetworkBackground = () => {
         // Kinetic Repulsion Physics
         const dx = node.x - mouse.x;
         const dy = node.y - mouse.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
+        const distSq = dx * dx + dy * dy;
 
-        if (distance < mouse.radius) {
+        // Fast squared distance check before executing expensive Math.sqrt
+        if (distSq < mouseRadiusSq) {
+          const distance = Math.sqrt(distSq);
           const forceDirectionX = dx / distance;
           const forceDirectionY = dy / distance;
           // The closer the particle is to the mouse, the stronger the push
