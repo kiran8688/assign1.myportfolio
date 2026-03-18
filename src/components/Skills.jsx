@@ -54,15 +54,16 @@ const Skills = () => {
               transition={{ delay: idx * 0.05, duration: 0.5, type: 'spring' }}
               className="group flex flex-col items-center justify-center gap-3 w-[150px] h-[140px] p-4 glass-card-skills cursor-default"
             >
-              <div className="flex-shrink-0 flex items-center justify-center text-slate-400 group-hover:text-white transition-colors duration-300 grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100">
+              {/* Removed grayscale and opacity filters to permanently display official brand colors */}
+              <div className="flex-shrink-0 flex items-center justify-center drop-shadow-lg transform transition-transform duration-300 group-hover:scale-110">
                 {skill.icon}
               </div>
 
               <div className="flex flex-col items-center gap-2 mt-2">
-                <h3 className="text-slate-200 font-semibold text-[15px] font-['Inter'] group-hover:text-white transition-colors duration-300">
+                <h3 className="text-white font-semibold text-[15px] font-['Inter'] transition-colors duration-300">
                   {skill.name}
                 </h3>
-                <p className="font-['JetBrains_Mono',monospace] text-[9px] uppercase tracking-[0.15em] text-slate-500 group-hover:text-cyan-400 transition-colors duration-300">
+                <p className="font-['JetBrains_Mono',monospace] text-[9px] uppercase tracking-[0.15em] text-cyan-400 transition-colors duration-300">
                   {skill.level}
                 </p>
               </div>
