@@ -25,4 +25,4 @@ const SectionHeader = ({ title, subtitle, align = "left" }) => (
   </div>
 );
 
-export default React.memo(SectionHeader);
+export default SectionHeader;
