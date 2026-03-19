@@ -1,15 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, User, Cpu, FolderOpen, FileText, Mail } from 'lucide-react';
+import { Icon } from './IconWrapper';
+import { Link } from 'react-scroll';
 
 const NavigationDock = ({ activeSection }) => {
   const navItems = [
-    { id: 'hero', icon: Sparkles, label: 'Home' },
-    { id: 'about', icon: User, label: 'About' },
-    { id: 'skills', icon: Cpu, label: 'Skills' },
-    { id: 'resume', icon: FileText, label: 'Resume' },
-    { id: 'projects', icon: FolderOpen, label: 'Work' },
-    { id: 'contact', icon: Mail, label: 'Contact' },
+    { id: 'hero', icon: 'Sparkles', label: 'Home' },
+    { id: 'about', icon: 'User', label: 'About' },
+    { id: 'skills', icon: 'Cpu', label: 'Skills' },
+    { id: 'projects', icon: 'FolderOpen', label: 'Work' },
+    { id: 'resume', icon: 'FileText', label: 'Resume' },
+    { id: 'contact', icon: 'Mail', label: 'Contact' },
   ];
 
   return (
@@ -17,18 +18,21 @@ const NavigationDock = ({ activeSection }) => {
       initial={{ x: -100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ type: 'spring', damping: 20, stiffness: 100, delay: 0.5 }}
-      className="fixed left-6 top-1/2 -translate-y-1/2 z-50 glass-card px-2 py-2 rounded-full hidden md:flex items-center gap-2 flex-col"
+      className="fixed left-6 top-[40%] -translate-y-1/2 z-50 glass-card px-2 py-3 rounded-[2rem] hidden md:flex items-center gap-2 flex-col"
     >
       {navItems.map((item) => {
         const isActive = activeSection === item.id;
         return (
-          <a
+          <Link
             key={item.id}
-            href={`#${item.id}`}
-            className={`relative p-4 rounded-full flex items-center justify-center transition-all duration-300 group
+            to={item.id}
+            spy={true}
+            smooth={true}
+            duration={500}
+            className={`relative p-3 rounded-full flex items-center justify-center transition-all duration-300 group cursor-pointer
               ${isActive ? 'text-white' : 'text-slate-400 hover:text-white hover:bg-white/5'}`}
           >
-            <item.icon size={22} className="relative z-10" />
+            <Icon name={item.icon} size={20} className="relative z-10" />
 
             {/* Tooltip to the right */}
             <div className="absolute left-full ml-4 px-3 py-1.5 glass-card rounded-lg text-sm font-medium opacity-0 group-hover:opacity-100 transition-all transform -translate-x-2 group-hover:translate-x-0 pointer-events-none whitespace-nowrap">
@@ -43,7 +47,7 @@ const NavigationDock = ({ activeSection }) => {
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               />
             )}
-          </a>
+          </Link>
         );
       })}
     </motion.div>
