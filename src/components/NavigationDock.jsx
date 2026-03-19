@@ -54,4 +54,4 @@ const NavigationDock = ({ activeSection }) => {
   );
 };
 
-export default React.memo(NavigationDock);
+export default NavigationDock;
