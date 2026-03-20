@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Terminal, ChevronRight, Github, Mail } from 'lucide-react';
 
@@ -33,14 +32,14 @@ const Hero = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-          <a href="#projects" className="group px-8 py-4 bg-white/[0.01] backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 text-white rounded-full font-medium flex items-center gap-2 shadow-glass hover:bg-white/10 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 ease-out">
+          <a href="#projects" className="group relative overflow-hidden px-8 py-4 bg-white/[0.01] backdrop-blur-2xl backdrop-saturate-[1.8] text-white rounded-full font-medium flex items-center gap-2 shadow-glass shadow-[inset_0px_1px_1px_rgba(255,255,255,0.2)] before:absolute before:inset-0 before:rounded-full before:border before:border-transparent before:bg-gradient-to-b before:from-white/40 before:to-transparent before:[-webkit-mask-image:linear-gradient(#fff_0_0),linear-gradient(#fff_0_0)] before:[-webkit-mask-clip:padding-box,border-box] before:[-webkit-mask-composite:destination-out] before:[mask-composite:exclude] hover:bg-white/10 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 ease-out">
             Explore Architecture <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </a>
           <div className="flex items-center gap-4">
-            <a href="https://github.com/kiran8688" target="_blank" rel="noreferrer" className="p-4 bg-white/[0.01] backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 rounded-full text-white shadow-glass hover:text-cyan-400 hover:bg-white/10 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 ease-out">
+            <a href="https://github.com/kiran8688" target="_blank" rel="noreferrer" className="relative overflow-hidden p-4 bg-white/[0.01] backdrop-blur-2xl backdrop-saturate-[1.8] rounded-full text-white shadow-glass shadow-[inset_0px_1px_1px_rgba(255,255,255,0.2)] before:absolute before:inset-0 before:rounded-full before:border before:border-transparent before:bg-gradient-to-b before:from-white/40 before:to-transparent before:[-webkit-mask-image:linear-gradient(#fff_0_0),linear-gradient(#fff_0_0)] before:[-webkit-mask-clip:padding-box,border-box] before:[-webkit-mask-composite:destination-out] before:[mask-composite:exclude] hover:text-cyan-400 hover:bg-white/10 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 ease-out">
               <Github size={20} />
             </a>
-            <a href="#contact" className="p-4 bg-white/[0.01] backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 rounded-full text-white shadow-glass hover:text-cyan-400 hover:bg-white/10 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 ease-out">
+            <a href="#contact" className="relative overflow-hidden p-4 bg-white/[0.01] backdrop-blur-2xl backdrop-saturate-[1.8] rounded-full text-white shadow-glass shadow-[inset_0px_1px_1px_rgba(255,255,255,0.2)] before:absolute before:inset-0 before:rounded-full before:border before:border-transparent before:bg-gradient-to-b before:from-white/40 before:to-transparent before:[-webkit-mask-image:linear-gradient(#fff_0_0),linear-gradient(#fff_0_0)] before:[-webkit-mask-clip:padding-box,border-box] before:[-webkit-mask-composite:destination-out] before:[mask-composite:exclude] hover:text-cyan-400 hover:bg-white/10 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 ease-out">
               <Mail size={20} />
             </a>
           </div>
