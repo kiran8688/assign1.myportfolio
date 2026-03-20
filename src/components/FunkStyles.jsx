@@ -37,87 +37,47 @@ const FunkStyles = () => (
     /* Authentic Apple Liquid Glass Utility */
     /* Based on iOS/iPadOS translucent control centers & overlays */
     .glass-card {
-      background: rgba(255, 255, 255, 0.05); /* Sheer, highly transparent base */
-      backdrop-filter: blur(16px) saturate(150%); /* Strong blur and color saturation push */
-      -webkit-backdrop-filter: blur(16px) saturate(150%);
-      border: 1px solid transparent; /* Bright, distinct thin border */
-      border-image: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, transparent 50%) 1;
-      border-radius: 1.5rem; /* Reverted to standard rounded-3xl */
+      background: rgba(255, 255, 255, 0.08); /* Sheer, highly transparent base */
+      backdrop-filter: blur(60px) saturate(180%); /* Strong blur and color saturation push */
+      -webkit-backdrop-filter: blur(60px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.3); /* Bright, distinct thin border */
+      border-radius: 1.5rem;
       /* Soft diffused shadows for depth without muddiness, plus an inner glow */
       box-shadow:
         0 20px 40px -10px rgba(0, 0, 0, 0.2),
-        inset 0 1px 1px rgba(255, 255, 255, 0.4);
+        inset 0 1px 2px 0 rgba(255, 255, 255, 0.4);
       transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-      will-change: transform, backdrop-filter;
-      position: relative; /* For border-radius fix on gradient borders */
-    }
-
-    .glass-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: 1.5rem;
-      padding: 1px;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255,255,255,0.1) 50%, transparent 100%);
-      -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      pointer-events: none;
     }
 
     .glass-card:hover {
-      background: rgba(255, 255, 255, 0.1); /* Becomes more opaque on hover */
+      background: rgba(255, 255, 255, 0.15); /* Becomes more opaque on hover */
+      border-color: rgba(255, 255, 255, 0.5);
       box-shadow:
         0 25px 50px -12px rgba(0, 0, 0, 0.3),
-        inset 0 1px 2px rgba(255, 255, 255, 0.5);
+        inset 0 1px 3px 0 rgba(255, 255, 255, 0.5);
       transform: translateY(-4px);
     }
 
     /* Skills specific variant matching the authentic liquid glass from reference */
     .glass-card-skills {
-      background: rgba(255, 255, 255, 0.05); /* Crystal clear frosted base */
-      backdrop-filter: blur(16px) saturate(150%);
-      -webkit-backdrop-filter: blur(16px) saturate(150%);
-      border: 1px solid transparent;
-      border-radius: 1.5rem; /* Reverted to standard rounded-3xl */
+      background: rgba(255, 255, 255, 0.08); /* Crystal clear frosted base */
+      backdrop-filter: blur(60px) saturate(180%);
+      -webkit-backdrop-filter: blur(60px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.3); /* Bright distinct rim */
+      border-radius: 1.5rem; /* Round edges like the Control Center bubbles */
       box-shadow:
         0 10px 30px -10px rgba(0, 0, 0, 0.3),
-        inset 0 1px 1px rgba(255, 255, 255, 0.4); /* Strong inner rim light */
+        inset 0 1px 2px 0 rgba(255, 255, 255, 0.4); /* Strong inner rim light */
       transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-      will-change: transform, backdrop-filter;
-      position: relative;
-    }
-
-    .glass-card-skills::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: 1.5rem;
-      padding: 1px;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255,255,255,0.1) 50%, transparent 100%);
-      -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      pointer-events: none;
     }
 
     .glass-card-skills:hover {
-      background: rgba(255, 255, 255, 0.1); /* Slightly lighter on hover */
+      background: rgba(255, 255, 255, 0.15); /* Slightly lighter on hover */
+      border-color: rgba(255, 255, 255, 0.5);
       box-shadow:
         0 20px 40px -8px rgba(0, 0, 0, 0.4),
-        inset 0 1px 2px rgba(255, 255, 255, 0.5);
+        inset 0 1px 3px 0 rgba(255, 255, 255, 0.5);
       transform: translateY(-4px); /* Add a slight lift */
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .glass-card, .glass-card-skills {
-        transition: none;
-        transform: none !important;
-      }
     }
 
     .text-gradient {

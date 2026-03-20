@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Icon } from './IconWrapper';
+import { Sparkles } from 'lucide-react';
 
 const SectionHeader = ({ title, subtitle, align = "left" }) => (
   <div className={`mb-16 ${align === "center" ? "text-center" : ""}`}>
@@ -10,7 +10,7 @@ const SectionHeader = ({ title, subtitle, align = "left" }) => (
       viewport={{ once: true }}
       className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-6"
     >
-      <Icon name="Sparkles" size={16} className="text-blue-400" />
+      <Sparkles size={16} className="text-blue-400" />
       <span className="text-sm font-medium tracking-wide text-slate-300 uppercase">{subtitle}</span>
     </motion.div>
     <motion.h2

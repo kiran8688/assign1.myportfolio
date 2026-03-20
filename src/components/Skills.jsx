@@ -11,7 +11,7 @@ import {
 } from 'react-icons/si';
 import { FaAws } from 'react-icons/fa';
 import { VscAzure } from 'react-icons/vsc';
-import { Icon } from './IconWrapper';
+import { Database } from 'lucide-react';
 
 const Skills = () => {
   const skillsList = [
@@ -24,7 +24,7 @@ const Skills = () => {
     { name: 'PostgreSQL', level: 'Intermediate', icon: <SiPostgresql size={36} color="#4169E1" /> },
     { name: 'Pytest', level: 'Beginner', icon: <SiPytest size={36} color="#0A9EDC" /> },
     { name: 'Docker', level: 'Intermediate', icon: <SiDocker size={36} color="#2496ED" /> },
-    { name: 'Alembic', level: 'Intermediate', icon: <Icon name="Database" size={36} color="#CBD5E1" /> },
+    { name: 'Alembic', level: 'Intermediate', icon: <Database size={36} color="#CBD5E1" /> },
     { name: 'Git', level: 'Intermediate', icon: <SiGit size={36} color="#F05032" /> },
     { name: 'Figma', level: 'Basic', icon: <SiFigma size={36} color="#F24E1E" /> },
     { name: 'Flask', level: 'Basic', icon: <SiFlask size={36} color="#FFFFFF" /> },

@@ -5,8 +5,6 @@ import FunkStyles from './components/FunkStyles';
 import BootSequence from './components/BootSequence';
 import NetworkBackground from './components/NetworkBackground';
 import NavigationDock from './components/NavigationDock';
-import { IconProvider } from './components/IconContext';
-import { IconToggle } from './components/IconWrapper';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
@@ -44,7 +42,7 @@ export default function App() {
   }, [activeSection, booting]);
 
   return (
-    <IconProvider>
+    <>
       <FunkStyles />
       <AnimatePresence>
         {booting && <BootSequence onComplete={() => setBooting(false)} />}
@@ -70,10 +68,8 @@ export default function App() {
             <Resume />
             <Contact />
           </main>
-
-          <IconToggle />
         </motion.div>
       )}
-    </IconProvider>
+    </>
   );
 }

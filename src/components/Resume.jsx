@@ -27,7 +27,7 @@ const Resume = () => {
               <div className="w-full md:w-[45%]">
                 <div className={`${glassStyle} p-6 md:p-8 hover:bg-white/5`}>
                   <h4 className="font-display text-xl text-white mb-1">{item.title}</h4>
-                  <p className="font-['JetBrains_Mono',monospace] text-xs text-cyan-400 mb-4">{item.org} &frasl;&frasl; {item.date}</p>
+                  <p className="font-['JetBrains_Mono',monospace] text-xs text-cyan-400 mb-4">{item.org} // {item.date}</p>
                   <p className="text-sm text-slate-400 leading-relaxed">{item.desc}</p>
                 </div>
               </div>

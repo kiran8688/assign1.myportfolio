@@ -1,16 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Icon } from './IconWrapper';
+import { Sparkles, User, Cpu, FolderOpen, FileText, Mail } from 'lucide-react';
 import { Link } from 'react-scroll';
 
 const NavigationDock = ({ activeSection }) => {
   const navItems = [
-    { id: 'hero', icon: 'Sparkles', label: 'Home' },
-    { id: 'about', icon: 'User', label: 'About' },
-    { id: 'skills', icon: 'Cpu', label: 'Skills' },
-    { id: 'projects', icon: 'FolderOpen', label: 'Work' },
-    { id: 'resume', icon: 'FileText', label: 'Resume' },
-    { id: 'contact', icon: 'Mail', label: 'Contact' },
+    { id: 'hero', icon: Sparkles, label: 'Home' },
+    { id: 'about', icon: User, label: 'About' },
+    { id: 'skills', icon: Cpu, label: 'Skills' },
+    { id: 'projects', icon: FolderOpen, label: 'Work' },
+    { id: 'resume', icon: FileText, label: 'Resume' },
+    { id: 'contact', icon: Mail, label: 'Contact' },
   ];
 
   return (
@@ -32,7 +32,7 @@ const NavigationDock = ({ activeSection }) => {
             className={`relative p-3 rounded-full flex items-center justify-center transition-all duration-300 group cursor-pointer
               ${isActive ? 'text-white' : 'text-slate-400 hover:text-white hover:bg-white/5'}`}
           >
-            <Icon name={item.icon} size={20} className="relative z-10" />
+            <item.icon size={20} className="relative z-10" />
 
             {/* Tooltip to the right */}
             <div className="absolute left-full ml-4 px-3 py-1.5 glass-card rounded-lg text-sm font-medium opacity-0 group-hover:opacity-100 transition-all transform -translate-x-2 group-hover:translate-x-0 pointer-events-none whitespace-nowrap">
