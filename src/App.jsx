@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import FunkStyles from './components/FunkStyles';
 import BootSequence from './components/BootSequence';
 import NetworkBackground from './components/NetworkBackground';
+import AmbientBackground from './components/AmbientBackground';
 import NavigationDock from './components/NavigationDock';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -53,8 +54,9 @@ export default function App() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5 }}
-          className="relative min-h-screen bg-[#030508] text-slate-200 font-['Inter',sans-serif] selection:bg-cyan-500/30"
+          className="relative bg-black text-white/85 min-h-screen overflow-x-hidden font-['Inter',sans-serif] selection:bg-cyan-500/30"
         >
+          <AmbientBackground />
           <NetworkBackground />
           <NavigationDock activeSection={activeSection} />
 
