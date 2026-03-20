@@ -28,7 +28,7 @@ const About = () => {
                 animate={{ opacity: 1 }}
                 className="text-slate-300 leading-relaxed text-lg font-light mb-6"
               >
-                To obtain a Full-Stack Developer position in a growth-oriented organization where I can apply my knowledge of backend architecture and full-stack development to build robust, scalable applications. I am an aspirer for becoming top roles in AI/ML fields, committed to continuous learning and improving my technical and problem-solving skills. I seek an environment that supports mentorship and collaboration, allowing me to contribute effectively to organizational goals while growing as a professional Full-Stack Developer. <span className="bg-cyan-500/20 text-cyan-300 font-semibold px-2 py-1 rounded inline-block mt-2 md:mt-0">Freelance: Available.</span>
+                To obtain a Full-Stack Developer position in a growth-oriented organization where I can apply my knowledge of backend architecture and full-stack development to build robust, scalable applications. I am an aspirer for becoming top roles in AI/ML fields, committed to continuous learning and improving my technical and problem-solving skills. I seek an environment that supports mentorship and collaboration, allowing me to contribute effectively to organizational goals while growing as a professional Full-Stack Developer.
               </motion.p>
             </div>
 
@@ -58,6 +58,12 @@ const About = () => {
               <a href="mailto:skirankumar.office@gmail.com" className="text-white font-medium flex items-center gap-2 hover:text-blue-400 transition-colors">
                 <Mail size={18} className="text-blue-400"/> skirankumar.office@gmail.com
               </a>
+            </div>
+            <div>
+              <p className="text-sm text-slate-500 uppercase tracking-widest mb-1">Availability</p>
+              <span className="bg-cyan-500/20 text-cyan-300 font-semibold px-3 py-1.5 rounded-lg inline-flex items-center gap-2 mt-1">
+                <Sparkles size={16} className="text-cyan-400" /> Freelance: Available
+              </span>
             </div>
             <a href="https://github.com/kiran8688" target="_blank" rel="noreferrer" className="mt-auto flex items-center justify-between p-4 bg-white/[0.01] rounded-2xl hover:bg-white/10 transition-colors group">
               <span className="flex items-center gap-2 text-white font-medium"><Github size={20} /> GitHub</span>
