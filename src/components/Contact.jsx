@@ -3,10 +3,13 @@ import { motion } from 'framer-motion';
 import { Terminal, MapPin } from 'lucide-react';
 
 const Contact = () => {
+  const glassInputStyle = "w-full bg-white/5 backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 rounded-2xl px-4 py-3 text-slate-200 placeholder-slate-500 shadow-glass focus:bg-white/10 focus:ring-1 focus:ring-white/30 focus:outline-none transition-all duration-300 ease-out";
+  const glassButtonStyle = "inline-flex items-center justify-center gap-3 px-10 py-4 mt-2 bg-white/5 backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 text-white rounded-full font-medium shadow-glass hover:bg-white/10 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 ease-out mx-auto";
+
   return (
     <motion.section id="contact"
       initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
-      className="py-32 text-center relative border-t border-white/5 mt-12 px-6 lg:px-24 z-10"
+      className="py-32 text-center relative border-t border-white/10 mt-12 px-6 lg:px-24 z-10"
     >
       <div className="max-w-6xl mx-auto">
         <h2 className="font-display text-5xl text-white mb-6">Initialize Connection</h2>
@@ -30,14 +33,14 @@ const Contact = () => {
               name="name"
               required
               placeholder="Your Name"
-              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition-colors"
+              className={glassInputStyle}
             />
             <input
               type="email"
               name="email"
               required
               placeholder="Your Email"
-              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition-colors"
+              className={glassInputStyle}
             />
           </div>
 
@@ -45,7 +48,7 @@ const Contact = () => {
             type="tel"
             name="phone"
             placeholder="Phone Number (Optional)"
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition-colors"
+            className={glassInputStyle}
           />
 
           <textarea
@@ -53,12 +56,12 @@ const Contact = () => {
             required
             rows="5"
             placeholder="Your Message..."
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition-colors resize-none"
+            className={`${glassInputStyle} resize-none`}
           ></textarea>
 
           <button
             type="submit"
-            className="inline-flex items-center justify-center gap-3 px-10 py-4 mt-2 bg-white text-black rounded-full font-medium hover:scale-105 shadow-[0_0_30px_rgba(255,255,255,0.1)] transition-all duration-300 mx-auto"
+            className={glassButtonStyle}
           >
             <Terminal size={18} /> Transmit Data
           </button>

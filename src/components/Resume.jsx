@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import SectionHeader from './SectionHeader';
 
 const Resume = () => {
-  const glassStyle = "glass-card";
+  const glassStyle = "bg-white/5 backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 rounded-2xl shadow-glass hover:bg-white/10 hover:-translate-y-1 transition-all duration-300 ease-out hover:shadow-2xl";
 
   return (
     <section id="resume" className="py-24 px-6 lg:px-24 relative z-10">
@@ -25,7 +25,7 @@ const Resume = () => {
               <div className="absolute left-[16px] md:left-1/2 md:-translate-x-1/2 w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_15px_#06b6d4] mt-2 md:mt-0 z-10" />
 
               <div className="w-full md:w-[45%]">
-                <div className={`${glassStyle} p-6 md:p-8 hover:bg-white/5`}>
+                <div className={`${glassStyle} p-6 md:p-8`}>
                   <h4 className="font-display text-xl text-white mb-1">{item.title}</h4>
                   <p className="font-['JetBrains_Mono',monospace] text-xs text-cyan-400 mb-4">{item.org} // {item.date}</p>
                   <p className="text-sm text-slate-400 leading-relaxed">{item.desc}</p>

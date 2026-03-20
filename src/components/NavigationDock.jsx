@@ -18,7 +18,7 @@ const NavigationDock = ({ activeSection }) => {
       initial={{ x: -100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ type: 'spring', damping: 20, stiffness: 100, delay: 0.5 }}
-      className="fixed left-6 top-[40%] -translate-y-1/2 z-50 glass-card px-2 py-3 rounded-[2rem] hidden md:flex items-center gap-2 flex-col"
+      className="fixed left-6 top-[40%] -translate-y-1/2 z-50 bg-white/5 backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 shadow-glass px-2 py-3 rounded-[2rem] hidden md:flex items-center gap-2 flex-col"
     >
       {navItems.map((item) => {
         const isActive = activeSection === item.id;
@@ -35,7 +35,7 @@ const NavigationDock = ({ activeSection }) => {
             <item.icon size={20} className="relative z-10" />
 
             {/* Tooltip to the right */}
-            <div className="absolute left-full ml-4 px-3 py-1.5 glass-card rounded-lg text-sm font-medium opacity-0 group-hover:opacity-100 transition-all transform -translate-x-2 group-hover:translate-x-0 pointer-events-none whitespace-nowrap">
+            <div className="absolute left-full ml-4 px-3 py-1.5 bg-white/5 backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 shadow-glass rounded-lg text-sm font-medium opacity-0 group-hover:opacity-100 transition-all transform -translate-x-2 group-hover:translate-x-0 pointer-events-none whitespace-nowrap text-white">
               {item.label}
             </div>
 
