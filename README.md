@@ -1,8 +1,10 @@
 # Kiran Kumar Singaram
-**Full Stack Developer**
+**Full-Stack Developer, Backend**
 
 ## Personal Statement
-To obtain a Full-Stack Developer position in a growth-oriented organization where I can apply my knowledge of full-stack development to build robust, scalable applications. I am an aspirer for becoming top roles in AI/ML fields, committed to continuous learning and improving my technical and problem-solving skills. I seek an environment that supports mentorship and collaboration, allowing me to contribute effectively to organizational goals while growing as a professional Full-Stack Developer.
+To obtain a Full-Stack Developer position in a growth-oriented organization where I can apply my knowledge of backend architecture and full-stack development to build robust, scalable applications. I am an aspirer for becoming top roles in AI/ML fields, committed to continuous learning and improving my technical and problem-solving skills. I seek an environment that supports mentorship and collaboration, allowing me to contribute effectively to organizational goals while growing as a professional Full-Stack Developer.
+
+**Freelance:** Available
 
 ---
 
@@ -15,11 +17,15 @@ To obtain a Full-Stack Developer position in a growth-oriented organization wher
 
 ---
 
-## Education
+## Experience & Education
+
+### Software Engineer
+**Novelski** | *Dec 2025 - Present*
+- Currently working at Novelski. Designated as a Software Engineer.
 
 ### B.Tech in Computer Science
 **Malla Reddy Engineering College (MREC)** | *May 2024*
-- CGPA: 6.75
+- Foundational computer science principles, algorithms, data structures, and networking.
 
 ## Training and Certifications
 

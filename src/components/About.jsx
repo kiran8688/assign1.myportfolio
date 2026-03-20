@@ -28,7 +28,7 @@ const About = () => {
                 animate={{ opacity: 1 }}
                 className="text-slate-300 leading-relaxed text-lg font-light mb-6"
               >
-                To obtain a Full-Stack Developer position in a growth-oriented organization where I can apply my knowledge of backend architecture and full-stack development to build robust, scalable applications. I am an aspirer for becoming top roles in AI/ML fields, committed to continuous learning and improving my technical and problem-solving skills. I seek an environment that supports mentorship and collaboration, allowing me to contribute effectively to organizational goals while growing as a professional Full-Stack Developer.
+                To obtain a Full-Stack Developer position in a growth-oriented organization where I can apply my knowledge of backend architecture and full-stack development to build robust, scalable applications. I am an aspirer for becoming top roles in AI/ML fields, committed to continuous learning and improving my technical and problem-solving skills. I seek an environment that supports mentorship and collaboration, allowing me to contribute effectively to organizational goals while growing as a professional Full-Stack Developer. <span className="text-cyan-400 bg-cyan-500/10 px-2 py-1 rounded-md font-medium border border-cyan-500/20 shadow-[0_0_10px_rgba(6,182,212,0.2)]">Freelance: Available</span>
               </motion.p>
             </div>
 

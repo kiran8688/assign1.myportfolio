@@ -1,6 +1,31 @@
 import { motion } from 'framer-motion';
 import SectionHeader from './SectionHeader';
 
+const calculateNovelskiDuration = () => {
+  // IST is UTC+5:30
+  const now = new Date();
+  const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+  const istTime = new Date(utc + (3600000 * 5.5));
+
+  const startYear = 2025;
+  const startMonth = 11; // December is month 11 (0-indexed)
+
+  let months = (istTime.getFullYear() - startYear) * 12;
+  months -= startMonth;
+  months += istTime.getMonth();
+
+  if (months <= 0) return '0 months';
+  if (months === 1) return '1 month';
+  return `${months} months`;
+};
+
+const experienceData = [
+  { title: "Software Engineer", org: "Novelski", date: `Dec 2025 - Present (${calculateNovelskiDuration()})`, desc: "Currently working at Novelski. Designated as a Software Engineer." },
+  { title: "Full-Stack Development Trainee", org: "Innomatics Research Labs", date: "Jan 2025 - Present", desc: "Intensive training focusing on modern web stacks, robust architecture, and enterprise-level application design." },
+  { title: "META Professional Certifications", org: "Coursera", date: "Ongoing", desc: "Advanced dual-certification in Front-End and Back-End development paradigms, ensuring industry-standard coding practices." },
+  { title: "B.Tech in Computer Science", org: "MREC", date: "May 2024", desc: "Foundational computer science principles, algorithms, data structures, and networking." }
+];
+
 const Resume = () => {
   const glassStyle = "bg-white/[0.01] backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 rounded-2xl shadow-glass hover:bg-white/10 hover:-translate-y-1 transition-all duration-300 ease-out hover:shadow-2xl";
 
@@ -12,11 +37,7 @@ const Resume = () => {
         <div className="max-w-3xl mx-auto relative mt-12">
           <div className="absolute left-[20px] md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-cyan-500/50 via-purple-500/50 to-transparent" />
 
-          {[
-            { title: "Full-Stack Development Trainee", org: "Innomatics Research Labs", date: "Jan 2025 - Present", desc: "Intensive training focusing on modern web stacks, robust architecture, and enterprise-level application design." },
-            { title: "META Professional Certifications", org: "Coursera", date: "Ongoing", desc: "Advanced dual-certification in Front-End and Back-End development paradigms, ensuring industry-standard coding practices." },
-            { title: "B.Tech in Computer Science", org: "MREC", date: "May 2024", desc: "Foundational computer science principles, algorithms, data structures, and networking." }
-          ].map((item, idx) => (
+          {experienceData.map((item, idx) => (
             <motion.div
               key={idx} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.2 }}
               className={`relative flex flex-col md:flex-row items-start md:items-center justify-between mb-16 pl-12 md:pl-0 ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
