@@ -10,6 +10,7 @@ const Contact = () => {
     <motion.section id="contact"
       initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
       className="py-32 text-center relative border-t border-white/10 mt-12 px-6 lg:px-24 z-10"
+      className="py-32 text-center relative border-t border-white/10 mt-12 px-6 lg:px-24 z-10"
     >
       <div className="max-w-6xl mx-auto">
         <h2 className="font-display text-5xl text-white mb-6">Initialize Connection</h2>
@@ -34,12 +35,14 @@ const Contact = () => {
               required
               placeholder="Your Name"
               className={glassInputStyle}
+              className={glassInputStyle}
             />
             <input
               type="email"
               name="email"
               required
               placeholder="Your Email"
+              className={glassInputStyle}
               className={glassInputStyle}
             />
           </div>
@@ -49,6 +52,7 @@ const Contact = () => {
             name="phone"
             placeholder="Phone Number (Optional)"
             className={glassInputStyle}
+            className={glassInputStyle}
           />
 
           <textarea
@@ -57,10 +61,12 @@ const Contact = () => {
             rows="5"
             placeholder="Your Message..."
             className={`${glassInputStyle} resize-none`}
+            className={`${glassInputStyle} resize-none`}
           ></textarea>
 
           <button
             type="submit"
+            className={glassButtonStyle}
             className={glassButtonStyle}
           >
             <Terminal size={18} /> Transmit Data
