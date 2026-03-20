@@ -17,7 +17,7 @@ const NavigationDock = ({ activeSection }) => {
       initial={{ x: -100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ type: 'spring', damping: 20, stiffness: 100, delay: 0.5 }}
-      className="fixed left-6 top-[40%] -translate-y-1/2 z-50 bg-white/[0.01] backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 shadow-glass px-2 py-3 rounded-[2rem] hidden md:flex items-center gap-2 flex-col"
+      className="fixed left-6 top-[40%] -translate-y-1/2 z-50 bg-white/[0.01] backdrop-blur-2xl backdrop-saturate-[1.8] shadow-glass px-2 py-3 rounded-[2rem] hidden md:flex items-center gap-2 flex-col relative overflow-hidden shadow-[inset_0px_1px_1px_rgba(255,255,255,0.2)] before:absolute before:inset-0 before:rounded-[2rem] before:border before:border-transparent before:bg-gradient-to-b before:from-white/40 before:to-transparent before:[-webkit-mask-image:linear-gradient(#fff_0_0),linear-gradient(#fff_0_0)] before:[-webkit-mask-clip:padding-box,border-box] before:[-webkit-mask-composite:destination-out] before:[mask-composite:exclude]"
     >
       {navItems.map((item) => {
         const isActive = activeSection === item.id;

@@ -14,9 +14,9 @@ const About = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="md:col-span-2 bg-white/[0.01] backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 rounded-2xl shadow-glass p-8 md:p-10 flex flex-col justify-center relative overflow-hidden group"
+            className="md:col-span-2 bg-white/[0.01] backdrop-blur-2xl backdrop-saturate-[1.8] rounded-2xl shadow-glass p-8 md:p-10 flex flex-col justify-center relative overflow-hidden group shadow-[inset_0px_1px_1px_rgba(255,255,255,0.2)] before:absolute before:inset-0 before:rounded-2xl before:border before:border-transparent before:bg-gradient-to-b before:from-white/40 before:to-transparent before:[-webkit-mask-image:linear-gradient(#fff_0_0),linear-gradient(#fff_0_0)] before:[-webkit-mask-clip:padding-box,border-box] before:[-webkit-mask-composite:destination-out] before:[mask-composite:exclude]"
           >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl group-hover:bg-cyan-500/20 transition-colors duration-700"></div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl group-hover:bg-cyan-500/20 transition-colors duration-700 z-0"></div>
 
             <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-4 mb-6 relative z-10">
               <h3 className="text-2xl font-display font-bold text-white whitespace-nowrap">Full-Stack Developer, Backend</h3>
@@ -43,7 +43,7 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="bg-white/[0.01] backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 rounded-2xl shadow-glass p-8 flex flex-col gap-6"
+            className="bg-white/[0.01] backdrop-blur-2xl backdrop-saturate-[1.8] rounded-2xl shadow-glass p-8 flex flex-col gap-6 relative overflow-hidden shadow-[inset_0px_1px_1px_rgba(255,255,255,0.2)] before:absolute before:inset-0 before:rounded-2xl before:border before:border-transparent before:bg-gradient-to-b before:from-white/40 before:to-transparent before:[-webkit-mask-image:linear-gradient(#fff_0_0),linear-gradient(#fff_0_0)] before:[-webkit-mask-clip:padding-box,border-box] before:[-webkit-mask-composite:destination-out] before:[mask-composite:exclude]"
           >
             <div>
               <p className="text-sm text-slate-500 uppercase tracking-widest mb-1">Location</p>
@@ -59,7 +59,7 @@ const About = () => {
                 <Mail size={18} className="text-blue-400"/> skirankumar.office@gmail.com
               </a>
             </div>
-            <a href="https://github.com/kiran8688" target="_blank" rel="noreferrer" className="mt-auto flex items-center justify-between p-4 bg-white/[0.01] rounded-2xl hover:bg-white/10 transition-colors group">
+            <a href="https://github.com/kiran8688" target="_blank" rel="noreferrer" className="mt-auto flex items-center justify-between p-4 bg-white/[0.01] rounded-2xl hover:bg-white/10 transition-colors group relative overflow-hidden shadow-[inset_0px_1px_1px_rgba(255,255,255,0.2)] before:absolute before:inset-0 before:rounded-2xl before:border before:border-transparent before:bg-gradient-to-b before:from-white/40 before:to-transparent before:[-webkit-mask-image:linear-gradient(#fff_0_0),linear-gradient(#fff_0_0)] before:[-webkit-mask-clip:padding-box,border-box] before:[-webkit-mask-composite:destination-out] before:[mask-composite:exclude]">
               <span className="flex items-center gap-2 text-white font-medium"><Github size={20} /> GitHub</span>
               <ExternalLink size={16} className="text-slate-400 group-hover:text-white transition-colors" />
             </a>
