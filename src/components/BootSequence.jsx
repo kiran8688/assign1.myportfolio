@@ -43,7 +43,7 @@ const BootSequence = ({ onComplete }) => {
           <span>KIRAN_SYS_INIT_SEQUENCE</span>
           <span>{progress.toFixed(2)}%</span>
         </div>
-        <div className="h-1 w-full bg-white/[0.02] relative overflow-hidden mb-8">
+        <div className="h-1 w-full bg-white/[0.01] relative overflow-hidden mb-8">
           <div className="absolute top-0 left-0 h-full bg-cyan-500 shadow-[0_0_10px_#06b6d4]" style={{ width: `${progress}%` }} />
         </div>
         <div className="h-32 text-slate-400 text-sm flex flex-col gap-2">
