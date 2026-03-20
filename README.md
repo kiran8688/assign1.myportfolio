@@ -43,7 +43,7 @@ To obtain a Full-Stack Developer position in a growth-oriented organization wher
 ## Contact Information
 - **Location:** Kukatpally, Hyderabad, Telangana 500055
 - **Phone:** +91 8099951768
-- **Email:** skirankumar2015@gmail.com
+- **Email:** skirankumar.office@gmail.com
 - **GitHub:** github.com/kiran8688
 - **Freelance:** Available
 
