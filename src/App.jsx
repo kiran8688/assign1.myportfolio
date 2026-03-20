@@ -13,6 +13,8 @@ import Projects from './components/Projects';
 import Resume from './components/Resume';
 import Contact from './components/Contact';
 
+const SECTIONS = ['hero', 'about', 'skills', 'projects', 'resume', 'contact'];
+
 export default function App() {
   const [booting, setBooting] = useState(true);
   const [activeSection, setActiveSection] = useState('hero');
@@ -20,11 +22,13 @@ export default function App() {
   // Track scroll position to update active Dock element
   useEffect(() => {
     if (booting) return;
-    const handleScroll = () => {
-      const sections = ['hero', 'about', 'skills', 'projects', 'resume', 'contact'];
+
+    let ticking = false;
+
+    const updateActiveSection = () => {
       let current = '';
 
-      for (let section of sections) {
+      for (let section of SECTIONS) {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
@@ -36,9 +40,17 @@ export default function App() {
       if (current && current !== activeSection) {
         setActiveSection(current);
       }
+      ticking = false;
     };
 
-    window.addEventListener('scroll', handleScroll);
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateActiveSection);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [activeSection, booting]);
 
