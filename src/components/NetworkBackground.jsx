@@ -1,5 +1,4 @@
-import { useRef } from 'react';
-import useNetworkAnimation from '../hooks/useNetworkAnimation';
+import { useEffect, useRef } from 'react';
 
 const NetworkBackground = () => {
   const canvasRef = useRef(null);
