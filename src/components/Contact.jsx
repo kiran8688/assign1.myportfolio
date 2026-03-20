@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import { Terminal, MapPin } from 'lucide-react';
 
 const Contact = () => {
-  const glassInputStyle = "w-full bg-white/5 backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 rounded-2xl px-4 py-3 text-slate-200 placeholder-slate-500 shadow-glass focus:bg-white/10 focus:ring-1 focus:ring-white/30 focus:outline-none transition-all duration-300 ease-out";
-  const glassButtonStyle = "inline-flex items-center justify-center gap-3 px-10 py-4 mt-2 bg-white/5 backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 text-white rounded-full font-medium shadow-glass hover:bg-white/10 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 ease-out mx-auto";
+  const glassInputStyle = "w-full bg-white/[0.02] backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 rounded-2xl px-4 py-3 text-slate-200 placeholder-slate-500 shadow-glass focus:bg-white/10 focus:ring-1 focus:ring-white/30 focus:outline-none transition-all duration-300 ease-out";
+  const glassButtonStyle = "inline-flex items-center justify-center gap-3 px-10 py-4 mt-2 bg-white/[0.02] backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 text-white rounded-full font-medium shadow-glass hover:bg-white/10 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 ease-out mx-auto";
 
   return (
     <motion.section id="contact"

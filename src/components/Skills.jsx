@@ -54,7 +54,7 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: idx * 0.05, duration: 0.5, type: 'spring' }}
-              className="group flex flex-col items-center justify-center gap-3 w-[150px] h-[140px] p-4 bg-white/5 backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 rounded-2xl shadow-glass cursor-default"
+              className="group flex flex-col items-center justify-center gap-3 w-[150px] h-[140px] p-4 bg-white/[0.02] backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 rounded-2xl shadow-glass cursor-default"
             >
               {/* Removed grayscale and opacity filters to permanently display official brand colors */}
               <div className="flex-shrink-0 flex items-center justify-center drop-shadow-lg transform transition-transform duration-300 group-hover:scale-110">

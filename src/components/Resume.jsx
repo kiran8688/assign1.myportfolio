@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import SectionHeader from './SectionHeader';
 
 const Resume = () => {
-  const glassStyle = "bg-white/5 backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 rounded-2xl shadow-glass hover:bg-white/10 hover:-translate-y-1 transition-all duration-300 ease-out hover:shadow-2xl";
+  const glassStyle = "bg-white/[0.02] backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 rounded-2xl shadow-glass hover:bg-white/10 hover:-translate-y-1 transition-all duration-300 ease-out hover:shadow-2xl";
 
   return (
     <section id="resume" className="py-24 px-6 lg:px-24 relative z-10">
