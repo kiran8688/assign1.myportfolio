@@ -3,7 +3,7 @@ import { ExternalLink, Layers } from 'lucide-react';
 import SectionHeader from './SectionHeader';
 
 const Projects = () => {
-  const glassStyle = "bg-white/[0.01] backdrop-blur-2xl backdrop-saturate-[1.8] rounded-2xl shadow-glass relative overflow-hidden shadow-[inset_0px_1px_1px_rgba(255,255,255,0.2)] before:absolute before:inset-0 before:rounded-2xl before:border before:border-transparent before:bg-gradient-to-b before:from-white/40 before:to-transparent before:[-webkit-mask-image:linear-gradient(#fff_0_0),linear-gradient(#fff_0_0)] before:[-webkit-mask-clip:padding-box,border-box] before:[-webkit-mask-composite:destination-out] before:[mask-composite:exclude]";
+  const glassStyle = "bg-white/[0.01] backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 rounded-2xl shadow-glass";
 
   return (
     <section id="projects" className="py-24 px-6 lg:px-24 relative z-10">
