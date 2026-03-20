@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Layers } from 'lucide-react';
 import SectionHeader from './SectionHeader';

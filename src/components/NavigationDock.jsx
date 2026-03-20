@@ -1,18 +1,17 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, User, Cpu, FolderOpen, FileText, Mail } from 'lucide-react';
 import { Link } from 'react-scroll';
 
-const NavigationDock = ({ activeSection }) => {
-  const navItems = [
-    { id: 'hero', icon: Sparkles, label: 'Home' },
-    { id: 'about', icon: User, label: 'About' },
-    { id: 'skills', icon: Cpu, label: 'Skills' },
-    { id: 'projects', icon: FolderOpen, label: 'Work' },
-    { id: 'resume', icon: FileText, label: 'Resume' },
-    { id: 'contact', icon: Mail, label: 'Contact' },
-  ];
+const navItems = [
+  { id: 'hero', icon: Sparkles, label: 'Home' },
+  { id: 'about', icon: User, label: 'About' },
+  { id: 'skills', icon: Cpu, label: 'Skills' },
+  { id: 'projects', icon: FolderOpen, label: 'Work' },
+  { id: 'resume', icon: FileText, label: 'Resume' },
+  { id: 'contact', icon: Mail, label: 'Contact' },
+];
 
+const NavigationDock = ({ activeSection }) => {
   return (
     <motion.div
       initial={{ x: -100, opacity: 0 }}

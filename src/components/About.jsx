@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, MapPin, User, Mail, Github, ExternalLink } from 'lucide-react';
 import SectionHeader from './SectionHeader';
@@ -56,8 +55,8 @@ const About = () => {
             </div>
             <div>
               <p className="text-sm text-slate-500 uppercase tracking-widest mb-1">Email</p>
-              <a href="mailto:skirankumar2015@gmail.com" className="text-white font-medium flex items-center gap-2 hover:text-blue-400 transition-colors">
-                <Mail size={18} className="text-blue-400"/> skirankumar2015@gmail.com
+              <a href="mailto:skirankumar.office@gmail.com" className="text-white font-medium flex items-center gap-2 hover:text-blue-400 transition-colors">
+                <Mail size={18} className="text-blue-400"/> skirankumar.office@gmail.com
               </a>
             </div>
             <a href="https://github.com/kiran8688" target="_blank" rel="noreferrer" className="mt-auto flex items-center justify-between p-4 bg-white/[0.01] rounded-2xl hover:bg-white/10 transition-colors group">

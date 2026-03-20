@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 const NetworkBackground = () => {
   const canvasRef = useRef(null);
@@ -48,38 +48,117 @@ const NetworkBackground = () => {
     // --- RENDERING FUNCTIONS ---
     let animationFrameId;
 
+    // Grid caching for spatial partitioning (reduces O(N^2) connection checks)
+    const CELL_SIZE = 180; // Matches connection threshold
+    let gridCols = 0;
+    let gridRows = 0;
+    let grid = [];
+
+    const initGrid = (w, h) => {
+      gridCols = Math.ceil(w / CELL_SIZE);
+      gridRows = Math.ceil(h / CELL_SIZE);
+      const totalCells = gridCols * gridRows;
+
+      if (grid.length !== totalCells) {
+        grid = new Array(totalCells);
+        for (let i = 0; i < totalCells; i++) {
+          grid[i] = [];
+        }
+      }
+    };
+
+    initGrid(width, height);
+
     const render = () => {
       ctx.clearRect(0, 0, width, height);
 
-      // Reset connection counts for the current frame
-      nodes.forEach(node => node.connections = 0);
+      // Clear the grid without reallocating arrays to prevent GC pressure
+      for (let i = 0; i < grid.length; i++) {
+        grid[i].length = 0;
+      }
 
-      // 1. Calculate Synaptic Connections First
+      // Reset connection counts and populate the spatial grid
       for (let i = 0; i < nodes.length; i++) {
-        for (let j = i + 1; j < nodes.length; j++) {
-          const dx = nodes[i].x - nodes[j].x;
-          const dy = nodes[i].y - nodes[j].y;
-          const d = Math.sqrt(dx * dx + dy * dy);
+        const node = nodes[i];
+        node.connections = 0;
 
-          if (d < 180) { // Connection threshold
-            nodes[i].connections++;
-            nodes[j].connections++;
+        const col = Math.floor(node.x / CELL_SIZE);
+        const row = Math.floor(node.y / CELL_SIZE);
 
-            ctx.beginPath();
-            ctx.moveTo(nodes[i].x, nodes[i].y);
-            ctx.lineTo(nodes[j].x, nodes[j].y);
+        // Ensure within bounds
+        if (col >= 0 && col < gridCols && row >= 0 && row < gridRows) {
+          grid[row * gridCols + col].push(i);
+        }
+      }
 
-            // Opacity and thickness scale with proximity
-            const opacity = ((180 - d) / 180) * 0.25;
+      const checkAndDrawConnection = (nodeA, nodeB) => {
+        const dx = nodeA.x - nodeB.x;
+        const dy = nodeA.y - nodeB.y;
+        const dSq = dx * dx + dy * dy;
 
-            // Create a dynamic linear gradient between the two node colors
-            const grad = ctx.createLinearGradient(nodes[i].x, nodes[i].y, nodes[j].x, nodes[j].y);
-            grad.addColorStop(0, `rgba(${nodes[i].color}, ${opacity})`);
-            grad.addColorStop(1, `rgba(${nodes[j].color}, ${opacity})`);
+        if (dSq < 32400) { // 180 * 180 (Connection threshold)
+          const d = Math.sqrt(dSq);
+          nodeA.connections++;
+          nodeB.connections++;
 
-            ctx.strokeStyle = grad; // Apply multi-color gradient
-            ctx.lineWidth = 0.5 + (opacity * 1.5);
-            ctx.stroke();
+          ctx.beginPath();
+          ctx.moveTo(nodeA.x, nodeA.y);
+          ctx.lineTo(nodeB.x, nodeB.y);
+
+          // Opacity and thickness scale with proximity
+          const opacity = ((180 - d) / 180) * 0.25;
+
+          // Create a dynamic linear gradient between the two node colors
+          const grad = ctx.createLinearGradient(nodeA.x, nodeA.y, nodeB.x, nodeB.y);
+          grad.addColorStop(0, `rgba(${nodeA.color}, ${opacity})`);
+          grad.addColorStop(1, `rgba(${nodeB.color}, ${opacity})`);
+
+          ctx.strokeStyle = grad; // Apply multi-color gradient
+          ctx.lineWidth = 0.5 + (opacity * 1.5);
+          ctx.stroke();
+        }
+      };
+
+      // 1. Calculate Synaptic Connections using Spatial Partitioning
+      for (let row = 0; row < gridRows; row++) {
+        for (let col = 0; col < gridCols; col++) {
+          const cellIdx = row * gridCols + col;
+          const cellNodes = grid[cellIdx];
+          const cellLen = cellNodes.length;
+
+          for (let i = 0; i < cellLen; i++) {
+            const nodeAIdx = cellNodes[i];
+            const nodeA = nodes[nodeAIdx];
+
+            // Same cell
+            for (let j = i + 1; j < cellLen; j++) {
+              checkAndDrawConnection(nodeA, nodes[cellNodes[j]]);
+            }
+
+            // Check neighboring cells (half to avoid duplicates: right, bottom-left, bottom, bottom-right)
+            // Right
+            if (col + 1 < gridCols) {
+              const neighbor = grid[row * gridCols + (col + 1)];
+              for (let j = 0; j < neighbor.length; j++) checkAndDrawConnection(nodeA, nodes[neighbor[j]]);
+            }
+
+            // Bottom-Left
+            if (row + 1 < gridRows && col - 1 >= 0) {
+              const neighbor = grid[(row + 1) * gridCols + (col - 1)];
+              for (let j = 0; j < neighbor.length; j++) checkAndDrawConnection(nodeA, nodes[neighbor[j]]);
+            }
+
+            // Bottom
+            if (row + 1 < gridRows) {
+              const neighbor = grid[(row + 1) * gridCols + col];
+              for (let j = 0; j < neighbor.length; j++) checkAndDrawConnection(nodeA, nodes[neighbor[j]]);
+            }
+
+            // Bottom-Right
+            if (row + 1 < gridRows && col + 1 < gridCols) {
+              const neighbor = grid[(row + 1) * gridCols + (col + 1)];
+              for (let j = 0; j < neighbor.length; j++) checkAndDrawConnection(nodeA, nodes[neighbor[j]]);
+            }
           }
         }
       }
@@ -138,6 +217,7 @@ const NetworkBackground = () => {
     const handleResize = () => {
       width = window.innerWidth; height = window.innerHeight;
       canvas.width = width; canvas.height = height;
+      initGrid(width, height);
     };
     window.addEventListener('resize', handleResize);
 
