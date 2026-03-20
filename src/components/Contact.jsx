@@ -17,7 +17,7 @@ const Contact = () => {
         </p>
 
         <form
-          action="https://formsubmit.co/skirankumar2015@gmail.com"
+          action={`https://formsubmit.co/${import.meta.env.VITE_FORMSUBMIT_TOKEN || 'skirankumar.office@gmail.com'}`}
           method="POST"
           className="max-w-xl mx-auto flex flex-col gap-4 text-left"
         >
