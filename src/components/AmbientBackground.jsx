@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const AmbientBackground = () => {
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    // Delay rendering orbs to prevent flash during/immediately after boot sequence
+    const timer = setTimeout(() => setShow(true), 2500);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+    <div className={`fixed inset-0 z-[-1] overflow-hidden pointer-events-none transition-opacity duration-1000 ${show ? 'opacity-100' : 'opacity-0'}`}>
       {/* Orb 1 */}
       <div className="absolute w-[50vw] h-[50vw] bg-[#ff2a5f] rounded-full blur-[80px] opacity-60 top-[-10%] left-[-10%] animate-drift mix-blend-screen" />
       {/* Orb 2 */}

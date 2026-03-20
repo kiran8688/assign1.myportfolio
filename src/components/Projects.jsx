@@ -4,7 +4,7 @@ import { ExternalLink, Layers } from 'lucide-react';
 import SectionHeader from './SectionHeader';
 
 const Projects = () => {
-  const glassStyle = "bg-white/5 backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 rounded-2xl shadow-glass";
+  const glassStyle = "bg-white/[0.02] backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 rounded-2xl shadow-glass";
 
   return (
     <section id="projects" className="py-24 px-6 lg:px-24 relative z-10">
@@ -47,7 +47,7 @@ const Projects = () => {
                 <img
                   src={import.meta.env.BASE_URL + project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover object-top filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                  className="w-full h-full object-contain filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
                 />
               </div>
 
@@ -58,7 +58,7 @@ const Projects = () => {
 
                 <div className="flex flex-wrap gap-2 mb-10">
                   {project.tags.map(tag => (
-                    <span key={tag} className="font-['JetBrains_Mono',monospace] text-[10px] uppercase tracking-wider px-3 py-1.5 bg-white/5 border border-white/5 rounded text-slate-300">
+                    <span key={tag} className="font-['JetBrains_Mono',monospace] text-[10px] uppercase tracking-wider px-3 py-1.5 bg-white/[0.02] border border-white/5 rounded text-slate-300">
                       {tag}
                     </span>
                   ))}
