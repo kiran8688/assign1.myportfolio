@@ -15,7 +15,7 @@ const About = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="md:col-span-2 glass-card p-8 md:p-10 flex flex-col justify-center relative overflow-hidden group"
+            className="md:col-span-2 bg-white/[0.01] backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 rounded-2xl shadow-glass p-8 md:p-10 flex flex-col justify-center relative overflow-hidden group"
           >
             <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl group-hover:bg-cyan-500/20 transition-colors duration-700"></div>
 
@@ -44,7 +44,7 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="glass-card p-8 flex flex-col gap-6"
+            className="bg-white/[0.01] backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 rounded-2xl shadow-glass p-8 flex flex-col gap-6"
           >
             <div>
               <p className="text-sm text-slate-500 uppercase tracking-widest mb-1">Location</p>
@@ -60,7 +60,7 @@ const About = () => {
                 <Mail size={18} className="text-blue-400"/> skirankumar2015@gmail.com
               </a>
             </div>
-            <a href="https://github.com/kiran8688" target="_blank" rel="noreferrer" className="mt-auto flex items-center justify-between p-4 bg-white/5 rounded-2xl hover:bg-white/10 transition-colors group">
+            <a href="https://github.com/kiran8688" target="_blank" rel="noreferrer" className="mt-auto flex items-center justify-between p-4 bg-white/[0.01] rounded-2xl hover:bg-white/10 transition-colors group">
               <span className="flex items-center gap-2 text-white font-medium"><Github size={20} /> GitHub</span>
               <ExternalLink size={16} className="text-slate-400 group-hover:text-white transition-colors" />
             </a>
