@@ -4,7 +4,7 @@ import { ExternalLink, Layers } from 'lucide-react';
 import SectionHeader from './SectionHeader';
 
 const Projects = () => {
-  const glassStyle = "glass-card";
+  const glassStyle = "bg-white/5 backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 rounded-2xl shadow-glass";
 
   return (
     <section id="projects" className="py-24 px-6 lg:px-24 relative z-10">

@@ -33,14 +33,14 @@ const Hero = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-          <a href="#projects" className="group px-8 py-4 bg-white text-black rounded-full font-medium flex items-center gap-2 hover:scale-105 transition-all duration-300">
+          <a href="#projects" className="group px-8 py-4 bg-white/5 backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 text-white rounded-full font-medium flex items-center gap-2 shadow-glass hover:bg-white/10 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 ease-out">
             Explore Architecture <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </a>
           <div className="flex items-center gap-4">
-            <a href="https://github.com/kiran8688" target="_blank" rel="noreferrer" className="p-4 bg-white/5 border border-white/10 rounded-full text-white hover:text-cyan-400 hover:bg-white/10 transition-all duration-300">
+            <a href="https://github.com/kiran8688" target="_blank" rel="noreferrer" className="p-4 bg-white/5 backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 rounded-full text-white shadow-glass hover:text-cyan-400 hover:bg-white/10 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 ease-out">
               <Github size={20} />
             </a>
-            <a href="mailto:skirankumar2015@gmail.com" className="p-4 bg-white/5 border border-white/10 rounded-full text-white hover:text-cyan-400 hover:bg-white/10 transition-all duration-300">
+            <a href="mailto:skirankumar2015@gmail.com" className="p-4 bg-white/5 backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 rounded-full text-white shadow-glass hover:text-cyan-400 hover:bg-white/10 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 ease-out">
               <Mail size={20} />
             </a>
           </div>
