@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Sparkles, User, Cpu, FolderOpen, FileText, Mail } from 'lucide-react';
 import { Link } from 'react-scroll';
 
+// Mapping configuration for the sidebar navigation links and their respective icons
 const navItems = [
   { id: 'hero', icon: Sparkles, label: 'Home' },
   { id: 'about', icon: User, label: 'About' },
@@ -11,6 +12,13 @@ const navItems = [
   { id: 'contact', icon: Mail, label: 'Contact' },
 ];
 
+/**
+ * NavigationDock Component
+ * A sticky, glassmorphism vertical sidebar navigation menu for desktop viewports.
+ * Uses `react-scroll` to smoothly anchor link to sections and visually highlights the currently active section.
+ *
+ * @param {string} activeSection - The ID of the currently in-view section, passed down from the parent App state.
+ */
 const NavigationDock = ({ activeSection }) => {
   return (
     <motion.div
