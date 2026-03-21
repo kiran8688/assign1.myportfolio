@@ -61,9 +61,9 @@ const About = () => {
             </div>
             <div>
               <p className="text-sm text-slate-500 uppercase tracking-widest mb-1">Availability</p>
-              <span className="bg-cyan-500/20 text-cyan-300 font-semibold px-3 py-1.5 rounded-lg inline-flex items-center gap-2 mt-1">
-                <Sparkles size={16} className="text-cyan-400" /> Freelance: Available
-              </span>
+              <p className="text-cyan-300 font-medium flex items-center gap-2">
+                <Sparkles size={18} className="text-cyan-400" /> Freelance: Available
+              </p>
             </div>
             <a href="https://github.com/kiran8688" target="_blank" rel="noreferrer" className="mt-auto flex items-center justify-between p-4 bg-white/[0.01] rounded-2xl hover:bg-white/10 transition-colors group">
               <span className="flex items-center gap-2 text-white font-medium"><Github size={20} /> GitHub</span>
