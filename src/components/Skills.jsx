@@ -6,12 +6,16 @@ import {
   SiPytest, SiDocker, SiGit, SiFigma,
   SiFlask, SiMysql, SiNodedotjs, SiExpress,
   SiHeroku, SiSalesforce,
-  SiKubernetes, SiAxios, SiNestjs, SiTypescript
+  SiKubernetes, SiAxios, SiNestjs, SiTypescript, SiGithub
 } from 'react-icons/si';
 import { FaAws } from 'react-icons/fa';
 import { VscAzure } from 'react-icons/vsc';
 import { Database } from 'lucide-react';
 
+/**
+ * Static array mapping technology names, proficiency levels, and corresponding SVGs/Icons.
+ * Defined outside the component to prevent unnecessary re-allocations during React re-renders.
+ */
 const skillsList = [
   { name: 'Python', level: 'Intermediate', icon: <SiPython size={36} color="#3776AB" /> },
   { name: 'C++', level: 'Beginner', icon: <SiCplusplus size={36} color="#00599C" /> },
@@ -24,6 +28,7 @@ const skillsList = [
   { name: 'Docker', level: 'Intermediate', icon: <SiDocker size={36} color="#2496ED" /> },
   { name: 'Alembic', level: 'Intermediate', icon: <Database size={36} color="#CBD5E1" /> },
   { name: 'Git', level: 'Intermediate', icon: <SiGit size={36} color="#F05032" /> },
+  { name: 'GitHub', level: 'Advanced', icon: <SiGithub size={36} color="#FFFFFF" /> },
   { name: 'Figma', level: 'Basic', icon: <SiFigma size={36} color="#F24E1E" /> },
   { name: 'Flask', level: 'Basic', icon: <SiFlask size={36} color="#FFFFFF" /> },
   { name: 'MySQL', level: 'Intermediate', icon: <SiMysql size={36} color="#4479A1" /> },
@@ -39,6 +44,11 @@ const skillsList = [
   { name: 'TypeScript', level: 'Intermediate', icon: <SiTypescript size={36} color="#3178C6" /> },
 ];
 
+/**
+ * Skills Component
+ * Renders a staggered animated grid of technical skills and tools.
+ * Utilizes Framer Motion for entrance animations.
+ */
 const Skills = () => {
   return (
     <section id="skills" className="py-24 px-6 lg:px-24 relative z-10">
@@ -52,10 +62,11 @@ const Skills = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
+              // Staggered entrance: each card delays its animation slightly longer than the previous
               transition={{ delay: idx * 0.05, duration: 0.5, type: 'spring' }}
               className="group flex flex-col items-center justify-center gap-3 w-[150px] h-[140px] p-4 bg-white/[0.01] backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 rounded-2xl shadow-glass cursor-default"
             >
-              {/* Removed grayscale and opacity filters to permanently display official brand colors */}
+              {/* Icon Container: Preserves original brand colors and applies a subtle hover zoom */}
               <div className="flex-shrink-0 flex items-center justify-center drop-shadow-lg transform transition-transform duration-300 group-hover:scale-110">
                 {skill.icon}
               </div>

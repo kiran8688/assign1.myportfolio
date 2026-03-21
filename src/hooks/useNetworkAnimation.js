@@ -1,5 +1,17 @@
 import { useEffect } from 'react';
 
+/**
+ * Custom React hook to render a highly interactive, animated neural network
+ * background using the HTML5 Canvas API.
+ *
+ * Features include:
+ * - Dynamic spatial node connections based on proximity.
+ * - Multi-color gradient connection lines.
+ * - Interactive repulsion physics tied to mouse movement.
+ * - Auto-resizing capabilities to fit the browser window.
+ *
+ * @param {React.MutableRefObject<HTMLCanvasElement>} canvasRef - A ref pointing to the target `<canvas>` DOM element.
+ */
 const useNetworkAnimation = (canvasRef) => {
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -8,32 +20,35 @@ const useNetworkAnimation = (canvasRef) => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
+    // Set canvas dimensions to explicitly match the current viewport size
+
     let width = window.innerWidth;
     let height = window.innerHeight;
     canvas.width = width;
     canvas.height = height;
 
     // --- Mouse Interactivity Tracking ---
-    const mouse = { x: -1000, y: -1000, radius: 150 }; // 150px repulsion field
+    // The cursor acts as a repulsor field. Initialized off-screen to avoid immediate impact.
+    const mouse = { x: -1000, y: -1000, radius: 150 };
 
     // --- ELEMENT INITIALIZATION ---
 
-    // Premium Multi-Color Palette
+    // Array of base RGB colors used for nodes and gradient connection lines
     const palette = ['6, 182, 212', '59, 130, 246', '139, 92, 246', '236, 72, 153', '16, 185, 129'];
 
-    // Full-Screen Neural Nodes
-    // Increased presence by 50% (80 * 1.50 = 120)
+    // Generate the particle array. Base count is 120 nodes.
     const nodes = Array.from({ length: Math.floor(80 * 1.50) }, () => ({
-      x: Math.random() * width,
-      y: Math.random() * height,
-      vx: (Math.random() - 0.5) * 0.5,
-      vy: (Math.random() - 0.5) * 0.5,
-      size: (Math.random() * 0.5 + 0.15) * 1.10, // Restored back to ultra-fine base size
-      connections: 0, // Track connections for dynamic glowing
-      color: palette[Math.floor(Math.random() * palette.length)] // Assign random premium color
+      x: Math.random() * width, // Initial random X position
+      y: Math.random() * height, // Initial random Y position
+      vx: (Math.random() - 0.5) * 0.5, // X-axis velocity vector
+      vy: (Math.random() - 0.5) * 0.5, // Y-axis velocity vector
+      size: (Math.random() * 0.5 + 0.15) * 1.10, // Base rendering radius
+      connections: 0, // State variable tracking active spatial connections per frame
+      color: palette[Math.floor(Math.random() * palette.length)]
     }));
 
     // --- EVENT LISTENERS ---
+    // Update the repulsor field center on mouse move
     const handleMouseMove = (e) => {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
@@ -57,13 +72,15 @@ const useNetworkAnimation = (canvasRef) => {
       nodes.forEach(node => node.connections = 0);
 
       // 1. Calculate Synaptic Connections First
+      // Iterates through all unique node pairs to check distance.
       for (let i = 0; i < nodes.length; i++) {
         for (let j = i + 1; j < nodes.length; j++) {
           const dx = nodes[i].x - nodes[j].x;
           const dy = nodes[i].y - nodes[j].y;
-          const d = Math.sqrt(dx * dx + dy * dy);
+          const d = Math.sqrt(dx * dx + dy * dy); // Pythagorean distance
 
-          if (d < 180) { // Connection threshold
+          // If nodes are within the connection threshold (180px), draw a line
+          if (d < 180) {
             nodes[i].connections++;
             nodes[j].connections++;
 
@@ -71,15 +88,15 @@ const useNetworkAnimation = (canvasRef) => {
             ctx.moveTo(nodes[i].x, nodes[i].y);
             ctx.lineTo(nodes[j].x, nodes[j].y);
 
-            // Opacity and thickness scale with proximity
+            // Closer nodes yield thicker, more opaque connection lines
             const opacity = ((180 - d) / 180) * 0.25;
 
-            // Create a dynamic linear gradient between the two node colors
+            // Generate a real-time linear gradient that blends the colors of the two connecting nodes
             const grad = ctx.createLinearGradient(nodes[i].x, nodes[i].y, nodes[j].x, nodes[j].y);
             grad.addColorStop(0, `rgba(${nodes[i].color}, ${opacity})`);
             grad.addColorStop(1, `rgba(${nodes[j].color}, ${opacity})`);
 
-            ctx.strokeStyle = grad; // Apply multi-color gradient
+            ctx.strokeStyle = grad;
             ctx.lineWidth = 0.5 + (opacity * 1.5);
             ctx.stroke();
           }
@@ -93,6 +110,7 @@ const useNetworkAnimation = (canvasRef) => {
         node.y += node.vy;
 
         // Kinetic Repulsion Physics
+        // If a node enters the mouse radius, apply a force vector pushing it away.
         const dx = node.x - mouse.x;
         const dy = node.y - mouse.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
@@ -100,34 +118,34 @@ const useNetworkAnimation = (canvasRef) => {
         if (distance < mouse.radius) {
           const forceDirectionX = dx / distance;
           const forceDirectionY = dy / distance;
-          // The closer the particle is to the mouse, the stronger the push
+          // The closer the node is to the cursor epicenter, the stronger the exponential push
           const force = (mouse.radius - distance) / mouse.radius;
-          const pushX = forceDirectionX * force * 3.5; // Repulsion strength multiplier
+          const pushX = forceDirectionX * force * 3.5;
           const pushY = forceDirectionY * force * 3.5;
 
           node.x += pushX;
           node.y += pushY;
         }
 
-        // Smooth bounce off screen edges
+        // Collision detection: Reverse velocity vectors on hitting canvas boundaries
         if(node.x < 0) { node.x = 0; node.vx *= -1; }
         if(node.x > width) { node.x = width; node.vx *= -1; }
         if(node.y < 0) { node.y = 0; node.vy *= -1; }
         if(node.y > height) { node.y = height; node.vy *= -1; }
 
-        // Dynamic Node Styling (Glows brighter & grows with more connections)
+        // Dynamic Node Styling: Nodes swell in size and brightness as they form more connections
         ctx.beginPath();
-        const dynamicSize = node.size + (node.connections * 0.08); // Halved dynamic growth multiplier
+        const dynamicSize = node.size + (node.connections * 0.08);
         ctx.arc(node.x, node.y, dynamicSize, 0, Math.PI*2);
 
         const nodeOpacity = Math.min(0.15 + (node.connections * 0.08), 0.8);
-        ctx.fillStyle = `rgba(${node.color}, ${nodeOpacity})`; // Use the node's specific assigned color
+        ctx.fillStyle = `rgba(${node.color}, ${nodeOpacity})`;
         ctx.fill();
 
-        // Add a bright core highlight to highly connected "hub" nodes
+        // Add a pure white core highlight to highly connected "hub" nodes to signify network density
         if (node.connections > 3) {
             ctx.beginPath();
-            ctx.arc(node.x, node.y, dynamicSize * 0.5, 0, Math.PI*2); // Adjusted core ratio to remain visible
+            ctx.arc(node.x, node.y, dynamicSize * 0.5, 0, Math.PI*2);
             ctx.fillStyle = `rgba(255, 255, 255, 0.7)`;
             ctx.fill();
         }
@@ -137,12 +155,14 @@ const useNetworkAnimation = (canvasRef) => {
     }
     render();
 
+    // Handle viewport changes to prevent the canvas from stretching or compressing
     const handleResize = () => {
       width = window.innerWidth; height = window.innerHeight;
       canvas.width = width; canvas.height = height;
     };
     window.addEventListener('resize', handleResize);
 
+    // Cleanup phase: Remove event listeners and stop the animation loop to prevent memory leaks on component unmount
     return () => {
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('mousemove', handleMouseMove);

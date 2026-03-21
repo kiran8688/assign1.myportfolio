@@ -1,7 +1,13 @@
 import { motion } from 'framer-motion';
 import { Terminal, MapPin } from 'lucide-react';
 
+/**
+ * Contact Component
+ * Provides a secure, functional contact form integrating with the FormSubmit API.
+ * Employs environment variables to obscure the target email address from scraping bots.
+ */
 const Contact = () => {
+  // Shared interactive glass styling variables for form inputs and the submit button
   const glassInputStyle = "w-full bg-white/[0.01] backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 rounded-2xl px-4 py-3 text-slate-200 placeholder-slate-500 shadow-glass focus:bg-white/10 focus:ring-1 focus:ring-white/30 focus:outline-none transition-all duration-300 ease-out";
   const glassButtonStyle = "inline-flex items-center justify-center gap-3 px-10 py-4 mt-2 bg-white/[0.01] backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 text-white rounded-full font-medium shadow-glass hover:bg-white/10 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 ease-out mx-auto";
 
@@ -17,12 +23,14 @@ const Contact = () => {
         </p>
 
         <form
+          // Form submission endpoint. Uses an obscure token configured in Vite env or falls back to standard email if missing.
           action={`https://formsubmit.co/${import.meta.env.VITE_FORMSUBMIT_TOKEN || 'skirankumar.office@gmail.com'}`}
           method="POST"
           className="max-w-xl mx-auto flex flex-col gap-4 text-left"
         >
-          {/* Honeypot & configuration for FormSubmit */}
+          {/* Honeypot Field: Hidden input to catch automated spam bots */}
           <input type="text" name="_honey" style={{ display: 'none' }} />
+          {/* FormSubmit Configurations: Disable CAPTCHA challenge and use the 'box' email layout template */}
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_template" value="box" />
 

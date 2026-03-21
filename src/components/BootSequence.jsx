@@ -1,11 +1,19 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
+/**
+ * BootSequence Component
+ * Simulates a terminal-style application startup sequence before revealing the portfolio.
+ * Manages an artificial progress bar and cycles through mock "system build" console logs.
+ *
+ * @param {Function} onComplete - Callback executed when the progress reaches 100% and the sequence finishes.
+ */
 const BootSequence = ({ onComplete }) => {
-  const [progress, setProgress] = useState(0);
-  const [currentProcess, setCurrentProcess] = useState('');
+  const [progress, setProgress] = useState(0); // Progress percentage (0 to 100)
+  const [currentProcess, setCurrentProcess] = useState(''); // The text log currently displayed to the user
 
   useEffect(() => {
+    // Array of mock console logs with their respective timestamp delays (in milliseconds)
     const processes = [
       { text: "INITIALIZING ROOT VIRTUAL ENVIRONMENT...", time: 200 },
       { text: "RESOLVING DEPENDENCIES (node_modules)...", time: 800 },
@@ -17,18 +25,28 @@ const BootSequence = ({ onComplete }) => {
     ];
 
     let startTime = Date.now();
-    const duration = 4000;
+    const duration = 4000; // Total duration of the boot sequence (4 seconds)
+
+    // Interval updates the progress bar and determines the active text log every 50ms
     const interval = setInterval(() => {
       const elapsed = Date.now() - startTime;
+
+      // Calculate smooth percentage based on elapsed time out of total duration
       const percent = Math.min((elapsed / duration) * 100, 100);
       setProgress(percent);
+
+      // Find the most recent process log that should be active based on elapsed time
       const activeProcess = processes.reduce((prev, curr) => elapsed >= curr.time ? curr : prev);
       setCurrentProcess(activeProcess.text);
+
+      // Once the progress hits 100%, halt the interval and trigger the completion callback after a brief visual buffer
       if (percent >= 100) {
         clearInterval(interval);
-        setTimeout(onComplete, 500);
+        setTimeout(onComplete, 500); // 500ms delay before fading out
       }
     }, 50);
+
+    // Cleanup interval to prevent memory leaks if component unmounts unexpectedly
     return () => clearInterval(interval);
   }, [onComplete]);
 
