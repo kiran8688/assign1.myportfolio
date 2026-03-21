@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Sparkles, MapPin, User, Mail, Github, ExternalLink } from 'lucide-react';
 import SectionHeader from './SectionHeader';
+import SpotlightCard from './SpotlightCard';
 
 const About = () => {
   return (
@@ -10,11 +11,12 @@ const About = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Main Bio Card */}
-          <motion.div
+          <SpotlightCard
+            isMotion={true}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="md:col-span-2 bg-white/[0.01] backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 rounded-2xl shadow-glass p-8 md:p-10 flex flex-col justify-center relative overflow-hidden group"
+            className="md:col-span-2 p-8 md:p-10 flex flex-col justify-center relative overflow-hidden group"
           >
             <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl group-hover:bg-cyan-500/20 transition-colors duration-700"></div>
 
@@ -28,22 +30,23 @@ const About = () => {
                 animate={{ opacity: 1 }}
                 className="text-slate-300 leading-relaxed text-lg font-light mb-6"
               >
-                To obtain a Full-Stack Developer position in a growth-oriented organization where I can apply my knowledge of backend architecture and full-stack development to build robust, scalable applications. I am an aspirer for becoming top roles in AI/ML fields, committed to continuous learning and improving my technical and problem-solving skills. I seek an environment that supports mentorship and collaboration, allowing me to contribute effectively to organizational goals while growing as a professional Full-Stack Developer. Freelance: Available.
+                To obtain a Full-Stack Developer position in a growth-oriented organization where I can apply my knowledge of backend architecture and full-stack development to build robust, scalable applications. I am an aspirer for becoming top roles in AI/ML fields, committed to continuous learning and improving my technical and problem-solving skills. I seek an environment that supports mentorship and collaboration, allowing me to contribute effectively to organizational goals while growing as a professional Full-Stack Developer.
               </motion.p>
             </div>
 
             <div className="inline-flex items-center gap-2 text-blue-400 font-medium relative z-10 mt-auto">
               <Sparkles size={18} /> Available for new opportunities
             </div>
-          </motion.div>
+          </SpotlightCard>
 
           {/* Contact Details Bento */}
-          <motion.div
+          <SpotlightCard
+            isMotion={true}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="bg-white/[0.01] backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 rounded-2xl shadow-glass p-8 flex flex-col gap-6"
+            className="p-8 flex flex-col gap-6"
           >
             <div>
               <p className="text-sm text-slate-500 uppercase tracking-widest mb-1">Location</p>
@@ -59,11 +62,17 @@ const About = () => {
                 <Mail size={18} className="text-blue-400"/> skirankumar.office@gmail.com
               </a>
             </div>
+            <div>
+              <p className="text-sm text-slate-500 uppercase tracking-widest mb-1">Availability</p>
+              <p className="text-cyan-300 font-medium flex items-center gap-2">
+                <Sparkles size={18} className="text-cyan-400" /> Freelance: Available
+              </p>
+            </div>
             <a href="https://github.com/kiran8688" target="_blank" rel="noreferrer" className="mt-auto flex items-center justify-between p-4 bg-white/[0.01] rounded-2xl hover:bg-white/10 transition-colors group">
               <span className="flex items-center gap-2 text-white font-medium"><Github size={20} /> GitHub</span>
               <ExternalLink size={16} className="text-slate-400 group-hover:text-white transition-colors" />
             </a>
-          </motion.div>
+          </SpotlightCard>
         </div>
       </div>
     </section>
