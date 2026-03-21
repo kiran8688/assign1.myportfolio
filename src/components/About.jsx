@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Sparkles, MapPin, User, Mail, Github, ExternalLink } from 'lucide-react';
 import SectionHeader from './SectionHeader';
+import SpotlightCard from './SpotlightCard';
 
 const About = () => {
   return (
@@ -10,11 +11,12 @@ const About = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Main Bio Card */}
-          <motion.div
+          <SpotlightCard
+            isMotion={true}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="md:col-span-2 bg-white/[0.01] backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 rounded-2xl shadow-glass p-8 md:p-10 flex flex-col justify-center relative overflow-hidden group"
+            className="md:col-span-2 p-8 md:p-10 flex flex-col justify-center relative overflow-hidden group"
           >
             <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl group-hover:bg-cyan-500/20 transition-colors duration-700"></div>
 
@@ -35,15 +37,16 @@ const About = () => {
             <div className="inline-flex items-center gap-2 text-blue-400 font-medium relative z-10 mt-auto">
               <Sparkles size={18} /> Available for new opportunities
             </div>
-          </motion.div>
+          </SpotlightCard>
 
           {/* Contact Details Bento */}
-          <motion.div
+          <SpotlightCard
+            isMotion={true}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="bg-white/[0.01] backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 rounded-2xl shadow-glass p-8 flex flex-col gap-6"
+            className="p-8 flex flex-col gap-6"
           >
             <div>
               <p className="text-sm text-slate-500 uppercase tracking-widest mb-1">Location</p>
@@ -69,7 +72,7 @@ const About = () => {
               <span className="flex items-center gap-2 text-white font-medium"><Github size={20} /> GitHub</span>
               <ExternalLink size={16} className="text-slate-400 group-hover:text-white transition-colors" />
             </a>
-          </motion.div>
+          </SpotlightCard>
         </div>
       </div>
     </section>
