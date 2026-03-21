@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion';
 import { ExternalLink, Layers } from 'lucide-react';
 import SectionHeader from './SectionHeader';
-import SpotlightCard from './SpotlightCard';
 
 const Projects = () => {
+  const glassStyle = "bg-white/[0.01] backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 rounded-2xl shadow-glass";
+
   return (
     <section id="projects" className="py-24 px-6 lg:px-24 relative z-10">
       <div className="max-w-6xl mx-auto">
@@ -36,13 +37,9 @@ const Projects = () => {
               image: "img/proj3.png"
             }
           ].map((project, idx) => (
-            <SpotlightCard
-              key={idx}
-              isMotion={true}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              className={`group relative flex flex-col md:flex-row ${idx % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
+            <motion.div
+              key={idx} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }}
+              className={`${glassStyle} group relative flex flex-col md:flex-row ${idx % 2 !== 0 ? 'md:flex-row-reverse' : ''} overflow-hidden`}
             >
               <div className="w-full md:w-[55%] bg-[#05080f]/50 relative overflow-hidden border-b md:border-b-0 border-white/5 md:border-r-0 border-opacity-10">
                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/30 to-purple-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10 mix-blend-overlay" />
@@ -72,7 +69,7 @@ const Projects = () => {
                   </a>
                 </div>
               </div>
-            </SpotlightCard>
+            </motion.div>
           ))}
         </div>
       </div>

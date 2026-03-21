@@ -11,7 +11,6 @@ import {
 import { FaAws } from 'react-icons/fa';
 import { VscAzure } from 'react-icons/vsc';
 import { Database } from 'lucide-react';
-import SpotlightCard from './SpotlightCard';
 
 const skillsList = [
   { name: 'Python', level: 'Intermediate', icon: <SiPython size={36} color="#3776AB" /> },
@@ -48,14 +47,13 @@ const Skills = () => {
 
         <div className="mt-16 flex flex-wrap justify-center gap-6">
           {skillsList.map((skill, idx) => (
-            <SpotlightCard
+            <motion.div
               key={skill.name}
-              isMotion={true}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: idx * 0.05, duration: 0.5, type: 'spring' }}
-              className="group flex flex-col items-center justify-center gap-3 w-[150px] h-[140px] p-4 cursor-default"
+              className="group flex flex-col items-center justify-center gap-3 w-[150px] h-[140px] p-4 bg-white/[0.01] backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 rounded-2xl shadow-glass cursor-default"
             >
               {/* Removed grayscale and opacity filters to permanently display official brand colors */}
               <div className="flex-shrink-0 flex items-center justify-center drop-shadow-lg transform transition-transform duration-300 group-hover:scale-110">
@@ -70,7 +68,7 @@ const Skills = () => {
                   {skill.level}
                 </p>
               </div>
-            </SpotlightCard>
+            </motion.div>
           ))}
         </div>
       </div>
