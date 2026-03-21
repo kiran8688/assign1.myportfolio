@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import FunkStyles from './components/FunkStyles';
 import BootSequence from './components/BootSequence';
 import NetworkBackground from './components/NetworkBackground';
-import AmbientBackground from './components/AmbientBackground';
 import NavigationDock from './components/NavigationDock';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -68,7 +67,6 @@ export default function App() {
           transition={{ duration: 1.5 }}
           className="relative bg-black text-white/85 min-h-screen overflow-x-hidden font-['Inter',sans-serif] selection:bg-cyan-500/30"
         >
-          <AmbientBackground />
           <NetworkBackground />
           <NavigationDock activeSection={activeSection} />
 
