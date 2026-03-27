@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Layers } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import SectionHeader from './SectionHeader';
 
 // Static array containing detailed project data.
