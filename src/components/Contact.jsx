@@ -23,8 +23,8 @@ const Contact = () => {
         </p>
 
         <form
-          // Form submission endpoint. Uses an obscure token configured in Vite env or falls back to standard email if missing.
-          action={`https://formsubmit.co/${import.meta.env.VITE_FORMSUBMIT_TOKEN || 'skirankumar.office@gmail.com'}`}
+          // Form submission endpoint. Uses an obscure token configured in Vite env.
+          action={`https://formsubmit.co/${import.meta.env.VITE_FORMSUBMIT_TOKEN}`}
           method="POST"
           className="max-w-xl mx-auto flex flex-col gap-4 text-left"
         >
