@@ -1,6 +1,18 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
+// Array of mock console logs with their respective timestamp delays (in milliseconds)
+// Defined outside the component to prevent unnecessary re-allocations on every re-render.
+const processes = [
+  { text: "INITIALIZING ROOT VIRTUAL ENVIRONMENT...", time: 200 },
+  { text: "RESOLVING DEPENDENCIES (node_modules)...", time: 800 },
+  { text: "BUNDLING ASSETS WITH VITE...", time: 1500 },
+  { text: "COMPILING REACT COMPONENTS...", time: 2100 },
+  { text: "ESTABLISHING DATABASE CONNECTIONS...", time: 2700 },
+  { text: "RENDERING GLASSMORPHISM UI LAYER...", time: 3300 },
+  { text: "SYSTEM ARCHITECTURE COMPILED. WELCOME.", time: 3900 }
+];
+
 /**
  * BootSequence Component
  * Simulates a terminal-style application startup sequence before revealing the portfolio.
@@ -13,19 +25,9 @@ const BootSequence = ({ onComplete }) => {
   const [currentProcess, setCurrentProcess] = useState(''); // The text log currently displayed to the user
 
   useEffect(() => {
-    // Array of mock console logs with their respective timestamp delays (in milliseconds)
-    const processes = [
-      { text: "INITIALIZING ROOT VIRTUAL ENVIRONMENT...", time: 200 },
-      { text: "RESOLVING DEPENDENCIES (node_modules)...", time: 800 },
-      { text: "BUNDLING ASSETS WITH VITE...", time: 1500 },
-      { text: "COMPILING REACT COMPONENTS...", time: 2100 },
-      { text: "ESTABLISHING DATABASE CONNECTIONS...", time: 2700 },
-      { text: "RENDERING GLASSMORPHISM UI LAYER...", time: 3300 },
-      { text: "SYSTEM ARCHITECTURE COMPILED. WELCOME.", time: 3900 }
-    ];
-
     let startTime = Date.now();
     const duration = 4000; // Total duration of the boot sequence (4 seconds)
+    let lastProcessIndex = 0; // Tracks the current active process index to avoid redundant array traversals
 
     // Interval updates the progress bar and determines the active text log every 50ms
     const interval = setInterval(() => {
@@ -35,9 +37,13 @@ const BootSequence = ({ onComplete }) => {
       const percent = Math.min((elapsed / duration) * 100, 100);
       setProgress(percent);
 
-      // Find the most recent process log that should be active based on elapsed time
-      const activeProcess = processes.reduce((prev, curr) => elapsed >= curr.time ? curr : prev);
-      setCurrentProcess(activeProcess.text);
+      // Efficiently find the most recent process log that should be active based on elapsed time
+      // Instead of using reduce() which scans the entire array on every tick,
+      // we only increment the index when the next process's time threshold is reached.
+      while (lastProcessIndex < processes.length - 1 && elapsed >= processes[lastProcessIndex + 1].time) {
+        lastProcessIndex++;
+      }
+      setCurrentProcess(processes[lastProcessIndex].text);
 
       // Once the progress hits 100%, halt the interval and trigger the completion callback after a brief visual buffer
       if (percent >= 100) {
