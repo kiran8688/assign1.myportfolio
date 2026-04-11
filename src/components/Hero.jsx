@@ -36,7 +36,7 @@ const Hero = () => {
             Explore Architecture <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </a>
           <div className="flex items-center gap-4">
-            <a href="https://github.com/kiran8688" target="_blank" rel="noreferrer" className="p-4 bg-white/[0.01] backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 rounded-full text-white shadow-glass hover:text-cyan-400 hover:bg-white/10 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 ease-out">
+            <a href="https://github.com/kiran8688" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/[0.01] backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 rounded-full text-white shadow-glass hover:text-cyan-400 hover:bg-white/10 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 ease-out">
               <Github size={20} />
             </a>
             <a href="#contact" className="p-4 bg-white/[0.01] backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 rounded-full text-white shadow-glass hover:text-cyan-400 hover:bg-white/10 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 ease-out">
