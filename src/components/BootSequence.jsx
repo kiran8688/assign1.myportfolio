@@ -58,6 +58,7 @@ const BootSequence = ({ onComplete }) => {
 
   return (
     <motion.div
+      data-testid="boot-sequence"
       initial={{ opacity: 1 }}
       exit={{ opacity: 0, filter: "blur(20px)", transition: { duration: 1.2 } }}
       className="fixed inset-0 z-50 bg-[#030508] flex flex-col items-center justify-center p-8 font-['JetBrains_Mono',monospace]"
@@ -65,7 +66,7 @@ const BootSequence = ({ onComplete }) => {
       <div className="w-full max-w-3xl">
         <div className="flex justify-between text-cyan-500 mb-4 text-sm tracking-widest border-b border-cyan-500/30 pb-2">
           <span>KIRAN_SYS_INIT_SEQUENCE</span>
-          <span>{progress.toFixed(2)}%</span>
+          <span data-testid="boot-progress">{progress.toFixed(2)}%</span>
         </div>
         <div className="h-1 w-full bg-white/[0.01] relative overflow-hidden mb-8">
           <div className="absolute top-0 left-0 h-full bg-cyan-500 shadow-[0_0_10px_#06b6d4]" style={{ width: `${progress}%` }} />
@@ -74,7 +75,7 @@ const BootSequence = ({ onComplete }) => {
           <div className="flex gap-4">
             <span className="text-slate-600">[{new Date().toISOString().split('T')[1].slice(0,-1)}]</span>
             <span className="text-emerald-400 animate-pulse">EXEC</span>
-            <span className="text-white">{currentProcess}</span>
+            <span data-testid="boot-current-process" className="text-white">{currentProcess}</span>
           </div>
         </div>
       </div>
