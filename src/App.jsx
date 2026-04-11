@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import FunkStyles from './components/FunkStyles';
 import BootSequence from './components/BootSequence';
 import NetworkBackground from './components/NetworkBackground';
 import NavigationDock from './components/NavigationDock';
@@ -64,9 +63,6 @@ export default function App() {
 
   return (
     <>
-      {/* Global CSS injections (animations, fonts) */}
-      <FunkStyles />
-
       {/* Boot Sequence Overlay: Unmounts smoothly when the application is ready */}
       <AnimatePresence>
         {booting && <BootSequence onComplete={() => setBooting(false)} />}
