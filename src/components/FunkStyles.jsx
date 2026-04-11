@@ -57,34 +57,6 @@ const FunkStyles = () => (
       transform: translateY(-4px);
     }
 
-    /* Skills specific variant matching the authentic liquid glass from reference */
-    .glass-card-skills {
-      background: rgba(255, 255, 255, 0.08); /* Crystal clear frosted base */
-      backdrop-filter: blur(60px) saturate(180%);
-      -webkit-backdrop-filter: blur(60px) saturate(180%);
-      border: 1px solid rgba(255, 255, 255, 0.3); /* Bright distinct rim */
-      border-radius: 1.5rem; /* Round edges like the Control Center bubbles */
-      box-shadow:
-        0 10px 30px -10px rgba(0, 0, 0, 0.3),
-        inset 0 1px 2px 0 rgba(255, 255, 255, 0.4); /* Strong inner rim light */
-      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    }
-
-    .glass-card-skills:hover {
-      background: rgba(255, 255, 255, 0.15); /* Slightly lighter on hover */
-      border-color: rgba(255, 255, 255, 0.5);
-      box-shadow:
-        0 20px 40px -8px rgba(0, 0, 0, 0.4),
-        inset 0 1px 3px 0 rgba(255, 255, 255, 0.5);
-      transform: translateY(-4px); /* Add a slight lift */
-    }
-
-    .text-gradient {
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-image: linear-gradient(90deg, #06b6d4, #3b82f6, #10b981);
-    }
   `}} />
 );
 
