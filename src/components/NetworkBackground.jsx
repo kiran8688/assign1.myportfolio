@@ -20,6 +20,8 @@ const NetworkBackground = () => {
     // --- Mouse Interactivity Tracking ---
     // Represents a repulsion epicenter around the user's cursor.
     const mouse = { x: -1000, y: -1000, radius: 150 };
+    // Pre-calculated squared radius for optimized distance comparisons in the rendering loop
+    const mouseRadiusSq = mouse.radius * mouse.radius;
 
     // --- ELEMENT INITIALIZATION ---
 
@@ -189,10 +191,12 @@ const NetworkBackground = () => {
         // Apply interactive mouse repulsion physics
         const dx = node.x - mouse.x;
         const dy = node.y - mouse.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
+        const dSq = dx * dx + dy * dy;
 
-        // If a node enters the mouse radius, apply an opposing force vector
-        if (distance < mouse.radius) {
+        // If a node enters the mouse radius (using squared distance to avoid expensive Math.sqrt),
+        // apply an opposing force vector
+        if (dSq < mouseRadiusSq) {
+          const distance = Math.sqrt(dSq);
           const forceDirectionX = dx / distance;
           const forceDirectionY = dy / distance;
           // Exponential falloff: force increases as distance to epicenter decreases
