@@ -24,43 +24,36 @@ export default function App() {
   const [booting, setBooting] = useState(true); // Controls the initial startup animation overlay
   const [activeSection, setActiveSection] = useState('hero'); // Tracks which section is currently in view
 
-  // Tracks the user's scroll position to dynamically update the active state in the NavigationDock
+  // Uses IntersectionObserver to track which section is in view.
+  // This is more performant than a scroll listener as it avoids layout thrashing from getBoundingClientRect.
   useEffect(() => {
-    if (booting) return; // Do not calculate scroll positions until the DOM is fully rendered and the boot sequence completes
+    if (booting) return;
 
-    let ticking = false;
+    // The observer looks for when a section crosses the vertical center of the viewport
+    const observerOptions = {
+      root: null,
+      rootMargin: '-50% 0px -50% 0px',
+      threshold: 0,
+    };
 
-    const updateActiveSection = () => {
-      let current = '';
-
-      // Determine which section currently occupies the vertical center of the viewport
-      for (let section of SECTIONS) {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-            current = section;
-          }
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
         }
-      }
-      // Update state only if the active section has changed to prevent unnecessary re-renders
-      if (current && current !== activeSection) {
-        setActiveSection(current);
-      }
-      ticking = false;
+      });
     };
 
-    // Throttle scroll events using requestAnimationFrame for optimal performance
-    const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(updateActiveSection);
-        ticking = true;
-      }
-    };
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [activeSection, booting]);
+    // Track all registered sections
+    SECTIONS.forEach((sectionId) => {
+      const element = document.getElementById(sectionId);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, [booting]);
 
   return (
     <>
