@@ -83,7 +83,7 @@ const Projects = () => {
                 </div>
 
                 <div className="mt-auto">
-                  <a href={project.link} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-white font-medium hover:text-cyan-400 transition-colors w-fit">
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-white font-medium hover:text-cyan-400 transition-colors w-fit">
                     Deploy Protocol <ExternalLink size={16} />
                   </a>
                 </div>

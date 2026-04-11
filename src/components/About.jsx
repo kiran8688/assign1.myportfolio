@@ -65,7 +65,7 @@ const About = () => {
                 <Sparkles size={18} className="text-cyan-400" /> Freelance: Available
               </p>
             </div>
-            <a href="https://github.com/kiran8688" target="_blank" rel="noreferrer" className="mt-auto flex items-center justify-between p-4 bg-white/[0.01] rounded-2xl hover:bg-white/10 transition-colors group">
+            <a href="https://github.com/kiran8688" target="_blank" rel="noopener noreferrer" className="mt-auto flex items-center justify-between p-4 bg-white/[0.01] rounded-2xl hover:bg-white/10 transition-colors group">
               <span className="flex items-center gap-2 text-white font-medium"><Github size={20} /> GitHub</span>
               <ExternalLink size={16} className="text-slate-400 group-hover:text-white transition-colors" />
             </a>
